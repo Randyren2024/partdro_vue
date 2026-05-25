@@ -1,0 +1,231 @@
+{
+  "MY-108": {
+    "model": "MY-108/MY-116",
+    "name": "飞利浦灭蚊蝇灯",
+    "nameEn": "Philips Mosquito and Fly Killer Lamp",
+    "brand": "PHILIPS/飞利浦",
+    "tagline": "盲选不踩坑，大牌更好用",
+    "description": "采用荷兰进口的飞利浦诱虫灯，365nmUVA波段高效诱捕蚊蝇，适用于家庭、餐厅、厨房等场景，安全环保无噪音。",
+    "features": [
+      "荷兰进口365nmUVA诱虫灯管，诱蚊效果更强",
+      "双灯管设计（T5 8W*2），提升灭蚊效率",
+      "粘板式设计，方便更换与清洁",
+      "每台机器配备唯一防伪码，正品保障",
+      "通过国家电器安全质量检验检测中心认证"
+    ],
+    "specifications": [
+      {
+        "label": "产品型号",
+        "value": "MY-108/MY-116"
+      },
+      {
+        "label": "额定功率",
+        "value": "8W/16W"
+      },
+      {
+        "label": "额定电压/频率",
+        "value": "220V/50Hz"
+      },
+      {
+        "label": "峰值波长",
+        "value": "365nm"
+      },
+      {
+        "label": "诱虫灯管",
+        "value": "T5 8W*1/T5 8W*2"
+      },
+      {
+        "label": "粘板尺寸",
+        "value": "23*10cm"
+      },
+      {
+        "label": "建议面积",
+        "value": "≤60m²/≤120m²"
+      },
+      {
+        "label": "产品尺寸",
+        "value": "38*16*19.5cm"
+      }
+    ],
+    "scenarios": [
+      "家庭使用",
+      "餐厅",
+      "厨房",
+      "办公室",
+      "商铺"
+    ],
+    "certifications": [
+      "CNAS认证",
+      "MA认证",
+      "国家电器安全质量检验检测中心检测报告"
+    ],
+    "powerVariants": [
+      {
+        "power": "8W",
+        "specs": [
+          {
+            "label": "覆盖面积",
+            "value": "≤60m²"
+          },
+          {
+            "label": "灯管配置",
+            "value": "T5 8W*1"
+          }
+        ]
+      },
+      {
+        "power": "16W",
+        "specs": [
+          {
+            "label": "覆盖面积",
+            "value": "≤120m²"
+          },
+          {
+            "label": "灯管配置",
+            "value": "T5 8W*2"
+          }
+        ]
+      }
+    ]
+  },
+  "MY-208": {
+    "model": "",
+    "name": "飞利浦灭蚊灯",
+    "nameEn": "Philips Mosquito Killer Lamp",
+    "brand": "飞利浦",
+    "tagline": "高效灭蚊蝇",
+    "description": "飞利浦品牌高效灭蚊灯，采用进口光源技术，专为室内环境设计，提供安全可靠的虫害管控解决方案。",
+    "features": [
+      "进口光源，高效诱蚊",
+      "可上翻盖外壳设计，便于清洁维护",
+      "扣手槽设计，方便拆卸粘虫板",
+      "市监局检查指定灭虫害设备",
+      "官方授权正品，品质保障",
+      "方圆严检，安全可靠"
+    ],
+    "specifications": [
+      {
+        "label": "安装高度",
+        "value": "1.8~2.5米"
+      },
+      {
+        "label": "孔距",
+        "value": "24.7cm"
+      },
+      {
+        "label": "钻头规格",
+        "value": "8mm"
+      }
+    ],
+    "scenarios": [
+      "家庭使用",
+      "餐饮场所",
+      "商业空间",
+      "公共场所"
+    ],
+    "certifications": [
+      "飞利浦官方授权",
+      "PHILIPS商标证明",
+      "方圆质量检测报告",
+      "飞利浦测试报告"
+    ],
+    "powerVariants": []
+  },
+  "MY-330": {
+    "model": "MY-330",
+    "name": "T8-30W大型商用灭蚊蝇灯",
+    "nameEn": "T8-30W Commercial Insect Killer Lamp",
+    "brand": "PHILIPS",
+    "tagline": "盲选不踩坑 大牌更好用",
+    "description": "飞利浦官方推出的30W大型商用灭蚊蝇灯，采用T8 15W进口灯管，加大加宽升级设计，提升诱捕效率。适用于餐饮饭店等商业场景，高效灭蚊灭蝇。",
+    "features": [
+      "T8 15W进口灯管，诱虫范围更广",
+      "双灯管设计，增强诱捕效果",
+      "配备两张长40CM粘虫板，粘捕面积更大",
+      "可拆卸设计，方便更换粘虫板",
+      "壁挂式安装，节省空间",
+      "安全无辐射，适合商用环境"
+    ],
+    "specifications": [
+      {
+        "label": "功率",
+        "value": "30W"
+      },
+      {
+        "label": "灯管类型",
+        "value": "T8"
+      },
+      {
+        "label": "灯管功率",
+        "value": "15W"
+      },
+      {
+        "label": "粘虫板尺寸",
+        "value": "40CM"
+      },
+      {
+        "label": "粘虫板数量",
+        "value": "2张"
+      },
+      {
+        "label": "电压",
+        "value": "220V"
+      },
+      {
+        "label": "波长",
+        "value": "365nm"
+      },
+      {
+        "label": "材质",
+        "value": "ABS塑料"
+      },
+      {
+        "label": "IP等级",
+        "value": "IP44"
+      },
+      {
+        "label": "尺寸",
+        "value": "未提供"
+      },
+      {
+        "label": "重量",
+        "value": "未提供"
+      }
+    ],
+    "scenarios": [
+      "餐饮饭店",
+      "商用厨房",
+      "餐厅",
+      "食堂",
+      "食品加工场所"
+    ],
+    "certifications": [
+      "CNAS",
+      "CMA",
+      "FGD"
+    ],
+    "powerVariants": [
+      {
+        "power": "30W",
+        "specs": [
+          {
+            "label": "覆盖面积",
+            "value": "未提供"
+          },
+          {
+            "label": "灯管类型",
+            "value": "T8"
+          },
+          {
+            "label": "灯管功率",
+            "value": "15W"
+          },
+          {
+            "label": "粘虫板长度",
+            "value": "40CM"
+          }
+        ]
+      }
+    ]
+  }
+}

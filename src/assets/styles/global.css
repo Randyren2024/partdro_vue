@@ -1,0 +1,212 @@
+/* ===== Precision Industrial Design System ===== */
+
+:root {
+  /* Primary palette */
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
+  --color-navy-muted: #334155;
+  --color-amber: #e8941a;
+  --color-amber-light: #f5b042;
+  --color-amber-glow: #fef3c7;
+
+  /* Neutrals */
+  --color-warm-white: #faf9f6;
+  --color-warm-cream: #f5f2eb;
+  --color-warm-border: #e7e3da;
+  --color-text: #1a1d23;
+  --color-text-secondary: #5c6370;
+  --color-text-muted: #8b919e;
+
+  /* Accent */
+  --color-accent-green: #16a34a;
+
+  /* Gradients */
+  --gradient-navy: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-amber: linear-gradient(135deg, #e8941a 0%, #f5b042 100%);
+  --gradient-warm: linear-gradient(135deg, #faf9f6 0%, #f5f2eb 100%);
+
+  /* Shadows - refined, subtle */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 24px rgba(232, 148, 26, 0.18);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Layout */
+  --header-height: 68px;
+
+  /* Legacy aliases */
+  --partdro-primary: var(--color-amber);
+  --partdro-primary-light: var(--color-amber-light);
+  --partdro-primary-dark: #c2780e;
+  --partdro-text: var(--color-text);
+  --partdro-text-secondary: var(--color-text-secondary);
+  --partdro-border: var(--color-warm-border);
+  --partdro-bg: var(--color-warm-white);
+  --partdro-card-bg: #ffffff;
+  --gradient-primary: var(--gradient-amber);
+}
+
+/* ===== Base ===== */
+
+html, body {
+  font-family: 'DM Sans', 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-warm-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', 'DM Sans', sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+}
+
+a {
+  color: var(--color-amber);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover { color: var(--color-amber-light); }
+
+img { max-width: 100%; height: auto; }
+
+/* ===== Utility Classes ===== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.card-hover {
+  transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gradient-text {
+  background: var(--gradient-amber);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Blueprint dot-grid pattern */
+.bp-grid {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bp-grid-light {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Section divider - blueprint line */
+.bp-divider {
+  width: 100%;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-warm-border) 0px,
+    var(--color-warm-border) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+  margin: 0;
+}
+
+/* ===== Buttons ===== */
+
+.btn-pill {
+  border-radius: 999px !important;
+  padding: 12px 28px !important;
+  height: auto !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+.btn-pill-primary {
+  border-radius: 999px !important;
+  padding: 14px 32px !important;
+  height: auto !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-family: 'Sora', sans-serif !important;
+  background: var(--gradient-amber) !important;
+  border: none !important;
+  color: #0f172a !important;
+  box-shadow: 0 8px 24px rgba(232, 148, 26, 0.25) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+  letter-spacing: -0.01em;
+}
+.btn-pill-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(232, 148, 26, 0.35) !important;
+}
+
+.btn-pill-outline {
+  border-radius: 999px !important;
+  padding: 12px 28px !important;
+  height: auto !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  border: 1.5px solid var(--color-warm-border) !important;
+  background: white !important;
+  color: var(--color-text) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+.btn-pill-outline:hover {
+  border-color: var(--color-amber) !important;
+  color: var(--color-amber) !important;
+  background: var(--color-amber-glow) !important;
+}
+
+/* ===== Scrollbar ===== */
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--color-warm-cream); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--color-warm-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ===== Responsive Helpers ===== */
+
+@media (max-width: 768px) {
+  .mobile-hidden { display: none !important; }
+  .mobile-center { text-align: center !important; }
+}
+@media (min-width: 769px) {
+  .desktop-hidden { display: none !important; }
+}
+
+/* ===== Page Transition ===== */
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}

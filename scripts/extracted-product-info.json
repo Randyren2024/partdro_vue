@@ -1,0 +1,63 @@
+{
+  "MY-108": {
+    "productModel": null,
+    "productName": "灭蚊灯",
+    "brandName": "PHILIPS",
+    "description": "盲选不踩坑，大牌更好用的灭蚊灯产品。",
+    "features": [
+      "高效灭蚊",
+      "安全设计",
+      "大品牌保障"
+    ],
+    "specifications": [],
+    "usageScenarios": [
+      "家庭室内",
+      "办公室",
+      "客厅"
+    ],
+    "certifications": [],
+    "anyOtherInfo": "图片中显示了产品发出蓝光，内部有蚊虫被吸引聚集，背景为现代家居环境。"
+  },
+  "MY-208": {
+    "productModel": null,
+    "productName": "灭蚊灯",
+    "brandName": "飞利浦",
+    "description": "大牌飞利浦高效灭蚊蝇",
+    "features": [
+      "进口光源"
+    ],
+    "specifications": [],
+    "usageScenarios": [],
+    "certifications": [],
+    "anyOtherInfo": "图片中强调产品使用进口光源，突出品牌为飞利浦，并宣传其高效灭蚊蝇功能。"
+  },
+  "MY-330": {
+    "productModel": null,
+    "productName": "30W大型商用灭蚊蝇灯",
+    "brandName": null,
+    "description": "盲选不踩坑，大牌更好用的30W大型商用灭蚊蝇灯。",
+    "features": [
+      "大功率30W",
+      "商用级设计",
+      "高效灭蚊蝇"
+    ],
+    "specifications": [
+      {
+        "label": "功率",
+        "value": "30W"
+      },
+      {
+        "label": "类型",
+        "value": "灭蚊蝇灯"
+      }
+    ],
+    "usageScenarios": [
+      "商业场所",
+      "餐厅",
+      "厨房",
+      "办公室"
+    ],
+    "certifications": [],
+    "anyOtherInfo": "图片中强调‘盲选不踩坑，大牌更好用’，突出产品可靠性和品牌优势。"
+  }
+}
