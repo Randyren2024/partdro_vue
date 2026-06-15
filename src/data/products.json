@@ -1,0 +1,149 @@
+[
+  {
+    "code": "AF718",
+    "name": "Autosteering System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/af718.png",
+    "sourceUrl": "https://www.Vesper.com/product/af718-autosteering-system/"
+  },
+  {
+    "code": "AF305",
+    "name": "Automated Steering System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/af305.png",
+    "sourceUrl": "https://www.Vesper.com/product/af305-automated-steering-system/"
+  },
+  {
+    "code": "AF303",
+    "name": "Automated Steering System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/af303.png",
+    "sourceUrl": "https://www.Vesper.com/product/af303-automated-steering-system/"
+  },
+  {
+    "code": "AF302",
+    "name": "Automated Steering System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/af302.png",
+    "sourceUrl": "https://www.Vesper.com/product/af302-automated-steering-system/"
+  },
+  {
+    "code": "AF201",
+    "name": "Hydraulic Automated Steering System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/af201.png",
+    "sourceUrl": "https://www.Vesper.com/product/af201-hydraulic-automated-steering-system/"
+  },
+  {
+    "code": "AF100",
+    "name": "Assisted Guidance System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/af100.png",
+    "sourceUrl": "https://www.Vesper.com/product/af100-assisted-guidance-system/"
+  },
+  {
+    "code": "VS100",
+    "name": "Spray Control System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/vs100.png",
+    "sourceUrl": "https://www.Vesper.com/product/vs100-spray-control-system/"
+  },
+  {
+    "code": "VF200",
+    "name": "Seeding and Fertilisation Control",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/vf200.png",
+    "sourceUrl": "https://www.Vesper.com/product/vf200-seeding-and-fertilisation-control/"
+  },
+  {
+    "code": "W20",
+    "name": "Land Leveling System",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/w20.png",
+    "sourceUrl": "https://www.Vesper.com/product/w20-land-leveling-system/"
+  },
+  {
+    "code": "ISOBUS",
+    "name": "Terminal",
+    "category": "precision-agriculture",
+    "imagePath": "/images/Vesper/isobus.png",
+    "sourceUrl": "https://www.Vesper.com/product/isobus-terminal/"
+  },
+  {
+    "code": "Taurus80E",
+    "name": "Smart Lawn Mowing Robot",
+    "category": "agricultural-robotics",
+    "imagePath": "/images/Vesper/taurus80e.png",
+    "sourceUrl": "https://www.Vesper.com/product/taurus80e-smart-lawn-mowing-robot/"
+  },
+  {
+    "code": "Aries300N",
+    "name": "Orchard Spraying Robot",
+    "category": "agricultural-robotics",
+    "imagePath": "/images/Vesper/aries300n.png",
+    "sourceUrl": "https://www.Vesper.com/product/aries300n-orchard-spraying-robot/"
+  },
+  {
+    "code": "R26 Pro",
+    "name": "GNSS Receiver",
+    "category": "geospatial-solutions",
+    "imagePath": "/images/Vesper/r26-pro.png",
+    "sourceUrl": "https://www.Vesper.com/product/r26-pro-gnss-receiver/"
+  },
+  {
+    "code": "R90",
+    "name": "Laser & AR RTK",
+    "category": "geospatial-solutions",
+    "imagePath": "/images/Vesper/r90.png",
+    "sourceUrl": "https://www.Vesper.com/product/r90-laser-ar-rtk/"
+  },
+  {
+    "code": "R10",
+    "name": "GNSS Receiver",
+    "category": "geospatial-solutions",
+    "imagePath": "/images/Vesper/r10.png",
+    "sourceUrl": "https://www.Vesper.com/product/r10-gnss-receiver/"
+  },
+  {
+    "code": "R27",
+    "name": "GNSS Receiver",
+    "category": "geospatial-solutions",
+    "imagePath": "/images/Vesper/r27.png",
+    "sourceUrl": "https://www.Vesper.com/product/r27-gnss-receiver/"
+  },
+  {
+    "code": "R61",
+    "name": "GNSS Receiver",
+    "category": "geospatial-solutions",
+    "imagePath": "/images/Vesper/r61.png",
+    "sourceUrl": "https://www.Vesper.com/product/r61-gnss-receiver/"
+  },
+  {
+    "code": "D32",
+    "name": "High Efficient Radio Modem",
+    "category": "geospatial-solutions",
+    "imagePath": "/images/Vesper/d32.png",
+    "sourceUrl": "https://www.Vesper.com/product/d32-high-efficient-radio-modem/"
+  },
+  {
+    "code": "Smart Collar",
+    "name": "Livestock Management System",
+    "category": "livestock-management",
+    "imagePath": "/images/Vesper/smart-collar.png",
+    "sourceUrl": "https://www.Vesper.com/product/smart-collar-livestock-management-system/"
+  },
+  {
+    "code": "EGS101",
+    "name": "Intelligent Excavator Guidance System",
+    "category": "machine-control",
+    "imagePath": "/images/Vesper/egs101.png",
+    "sourceUrl": "https://www.Vesper.com/product/egs101-intelligent-excavator-guidance-system/"
+  },
+  {
+    "code": "AllyLink",
+    "name": "Service",
+    "category": "allylink-service",
+    "imagePath": "/images/Vesper/allylink.png",
+    "sourceUrl": "https://www.Vesper.com/product/allylink-service/"
+  }
+]
