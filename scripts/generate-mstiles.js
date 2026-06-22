@@ -37,7 +37,7 @@ async function generateMSTiles() {
         await sharp(svgPath)
           .resize(tile.width, tile.height, {
             fit: 'contain',
-            background: { r: 46, g: 125, b: 50, alpha: 1 } // #2e7d32
+            background: { r: 46, g: 125, b: 50, alpha: 1 } // #1888c8
           })
           .png({ quality: 100 })
           .toFile(outputPath);

@@ -8,7 +8,7 @@
       <div class="hero-image-container">
         <img 
           :src="getImageUrl('contact', 'hero')" 
-          alt="Contact Vesper AgriTech"
+          alt="Contact Partdro AgriTech"
           class="hero-img"
           @error="(e) => e.target.src = images.fallback.contact.hero"
         />
@@ -37,7 +37,7 @@
             :enter="{ opacity: 1, scale: 1, transition: { delay: index * 100 + 400 } }"
           >
             <div :class="`contact-icon ${card.iconClass}`">
-              <span>{{ card.icon }}</span>
+              <img :src="card.icon" :alt="card.title" />
             </div>
             <h3 class="contact-card-title">{{ card.title }}</h3>
             <p class="contact-card-content">{{ card.content }}</p>
@@ -154,7 +154,7 @@
       <div class="section-container">
         <div class="section-header">
           <h2 class="section-title">Our Global Presence</h2>
-          <p class="section-subtitle">Vesper AgriTech dealers and partners worldwide</p>
+          <p class="section-subtitle">Partdro AgriTech dealers and partners worldwide</p>
         </div>
         
         <WorldMap 
@@ -167,7 +167,7 @@
         
         <div class="map-description">
           <p>
-            Vesper AgriTech has established a global network of dealers and partners across major agricultural markets. 
+            Partdro AgriTech has established a global network of dealers and partners across major agricultural markets. 
             Our distribution network ensures that farmers and agricultural businesses worldwide have access to our 
             advanced technology solutions with local support and service.
           </p>
@@ -202,11 +202,11 @@ const filterOption = (input: string, option: any) => {
 // 图片配置
 const images = {
   contact: {
-    hero: '/images/pexels-vladimirsrajber-18431208.webp',
+    hero: '/images/contact-hero.png',
   },
   fallback: {
     contact: {
-      hero: '/images/pexels-vladimirsrajber-18431208.webp',
+      hero: '/images/contact-hero.png',
     }
   }
 }
@@ -250,50 +250,50 @@ const copyrightYear = (() => {
 
 // WhatsApp联系
 const openWhatsApp = (customMessage?: string) => {
-  const phoneNumber = '61448290926'
-  const message = customMessage || 'Hello! I would like to get in touch with Vesper AgriTech.'
+  const phoneNumber = '8613362853598'
+  const message = customMessage || 'Hello! I would like to get in touch with Partdro.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
 
 // 电话联系
 const callPhone = () => {
-  window.open('tel:+61448290926', '_blank')
+  window.open('tel:+8613362853598', '_blank')
 }
 
 // 邮件联系
 const sendEmail = () => {
-  window.open('mailto:market@vesperinno.com', '_blank')
+  window.open('mailto:info@partdro.com', '_blank')
 }
 
 // 联系卡片数据
 const contactCards = [
   {
-    icon: '📞',
+    icon: '/images/icons/phone-icon.png',
     iconClass: 'phone',
     title: 'Phone',
-    content: '+61 448 290 926',
+    content: '+86 16788684420',
     action: () => callPhone(),
     actionText: 'Call Now'
   },
   {
-    icon: '📧',
+    icon: '/images/icons/email-icon.png',
     iconClass: 'email',
     title: 'Email',
-    content: 'market@vesperinno.com',
+    content: 'info@partdro.com',
     action: () => sendEmail(),
     actionText: 'Send Email'
   },
   {
-    icon: '💬',
+    icon: '/images/icons/chat-icon.png',
     iconClass: 'whatsapp',
     title: 'WhatsApp',
-    content: '+61 448 290 926',
+    content: '+86 16788684420',
     action: () => openWhatsApp(),
     actionText: 'Message on WhatsApp'
   },
   {
-    icon: '📍',
+    icon: '/images/icons/location-icon.png',
     iconClass: 'location',
     title: 'Location',
     content: 'Australia',
@@ -390,7 +390,7 @@ const dealerLocations: DealerLocation[] = [
 
 <style scoped>
 .contact {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
 }
 
 /* Hero Section */
@@ -429,13 +429,16 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .hero-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 16px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
@@ -458,13 +461,15 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .section-title {
-  font-size: clamp(28px, 3vw, 36px);
-  font-weight: 700;
-  background: var(--gradient-secondary);
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(30px, 3.2vw, 40px);
+  font-weight: 800;
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 16px;
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {
@@ -510,8 +515,13 @@ const dealerLocations: DealerLocation[] = [
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
   margin-bottom: 20px;
+}
+
+.contact-icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .contact-icon.phone {
@@ -531,9 +541,10 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .contact-card-title {
+  font-family: 'Poppins', 'Barlow', sans-serif;
   font-size: 20px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 700;
+  color: #1d1d1f;
   margin-bottom: 10px;
 }
 
@@ -551,7 +562,7 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .contact-action-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   margin-top: auto;
@@ -627,7 +638,7 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   padding: 0 40px;
@@ -717,7 +728,7 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   white-space: nowrap;
@@ -774,7 +785,7 @@ const dealerLocations: DealerLocation[] = [
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {

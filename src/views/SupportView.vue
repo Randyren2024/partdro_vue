@@ -7,7 +7,7 @@
       <div class="hero-image-container">
         <img 
           src="/images/pexels-nc-farm-bureau-mark-26256448.webp" 
-          alt="Vesper AgriTech Support"
+          alt="Partdro AgriTech Support"
           class="hero-img"
         />
         <div class="hero-overlay">
@@ -27,23 +27,23 @@
         
         <div class="support-cards">
            <div class="support-card">
-            <div class="support-icon">📞</div>
+            <div class="support-icon"><img src="/images/icons/phone-icon.png" alt="Phone" /></div>
             <h3>Phone Support</h3>
-            <p class="support-phone">+61 448 290 926</p>
+            <p class="support-phone">+86 16788684420</p>
             <a-button type="primary" size="large" block @click="callPhone">Call Now</a-button>
           </div>
           
           <div class="support-card">
-            <div class="support-icon">💬</div>
+            <div class="support-icon"><img src="/images/icons/chat-icon.png" alt="WhatsApp" /></div>
             <h3>WhatsApp</h3>
-            <p class="support-phone">+61 448 290 926</p>
+            <p class="support-phone">+86 16788684420</p>
             <a-button type="primary" size="large" block @click="openWhatsApp">Message on WhatsApp</a-button>
           </div>
           
             <div class="support-card">
-            <div class="support-icon">📧</div>
+            <div class="support-icon"><img src="/images/icons/email-icon.png" alt="Email" /></div>
             <h3>Email Support</h3>
-            <p class="support-phone">market@vesperinno.com</p>
+            <p class="support-phone">info@partdro.com</p>
             <a-button type="primary" size="large" block @click="sendEmail">Send Email</a-button>
           </div>
         </div>
@@ -68,11 +68,16 @@
             <GlobalOutlined class="hours-icon" />
             <h3>Services Available</h3>
             <div class="hours-info">
-              <p>✅ On-site Demonstrations</p>
-              <p>✅ Remote Technical Support</p>
-              <p>✅ Remote Diagnostics</p>
-              <p>✅ Emergency Response</p>
-              <p>✅ Software Updates</p>
+              <p>
+On-site Demonstrations</p>
+              <p>
+Remote Technical Support</p>
+              <p>
+Remote Diagnostics</p>
+              <p>
+Emergency Response</p>
+              <p>
+Software Updates</p>
             </div>
           </div>
         </div>
@@ -130,7 +135,7 @@
         <div class="warranty-content">
           <a-collapse v-model:activeKey="activeKey">
             <a-collapse-panel key="1" header="Standard Warranty">
-              <p>All Vesper AgriTech products come with a standard 12-month warranty covering manufacturing defects. The warranty period starts from the date of purchase.</p>
+              <p>All Partdro AgriTech products come with a standard 12-month warranty covering manufacturing defects. The warranty period starts from the date of purchase.</p>
             </a-collapse-panel>
             <a-collapse-panel key="2" header="Extended Warranty">
               <p>Extended warranty options are available for purchase. Contact us for more information about extended warranty plans.</p>
@@ -164,18 +169,18 @@ const router = useRouter()
 const activeKey = ref(['1'])
 
 const callPhone = () => {
-  window.location.href = 'tel:+61448290926'
+  window.location.href = 'tel:+8613362853598'
 }
 
 const openWhatsApp = () => {
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I need support with Vesper AgriTech products.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I need support with Partdro products.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
 
 const sendEmail = () => {
-  window.location.href = 'mailto:market@vesperinno.com?subject=Technical Support Request'
+  window.location.href = 'mailto:info@partdro.com?subject=Technical Support Request'
 }
 </script>
 
@@ -219,14 +224,16 @@ const sendEmail = () => {
 }
 
 .hero-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 16px;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -290,8 +297,13 @@ const sendEmail = () => {
 }
 
 .support-icon {
-  font-size: 48px;
   margin-bottom: 16px;
+}
+
+.support-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .support-card h3 {
@@ -304,7 +316,7 @@ const sendEmail = () => {
 .support-phone {
   font-size: 24px;
   font-weight: 700;
-  color: #52c41a;
+  color: #1888c8;
   margin-bottom: 20px;
 }
 
@@ -328,7 +340,7 @@ const sendEmail = () => {
 
 .hours-icon {
   font-size: 48px;
-  color: #52c41a;
+  color: #1888c8;
   margin-bottom: 16px;
 }
 
@@ -369,7 +381,7 @@ const sendEmail = () => {
 
 .service-icon {
   font-size: 36px;
-  color: #52c41a;
+  color: #1888c8;
   margin-bottom: 12px;
 }
 

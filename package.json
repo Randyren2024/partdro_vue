@@ -1,7 +1,7 @@
 {
-  "name": "vesper-agritech",
+  "name": "partdro",
   "version": "1.0.0",
-  "description": "农业科技产品网站",
+  "description": "Partdro - Premium Drone Solutions",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

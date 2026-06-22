@@ -11,7 +11,7 @@
         <router-link to="/">
           <img 
             src="/logo.webp" 
-            alt="Vesper AgriTech" 
+            alt="Partdro AgriTech" 
             class="logo-image"
             @error="handleLogoError"
           />
@@ -78,7 +78,7 @@
         <div class="drawer-logo" v-motion-slide-visible-top>
           <img 
             src="/logo.webp" 
-            alt="Vesper AgriTech" 
+            alt="Partdro AgriTech" 
             class="logo-image"
             @error="handleLogoError"
           />
@@ -181,8 +181,8 @@ const handleCategoryClick = async (categoryId: string) => {
 
 const handleRequestDemo = () => {
   drawerVisible.value = false
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I would like to request a demo of Vesper AgriTech products.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I would like to learn more about Partdro drone solutions.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
@@ -287,11 +287,11 @@ onMounted(() => {
 
 .category-icon {
   font-size: 16px;
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .view-all {
-  color: #52c41a;
+  color: #1888c8;
   font-weight: 500;
 }
 
@@ -302,7 +302,7 @@ onMounted(() => {
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   white-space: nowrap;
@@ -347,13 +347,13 @@ onMounted(() => {
 }
 
 .mobile-menu :deep(.ant-menu-item-selected) {
-  background: linear-gradient(135deg, #52c41a, #73d13d) !important;
+  background: linear-gradient(135deg, #1888c8, #1a9de4) !important;
   color: white !important;
 }
 
 .mobile-menu :deep(.ant-menu-item:hover) {
-  background: #f6ffed !important;
-  color: #52c41a !important;
+  background: #e6f7ff !important;
+  color: #1888c8 !important;
 }
 
 .mobile-menu :deep(.ant-menu-item) {

@@ -130,7 +130,7 @@ const openWhatsApp = (product: Product) => {
 
 <style scoped>
 .products-page {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
 }
 
 .header {
@@ -171,7 +171,7 @@ const openWhatsApp = (product: Product) => {
   align-items: flex-start;
   height: 40px;
   padding: 0 12px;
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border-radius: 8px;
   color: white;
 }
@@ -207,13 +207,13 @@ const openWhatsApp = (product: Product) => {
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
 }
 
 .hero-section {
-  background: linear-gradient(135deg, #f6ffed 0%, #e6f7ff 100%);
+  background: linear-gradient(135deg, #e6f7ff 0%, #e6f7ff 100%);
   padding: 60px 20px;
   text-align: center;
 }
@@ -367,7 +367,7 @@ const openWhatsApp = (product: Product) => {
 .footer-logo-fallback {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   padding: 8px 12px;
   border-radius: 8px;
 }
@@ -400,7 +400,7 @@ const openWhatsApp = (product: Product) => {
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {

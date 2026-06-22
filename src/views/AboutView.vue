@@ -6,7 +6,7 @@
     <a-layout-header class="header">
       <div class="header-content">
         <div class="logo">
-          <img src="/logo.png" alt="Vesper AgriTech" class="logo-image" @error="handleLogoError" />
+          <img src="/logo.png" alt="Partdro AgriTech" class="logo-image" @error="handleLogoError" />
         </div>
         <a-menu v-model:selectedKeys="current" mode="horizontal" class="nav-menu">
           <a-menu-item key="home" @click="$router.push('/')">Home</a-menu-item>
@@ -27,13 +27,13 @@
       <div class="hero-image-container">
         <img 
           :src="getImageUrl('about', 'hero')" 
-          alt="Vesper AgriTech - About Us"
+          alt="Partdro AgriTech - About Us"
           class="hero-img"
           @error="(e) => handleImageError(e, images.fallback.about.hero)"
         />
         <div class="hero-overlay" v-motion-slide-visible-bottom :delay="200">
-          <h1 class="hero-title">Bridging China's Intelligent Hardware Technology with Australia Agriculture</h1>
-          <p class="hero-subtitle">Your trusted partner for advanced agricultural robotics solutions</p>
+          <h1 class="hero-title">Premium Drone Solutions for Every Mission</h1>
+          <p class="hero-subtitle">Your trusted partner for consumer and enterprise UAV solutions</p>
         </div>
       </div>
     </section>
@@ -42,16 +42,16 @@
     <section class="intro-section" v-motion-fade-visible :delay="300">
       <div class="section-container">
         <div class="section-header" v-motion-slide-visible-bottom :delay="300">
-          <h2 class="section-title">About Vesper AgriTech</h2>
-          <p class="section-subtitle">Building the bridge between technology and agriculture</p>
+          <h2 class="section-title">About Partdro</h2>
+          <p class="section-subtitle">Your trusted partner for premium drone solutions</p>
         </div>
         <div class="intro-content">
           <div class="intro-text">
             <p class="intro-paragraph">
-              Vesper AgriTech is committed to building an efficient bridge between China's intelligent hardware technology and the local needs of Australia. With deep expertise accumulated from residential scenarios to large-scale agriculture, we provide comprehensive product solutions and services for the Australian market.
+              Partdro is a specialized drone retailer bridging cutting-edge UAV technology with the needs of consumers and businesses worldwide. From aerial photography enthusiasts to enterprise inspection teams, we provide premium drone solutions backed by expert support.
             </p>
             <p class="intro-paragraph">
-              Based in Australia with strong connections to China's technology ecosystem, we leverage our full-chain capabilities—spanning R&D, mass production, and overseas service systems—to deliver cutting-edge agricultural robotics solutions that enhance efficiency and sustainability.
+              With deep supply chain connections to leading drone manufacturers, we offer competitive pricing, fast shipping, and local after-sales support. Whether you're a hobbyist, a professional photographer, or an enterprise operations manager, Partdro has the right UAV for your mission.
             </p>
           </div>
           <div class="intro-image" v-motion-slide-visible-right :delay="400">
@@ -70,7 +70,7 @@
       <div class="section-container">
         <div class="section-header" v-motion-slide-visible-bottom :delay="500">
           <h2 class="section-title">Our Journey</h2>
-          <p class="section-subtitle">From drones to agricultural robotics</p>
+          <p class="section-subtitle">From drone enthusiasts to industry leaders</p>
         </div>
         <div class="timeline">
           <div 
@@ -111,7 +111,7 @@
             <div class="team-image">
               <img 
                 :src="getImageUrl('about', 'team')" 
-                alt="Mr. Gan - Founder & CEO of Vesper AgriTech"
+                alt="Mr. Gan - Founder & CEO of Partdro AgriTech"
                 @error="(e) => handleImageError(e, images.fallback.about.team)"
               />
             </div>
@@ -138,7 +138,7 @@
         <div class="values-grid">
           <div class="value-card" v-for="(value, index) in values" :key="index">
             <div class="value-icon" :class="`value-${index + 1}`">
-              {{ value.icon }}
+              <img :src="value.icon" :alt="value.title" />
             </div>
             <h3 class="value-title">{{ value.title }}</h3>
             <p class="value-description">{{ value.description }}</p>
@@ -157,7 +157,7 @@
         <div class="stats-grid">
           <div class="stat-card" v-for="(stat, index) in stats" :key="index">
             <div class="stat-icon" :class="`stat-${index + 1}`">
-              {{ stat.icon }}
+              <img :src="stat.icon" :alt="stat.title" />
             </div>
             <h3 class="stat-title">{{ stat.title }}</h3>
             <p class="stat-description">{{ stat.description }}</p>
@@ -179,9 +179,9 @@
             <a-button size="large" class="secondary-btn" @click="openWhatsApp">Request Demo</a-button>
           </div>
           <div class="contact-info">
-            <p class="contact-detail">📧 market@vesperinno.com</p>
-            <p class="contact-detail">📞 +61 448 290 926</p>
-            <p class="contact-detail">📍 Australia</p>
+            <p class="contact-detail"><img src="/images/icons/email-icon.png" alt="Email" class="contact-inline-icon" /> info@partdro.com</p>
+            <p class="contact-detail"><img src="/images/icons/phone-icon.png" alt="Phone" class="contact-inline-icon" /> +86 16788684420</p>
+            <p class="contact-detail"><img src="/images/icons/location-icon.png" alt="Location" class="contact-inline-icon" /> Australia</p>
           </div>
         </div>
       </div>
@@ -206,8 +206,8 @@ const footerLogoError = ref(false)
 // 图片配置 - 使用 public 目录中实际存在的文件（已优化为 .webp）
 const images = {
   about: {
-    hero: '/images/pexels-nc-farm-bureau-mark-2889442.webp',
-    intro: '/images/agriculture-6502282.webp',
+    hero: '/images/about-hero.png',
+    intro: '/images/about-intro.png',
     team: '/images/mr-gan-founder.webp'
   },
   fallback: {
@@ -251,8 +251,8 @@ const handleFooterLogoError = () => {
 
 // WhatsApp联系
 const openWhatsApp = () => {
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I would like to request a demo of Vesper AgriTech products.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I would like to learn more about Partdro drone solutions.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
@@ -279,7 +279,7 @@ const timeline = [
   },
   {
     year: '2024',
-    title: 'Vesper AgriTech',
+    title: 'Partdro AgriTech',
     description: 'Extended expertise to large-scale agriculture. Partnered with Australia-China Agricultural Association. Established product matrix including agricultural robots and lawn mowers.',
     logo: '/logo.webp'
   }
@@ -288,22 +288,22 @@ const timeline = [
 // 核心价值
 const values = [
   {
-    icon: '⚡',
+    icon: '/images/icons/technical-excellence.png',
     title: 'Technical Excellence',
     description: 'Maintaining the highest standards in product selection and technical validation, ensuring every solution meets rigorous quality benchmarks.'
   },
   {
-    icon: '🤝',
+    icon: '/images/icons/customer-partnership.png',
     title: 'Customer Partnership',
     description: 'Viewing clients as long-term partners, providing comprehensive support from product selection to after-sales service.'
   },
   {
-    icon: '📊',
+    icon: '/images/icons/market-intelligence.png',
     title: 'Market Intelligence',
     description: 'Deep understanding of both Chinese manufacturing capabilities and global market needs for optimal product-market fit.'
   },
   {
-    icon: '🌏',
+    icon: '/images/icons/localized-service.png',
     title: 'Localized Service',
     description: 'Building deep, localized service systems to truly serve global customers with complete solutions, not just products.'
   }
@@ -312,24 +312,24 @@ const values = [
 // 公司业绩数据
 const stats = [
   {
-    icon: '🌱',
+    icon: '/images/icons/technical-excellence.png',
     title: '10+ Years Experience',
-    description: 'Deep expertise in agricultural technology, continuously innovating since 2014.'
+    description: 'Deep expertise in UAV technology, continuously innovating since 2014.'
   },
   {
-    icon: '🚜',
+    icon: '/images/icons/market-intelligence.png',
     title: 'Multiple Product Lines',
-    description: 'Comprehensive solutions covering precision agriculture, autonomous robots, and smart farming systems.'
+    description: 'Comprehensive solutions covering consumer, enterprise, agriculture drones and accessories.'
   },
   {
-    icon: '🇦🇺',
-    title: 'Australia Market',
-    description: 'Headquartered in Australia, serving customers across Oceania and globally.'
+    icon: '/images/icons/localized-service.png',
+    title: 'Global Reach',
+    description: 'Serving customers across Oceania and globally with localized support.'
   },
   {
-    icon: '🤝',
-    title: 'Global Partners',
-    description: 'Strong partnerships with leading international investors and distribution networks.'
+    icon: '/images/icons/customer-partnership.png',
+    title: 'Trusted Partners',
+    description: 'Strong partnerships with leading drone manufacturers and distribution networks.'
   }
 ]
 
@@ -338,7 +338,7 @@ const stats = [
 
 <style scoped>
 .about {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
   overflow: clip;
   contain: layout style;
 }
@@ -409,13 +409,15 @@ const stats = [
 }
 
 .section-title {
-  font-size: clamp(28px, 3vw, 36px);
-  font-weight: 700;
-  background: var(--gradient-secondary);
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(30px, 3.2vw, 40px);
+  font-weight: 800;
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 16px;
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {
@@ -481,7 +483,7 @@ const stats = [
   top: 0;
   bottom: 0;
   width: 2px;
-  background: #52c41a;
+  background: #1888c8;
 }
 
 .timeline-item {
@@ -519,8 +521,8 @@ const stats = [
   bottom: 0;
   width: 80px;
   height: 20px;
-  background: linear-gradient(to top, #f6ffed, #d9f7be);
-  color: #237804;
+  background: linear-gradient(to top, #e6f7ff, #d9f7be);
+  color: #0a4f7a;
   border-radius: 0 0 40px 40px;
   display: flex;
   align-items: center;
@@ -538,7 +540,7 @@ const stats = [
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #52c41a;
+  border-left: 4px solid #1888c8;
 }
 
 .timeline-title {
@@ -602,7 +604,7 @@ const stats = [
 
 .team-position {
   font-size: 18px;
-  color: #52c41a;
+  color: #1888c8;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -652,18 +654,25 @@ const stats = [
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  background: rgba(24, 136, 200, 0.08);
 }
 
-.value-1 { background: linear-gradient(135deg, #b7eb8f, #95de64); }
-.value-2 { background: linear-gradient(135deg, #91d5ff, #69c0ff); }
-.value-3 { background: linear-gradient(135deg, #ffd666, #ffc53d); }
-.value-4 { background: linear-gradient(135deg, #d3adf7, #b37feb); }
+.value-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.value-1 { background: linear-gradient(135deg, rgba(24, 136, 200, 0.08), rgba(26, 157, 228, 0.12)); }
+.value-2 { background: linear-gradient(135deg, rgba(24, 136, 200, 0.08), rgba(26, 157, 228, 0.12)); }
+.value-3 { background: linear-gradient(135deg, rgba(24, 136, 200, 0.08), rgba(26, 157, 228, 0.12)); }
+.value-4 { background: linear-gradient(135deg, rgba(24, 136, 200, 0.08), rgba(26, 157, 228, 0.12)); }
 
 .value-title {
+  font-family: 'Poppins', 'Barlow', sans-serif;
   font-size: 20px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 700;
+  color: #1d1d1f;
   margin-bottom: 12px;
 }
 
@@ -704,14 +713,20 @@ const stats = [
 }
 
 .stat-icon {
-  font-size: 40px;
   margin-bottom: 16px;
 }
 
+.stat-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
 .stat-title {
+  font-family: 'Poppins', 'Barlow', sans-serif;
   font-size: 20px;
-  font-weight: 600;
-  color: #2c3e50;
+  font-weight: 700;
+  color: #1d1d1f;
   margin-bottom: 12px;
 }
 
@@ -742,7 +757,7 @@ const stats = [
 /* Contact Section */
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #f6ffed 0%, #e6f7ff 100%);
+  background: linear-gradient(135deg, #e6f7ff 0%, #e6f7ff 100%);
 }
 
 .contact-content {
@@ -757,10 +772,12 @@ const stats = [
 }
 
 .contact-title {
+  font-family: 'Poppins', 'Barlow', sans-serif;
   font-size: 36px;
-  font-weight: 700;
-  color: #2c3e50;
+  font-weight: 800;
+  color: #1d1d1f;
   margin-bottom: 20px;
+  letter-spacing: -0.01em;
 }
 
 .contact-description {
@@ -782,7 +799,7 @@ const stats = [
 }
 
 .contact-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   padding: 0 32px;
@@ -791,8 +808,8 @@ const stats = [
 }
 
 .secondary-btn {
-  border-color: #52c41a;
-  color: #52c41a;
+  border-color: #1888c8;
+  color: #1888c8;
   padding: 0 32px;
   height: 48px;
   font-size: 16px;
@@ -808,6 +825,15 @@ const stats = [
 .contact-detail {
   font-size: 16px;
   color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-inline-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 /* Footer Styles (复用HomeView样式) */
@@ -867,7 +893,7 @@ const stats = [
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   white-space: nowrap;
@@ -925,7 +951,7 @@ const stats = [
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {
@@ -985,8 +1011,8 @@ const stats = [
     height: 12px;
     font-size: 9px;
     border-radius: 0 0 25px 25px;
-    background: linear-gradient(to top, #f6ffed, #d9f7be);
-    color: #237804;
+    background: linear-gradient(to top, #e6f7ff, #d9f7be);
+    color: #0a4f7a;
     border-top: 1px solid #b7eb8f;
   }
   

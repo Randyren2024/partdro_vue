@@ -1,44 +1,146 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+This file documents the **landing-page-from-source workflow** used in this repo. Codex (Codex.ai/code) should follow these phases end-to-end when asked to build a product page from an external source.
 
-## Build & Dev Commands
+## Workflow Overview
 
-```bash
-npm run dev          # Vite dev server on port 3000
-npm run build        # Production build → dist/
-npm run preview      # Preview production build
+```
+URL / Upload (image·text·PDF)
+        │
+        ▼
+[1] Acquire & Extract ────► structured Product fields
+        │
+        ▼
+[2] Map & Brand-decide ─── source terms → target brand
+        │
+        ▼
+[3] Asset Pipeline ────── download → redact → save
+        │
+        ▼
+[4] Code-gen ───────────── products.ts + hardcoded maps
+        │
+        ▼
+[5] Build verify ───────── npm run build
+        │
+        ▼
+[6] Render & Screenshot ── Playwright 1440×900 + 390×844
+        │
+        ▼
+[7] Detail audit ───────── per-section inspection
+        │                          │
+        │       issues found ──────┘
+        ▼
+[8] Fix → loop back to (6) ──── repeat until user says done
 ```
 
-No test suite or linter is configured. Type checking (`vue-tsc --noEmit`) is broken due to Node version incompatibility — verify correctness via `npm run build`.
+The loop in (7)→(8) is the most important part. Do **not** declare the task complete after one screenshot pass.
 
-## Architecture
+---
 
-**Stack:** Vue 3 + Vite + TypeScript + Ant Design Vue 4 + Vue Router + `@vueuse/motion`
+## Phase 1 — Acquire & Extract
 
-**Routing (SPA):** `createWebHistory()` — all routes fall through to `/index.html` (Netlify `_redirects` handles this in production). Routes: `/`, `/products-solutions`, `/product/:id`, `/solutions`, `/about_us`, `/contact_us`, `/support`, `/privacy-policy`, `/terms-conditions`.
+| Input | Tool | Notes |
+|---|---|---|
+| URL (live web page) | `WebFetch` with a detailed extraction prompt | Ask for: name, tagline, description, all image URLs (hero/feature/gallery/spec/faq/application/kit), specs, FAQs, learn-more card text, applications, hero/compare/bundle sections, price/SKU/CTA |
+| Local image | `Read` (image is rendered) | Note visible third-party branding for phase 3 redaction |
+| Local text/markdown | `Read` | Split into fields manually |
+| Local PDF | `Read` with `pages` parameter for >10-page docs | Same extraction fields as WebFetch |
 
-**Product data:** `src/data/products.ts` is the single source of truth. It exports:
-- `Product` interface — all product fields (name, description, tagline, features, specifications, `specsGroups`, `learnMoreCards`, `faqs`, `gallery`, `whyReasons`, `applications`, `image`, etc.)
-- `products[]` — array of 8 product objects keyed by `id` (af718, af305, isobus, vs100, w20, aries300n, taurus80e, egs101)
-- `categories[]` — 5 category objects
-- Helper functions: `getProductsByCategory()`, `getProductById()`, `getBestSellers()`, `getNewProducts()`
+Prompt templates for WebFetch should request "保留完整 URL", "标注 hero/feature/gallery/spec/faq/application" so the downstream mapping has clear metadata.
 
-**Product detail page (`ProductDetailView.vue`):** The most complex component. Uses `computed` to derive `product` from route param `:id` via `getProductById()`. Key sections: hero (image + info + accordion), learn-more cards, core applications carousel, specs tabs, FAQs accordion, related products. Handles fallback images via `images.fallback` map.
+## Phase 2 — Map & Brand-decide
 
-**Image strategy:** All images live in `public/images/` — served statically, not processed by Vite. Product subdirectories: `products/` (main images), `af718/`, `af305/`, `isobus/`, `vs100/`, `w20_cards/`, `aries300n/`, `egs101/` (learn-more card images). The `@vueuse/motion` plugin provides scroll-triggered animations (`v-motion-slide-visible-left`, `v-motion-fade-visible`, etc.).
+Decide upfront:
+- **Product id / code / name**: short alphanumeric id (e.g. `lumenfly-mini` / `LM-MINI`), human-readable name. Avoid double-stamping the same word (we shipped "Mini Camera Drone" then noticed "LM-MINI Mini Camera Drone" had "Mini" twice — fix to "Camera Drone").
+- **Category**: pick from the 5 in `categories[]`. New categories need entries in `src/data/products.ts`.
+- **Brand rewrite**: any third-party brand in the source (e.g. "SKYROVER") must be replaced with the target brand throughout the data, AND visually removed from images (see phase 3).
+- **In-stock / best-seller / new** flags: default `inStock: true`, `isNew: true`, `isBestSeller: false` for new product launches.
 
-## Critical CSS Gotchas
+## Phase 3 — Asset Pipeline
 
-- **Ant Design carousel (`<a-carousel>`) + CSS Grid:** Slick carousel sets inline `width` on `.slick-track` via JavaScript. Grid items MUST have `min-width: 0` and `overflow: clip` to prevent the column from expanding to fit slick's calculated width.
-- **Grid `align-items: start`:** Prevents image and info columns from being forced to equal height.
-- **Product images:** Use `object-fit: contain` (not `cover`) to preserve full product image without cropping. Square images (1024×1024) from AllyNav source.
+```bash
+mkdir -p public/images/<product-id>
+curl -L -o public/images/<product-id>/<semantic-name>.<ext> '<source-url>'
+```
 
-## Content Population Pattern
+Naming convention: `hero`, `one-tap-takeoff`, `live-feed`, `sony-sensor`, `gimbal`, `wind-resistance`, `auto-track`, `battery-life`, `standard-kit`, `fly-more-combo` — semantic, not the source's UUID-based filenames.
 
-When updating product content from external sources (AllyNav):
-1. Download product main image (og:image) → `public/images/products/<id>-main.png`
-2. Download learn-more card images → `public/images/<id>/`
-3. Extract specs tabs (`.elementskit-tab-title`), FAQ questions/answers (`.e-n-accordion-item-title-text`), feature badges, learn-more card data from product page HTML
-4. Update `src/data/products.ts` with new `gallery`, `image`, `learnMoreCards`, `specsGroups`, `faqs`, `tagline`, `whyReasons` fields
-5. Verify with Playwright: `node -e "import('playwright').then(…)"` taking a screenshot at 1440×900
+If images contain third-party branding:
+1. Identify the row range of the text using `scripts/verify-image.py` (white-pixel scan)
+2. Paint over with PIL (`scripts/redact-skyrover.py` is the reference) — sample background gradient above/below the band, lerp to fill
+3. Optionally draw replacement brand text in white over the band
+4. Re-run `verify-image.py` — expect only intentional replacement text in that band
+
+## Phase 4 — Code Generation
+
+1. **`src/data/products.ts`** — append a new `Product` entry. Fill every field that has a corresponding source extraction. Don't leave empty arrays for sections the source had content for.
+2. **`src/views/ProductDetailView.vue`** has TWO hardcoded maps that need updating when adding a product:
+   - `badgeStyleProducts` (line ~914) — product codes whose `features` render as badge chips. Add if your features are short labels (≤30 chars).
+   - `appImageMap` (line ~895) — application-name → image-path. Add one entry per unique `applications[]` string so the carousel shows real photos instead of generic icons.
+
+## Phase 5 — Build Verify
+
+```bash
+npm run build
+```
+
+`vue-tsc --noEmit` is broken (Node version incompatibility, per CLAUDE.md) — the build is the type-check. Fail = fix before screenshotting.
+
+## Phase 6 — Render & Screenshot
+
+```bash
+npm run dev          # may fall back to 3001/3002 if 3000 is taken by ~/Desktop/partdro_final
+node scripts/screenshot-full.mjs
+```
+
+Output PNGs in `screenshots/`. The script:
+- Forces v-motion opacity to 1 (fullPage screenshot doesn't trigger IntersectionObserver)
+- Captures: desktop hero + full, learn-more, applications, specs, faqs, cta, plus mobile hero + full
+
+**Always tell the user the actual port** — `npm run dev` output reveals it; the README's "3000" is stale.
+
+## Phase 7 — Detail Audit
+
+Read every section screenshot. Common issues found in practice:
+
+| Section | Things to check |
+|---|---|
+| Hero | Title redundancy (id+name overlap), tagline length, badge chip text matches the product type (camera drone ≠ COLLABORATIVE/EFFICIENT/STABLE), carousel first-slide content |
+| Gallery / hero carousel | Third-party logos still visible, image ordering |
+| Learn-more cards | Image matches card topic (a runner-comparison shot is not a gimbal close-up), title and description match the visual |
+| Core Applications | Each app should have a real image, not the generic AppstoreOutlined icon |
+| Specifications | All spec rows populated, values in correct units (km vs mi), no NaN/empty strings |
+| FAQs | At least 5–10 questions, mix of registration/usage/spec/warranty topics |
+| CTA section | Brand name + Request-a-Demo / Get-a-Quote buttons |
+| Footer | No broken links, contact info current |
+
+## Phase 8 — Fix & Loop
+
+For each issue found:
+1. Update the data/code (`products.ts` or `ProductDetailView.vue` or images)
+2. Re-run `npm run build` if code changed
+3. Re-run `screenshot-full.mjs`
+4. Re-read the affected section screenshots
+5. Repeat until the user signals done ("好了" / "满意" / etc.) OR two consecutive passes have no new issues
+
+The user's directive: **"循序渐进式的改进"** — incremental, not big-bang. Ship a working v1 first, then improve section by section. Don't try to fix everything in one edit pass.
+
+---
+
+## Reference: scripts/
+
+| Script | Purpose |
+|---|---|
+| `scripts/screenshot-full.mjs` | Desktop + mobile Playwright capture with motion-opacity workaround |
+| `scripts/screenshot-lumenfly-mini.mjs` | One-off variant for a single product (debug) |
+| `scripts/debug-lumenfly-mini.mjs` | DOM dump — section heights, opacities, counts |
+| `scripts/redact-skyrover.py` | PIL gradient-mask + text replacement for source-image branding |
+| `scripts/verify-image.py` | White-pixel row scan to confirm redaction actually removed the text |
+| `scripts/optimize-images.js` | npm run optimize-images — sharp-based batch resize |
+| `scripts/scrape-allynav-images.js` | AllyNav-specific image scraper (industrial products) |
+| `scripts/convert-logos.js` | Logo variant generation |
+| `scripts/generate-favicons.js` / `generate-mstiles.js` | Favicon + MSTILE generation |
+
+## Reference: shared with CLAUDE.md
+
+Build commands, routing, image strategy, git-push, and the AllyNav / Skyrover image-source notes are in `CLAUDE.md`. Read both files at the start of any task.

@@ -39,7 +39,7 @@
           <div id="acceptance" class="content-block">
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By accessing or using Vesper AgriTech's website, products, or services, you agree to be bound by these 
+              By accessing or using Partdro AgriTech's website, products, or services, you agree to be bound by these 
               Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not access or use our services.
             </p>
             <p>
@@ -118,7 +118,7 @@
             <h3>Ownership</h3>
             <p>
               All content on our website, including text, graphics, logos, images, software, and other 
-              materials, is owned by Vesper AgriTech or our licensors and is protected by copyright, 
+              materials, is owned by Partdro AgriTech or our licensors and is protected by copyright, 
               trademark, and other intellectual property laws.
             </p>
             <h3>Restrictions</h3>
@@ -174,7 +174,7 @@
           <div id="limitation-liability" class="content-block">
             <h2>8. Limitation of Liability</h2>
             <p>
-              To the maximum extent permitted by law, Vesper AgriTech shall not be liable for:
+              To the maximum extent permitted by law, Partdro AgriTech shall not be liable for:
             </p>
             <ul>
               <li>Indirect, incidental, consequential, or punitive damages</li>
@@ -192,7 +192,7 @@
           <div id="indemnification" class="content-block">
             <h2>9. Indemnification</h2>
             <p>
-              You agree to indemnify, defend, and hold harmless Vesper AgriTech and its officers, directors, 
+              You agree to indemnify, defend, and hold harmless Partdro AgriTech and its officers, directors, 
               employees, and agents from any claims, damages, losses, liabilities, costs, or expenses 
               (including reasonable attorneys' fees) arising from:
             </p>
@@ -241,10 +241,10 @@
             <h2>12. Contact Us</h2>
             <p>If you have questions about these Terms, please contact us:</p>
             <div class="contact-info-box">
-              <p><strong>Vesper AgriTech</strong></p>
-              <p>📧 Email: market@vesperinno.com</p>
-              <p>📞 Phone: +61 448 290 926</p>
-              <p>📍 Location: Australia</p>
+              <p><strong>Partdro AgriTech</strong></p>
+              <p><img src="/images/icons/email-icon.png" alt="" class="contact-icon-inline" /> Email: info@partdro.com</p>
+              <p><img src="/images/icons/phone-icon.png" alt="" class="contact-icon-inline" /> Phone: +86 16788684420</p>
+              <p><img src="/images/icons/location-icon.png" alt="" class="contact-icon-inline" /> Location: Australia</p>
               <p class="contact-action">
                 <a-button type="primary" @click="$router.push('/contact_us')">Contact Us</a-button>
               </p>
@@ -312,8 +312,8 @@ const handleFooterLogoError = (event: Event) => {
 
 // WhatsApp联系
 const openWhatsApp = () => {
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I would like to request a demo of Vesper AgriTech products.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I would like to request a demo of Partdro AgriTech products.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
@@ -321,12 +321,12 @@ const openWhatsApp = () => {
 
 <style scoped>
 .terms-conditions {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
 }
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #2e7d32, #1a5e20);
+  background: linear-gradient(135deg, #1888c8, #1a5e20);
   padding: 80px 20px;
   text-align: center;
 }
@@ -389,7 +389,7 @@ const openWhatsApp = () => {
   color: #2c3e50;
   margin-bottom: 16px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #52c41a;
+  border-bottom: 2px solid #1888c8;
 }
 
 .toc-list {
@@ -413,8 +413,8 @@ const openWhatsApp = () => {
 }
 
 .toc-list a:hover {
-  color: #52c41a;
-  background: #f6ffed;
+  color: #1888c8;
+  background: #e6f7ff;
 }
 
 @media (max-width: 900px) {
@@ -486,11 +486,11 @@ const openWhatsApp = () => {
 }
 
 .alert {
-  background: #f6ffed;
+  background: #e6f7ff;
   border: 1px solid #b7eb8f;
   padding: 16px 20px;
   border-radius: 8px;
-  color: #2e7d32;
+  color: #1888c8;
   font-weight: 500;
 }
 
@@ -504,6 +504,16 @@ const openWhatsApp = () => {
 
 .contact-info-box p {
   margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon-inline {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.6;
 }
 
 .contact-action {
@@ -511,7 +521,7 @@ const openWhatsApp = () => {
 }
 
 .contact-action .ant-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
 }
 
@@ -572,7 +582,7 @@ const openWhatsApp = () => {
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   white-space: nowrap;
@@ -629,7 +639,7 @@ const openWhatsApp = () => {
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {

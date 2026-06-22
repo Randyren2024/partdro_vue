@@ -6,7 +6,7 @@
     <a-layout-header class="header">
       <div class="header-content">
         <div class="logo" @click="$router.push('/')">
-          <img src="/logo.webp" alt="Vesper AgriTech" class="logo-image" @error="handleLogoError" />
+          <img src="/logo.webp" alt="Partdro AgriTech" class="logo-image" @error="handleLogoError" />
         </div>
         <a-menu v-model:selectedKeys="current" mode="horizontal" class="nav-menu">
           <a-menu-item key="home" @click="$router.push('/')">Home</a-menu-item>
@@ -24,10 +24,9 @@
     <!-- 英雄区域 - 产品轮播图 -->
     <section class="hero-section" v-motion-fade-visible>
       <div class="hero-content" v-motion-slide-visible-bottom :delay="100">
-        <h1 class="hero-title">Smart Agriculture, Precision Future</h1>
+        <h1 class="hero-title">Take Flight with Partdro</h1>
         <p class="hero-subtitle">
-          Vesper AgriTech provides advanced agricultural technology solutions,
-          enhancing farming efficiency and sustainability through intelligent technology
+          Your trusted destination for premium drones — from consumer aerial photography to enterprise-grade industrial UAV solutions
         </p>
         <div class="hero-actions">
           <a-button type="primary" size="large" class="primary-btn" @click="$router.push('/products-solutions')">
@@ -108,10 +107,10 @@
     </section>
 
     <!-- 解决方案 -->
-    <section class="solutions-section" v-motion-fade-visible :delay="400">
+    <section class="solutions-section">
       <div class="section-header" v-motion-slide-visible-bottom :delay="400">
-        <h2 class="section-title">Products & Solutions</h2>
-        <p class="section-subtitle">Comprehensive technical support for modern agriculture</p>
+        <h2 class="section-title">Drone Categories</h2>
+        <p class="section-subtitle">Explore our full range of UAV solutions for every mission</p>
       </div>
       <div class="solutions-grid">
         <a-card 
@@ -143,10 +142,10 @@
     </section>
 
 <!-- 产品展示 -->
-    <section class="products-section" v-motion-fade-visible :delay="600">
+    <section class="products-section">
       <div class="section-header" v-motion-slide-visible-bottom :delay="600">
-        <h2 class="section-title">Featured Products</h2>
-        <p class="section-subtitle">Leading agricultural technology equipment</p>
+        <h2 class="section-title">Featured Drones</h2>
+        <p class="section-subtitle">Top-selling UAVs trusted by professionals worldwide</p>
       </div>
       <div class="products-grid">
          <a-card 
@@ -184,21 +183,23 @@
 
 
     <!-- Our Values -->
-    <section class="values-section" v-motion-fade-visible :delay="900">
+    <section class="values-section">
       <div class="section-header" v-motion-slide-visible-bottom :delay="900">
         <h2 class="section-title">Our Values</h2>
         <p class="section-subtitle">What drives us forward</p>
       </div>
       <div class="values-grid">
-        <div 
-          v-for="(value, index) in valueItems" 
-          :key="index" 
+        <div
+          v-for="(value, index) in valueItems"
+          :key="index"
           class="value-card"
           v-motion
           :initial="{ opacity: 0, y: 30 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: index * 100 + 1000 } }"
         >
-          <div class="value-icon" :class="`value-${index + 1}`">{{ value.icon }}</div>
+          <div class="value-icon" :class="`value-${index + 1}`">
+            <img :src="value.icon" :alt="value.title" />
+          </div>
           <h3 class="value-title">{{ value.title }}</h3>
           <p class="value-description">{{ value.description }}</p>
         </div>
@@ -226,34 +227,33 @@ const displayedProducts = getBestSellers().slice(0, 3)
 
 const valueItems = [
   {
-    icon: '⚡',
+    icon: '/images/icons/technical-excellence.png',
     title: 'Technical Excellence',
     description: 'Maintaining the highest standards in product selection and technical validation, ensuring every solution meets rigorous quality benchmarks.'
   },
   {
-    icon: '🤝',
+    icon: '/images/icons/customer-partnership.png',
     title: 'Customer Partnership',
     description: 'Viewing clients as long-term partners, providing comprehensive support from product selection to after-sales service.'
   },
   {
-    icon: '📊',
+    icon: '/images/icons/market-intelligence.png',
     title: 'Market Intelligence',
     description: 'Deep understanding of both Chinese manufacturing capabilities and global market needs for optimal product-market fit.'
   },
   {
-    icon: '🌏',
+    icon: '/images/icons/localized-service.png',
     title: 'Localized Service',
     description: 'Building deep, localized service systems to truly serve global customers with complete solutions, not just products.'
   }
 ]
 
 const categoryImages: Record<string, string> = {
-  'lawn-mower': '/images/categories/lawn-mower.webp',
-  'precision-agriculture': '/images/pexels-nc-farm-bureau-mark-26256448.webp',
-  'precision-spraying': '/images/agriculture-6502282.webp',
-  'land-leveling': '/images/pexels-wolfgang-weiser-467045605-34239949.webp',
-  'agricultural-robotics': '/images/3U9A0093.webp',
-  'machine-control': '/images/pexels-vladimirsrajber-18431208.webp'
+  'consumer-drones': '/images/categories/consumer-drones_001.jpg',
+  'enterprise-drones': '/images/categories/enterprise-drones_001.jpg',
+  'agriculture-drones': '/images/categories/agriculture-drones_001.jpg',
+  'drone-accessories': '/images/categories/drone-accessories_001.jpg',
+  'payloads-sensors': '/images/categories/payloads-sensors_001.jpg'
 }
 
 const getCategoryImage = (categoryId: string): string => {
@@ -307,28 +307,28 @@ const touchEndX = ref(0)
 
 const carouselProducts = [
   {
-    tag: 'Vesper S1',
-    title: 'Slope Lawn Mower — 50°',
-    description: 'Remote-controlled 4WD with grip-tread tires conquers 50° (119% grade) slopes. 1985W peak power, 53cm deck, leaf-shredding vacuum.',
-    image: '/images/products/vesper-s1-4wd-50.webp',
-    imageAlt: 'Vesper S1 4WD 50° Slope Lawn Mower',
-    link: '/product/vesper-s1-4wd-50'
+    tag: 'Consumer',
+    title: 'Aerial Photography Drones',
+    description: 'Capture breathtaking 4K/8K aerial footage with intelligent flight modes, obstacle avoidance, and extended battery life.',
+    image: '/images/pexels-nc-farm-bureau-mark-2889442.webp',
+    imageAlt: 'Consumer Aerial Photography Drone',
+    link: '/products-solutions?category=consumer-drones'
   },
   {
-    tag: 'Vesper S1',
-    title: 'Slope Lawn Mower — 40°',
-    description: 'Wide TPU-tire 4WD climbs 40° (85% grade) slopes with extra grip on soft soil, mud, and wet grass. Same 1985W cutting platform.',
-    image: '/images/products/vesper-s1-4wd-40.webp',
-    imageAlt: 'Vesper S1 4WD 40° Wide Wheel Lawn Mower',
-    link: '/product/vesper-s1-4wd-40'
+    tag: 'Enterprise',
+    title: 'Industrial Inspection UAVs',
+    description: 'Professional-grade drones with thermal imaging, LiDAR, and multispectral payloads for surveying, inspection, and public safety.',
+    image: '/images/3U9A0093.webp',
+    imageAlt: 'Enterprise Industrial Inspection UAV',
+    link: '/products-solutions?category=enterprise-drones'
   },
   {
-    tag: 'AF718',
-    title: 'Autosteering System',
-    description: 'High-performance autosteering with ±2.5 cm accuracy for precision agriculture',
-    image: '/images/products/af718.webp',
-    imageAlt: 'AF718 Autosteering System',
-    link: '/product/af718'
+    tag: 'Agriculture',
+    title: 'Smart Agricultural Drones',
+    description: 'Precision spraying, seeding, and crop monitoring drones that reduce chemical use by up to 30% while boosting yields.',
+    image: '/images/harvest-1543064.webp',
+    imageAlt: 'Smart Agricultural Spraying Drone',
+    link: '/products-solutions?category=agriculture-drones'
   }
 ]
 
@@ -344,15 +344,15 @@ const copyrightYear = (() => {
 
 // 打开WhatsApp联系
 const openWhatsApp = () => {
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I would like to request a demo of Vesper AgriTech products.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I would like to learn more about Partdro drone solutions.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
 
 // 为特定产品打开WhatsApp获取报价
 const openWhatsAppForProduct = (productName: string) => {
-  const phoneNumber = '61448290926'
+  const phoneNumber = '8613362853598'
   const message = `Hello! I'm interested in getting a quote for the ${productName}. Could you please provide more information?`
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
@@ -470,7 +470,7 @@ onUnmounted(() => {
 
 <style scoped>
 .home {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
 }
 
 /* 导航栏样式 - 改进响应式 */
@@ -528,7 +528,7 @@ onUnmounted(() => {
   justify-content: center;
   height: 40px;
   padding: 0 12px;
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border-radius: 8px;
   color: white;
   flex-shrink: 0;
@@ -556,7 +556,7 @@ onUnmounted(() => {
   justify-content: center;
   height: 40px;
   padding: 0 12px;
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border-radius: 8px;
   color: white;
 }
@@ -596,7 +596,7 @@ onUnmounted(() => {
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   white-space: nowrap;
@@ -607,7 +607,7 @@ onUnmounted(() => {
 
 /* 英雄区域 - 产品轮播图 */
 .hero-section {
-  background: linear-gradient(135deg, #f6ffed 0%, #e6f7ff 100%);
+  background: linear-gradient(135deg, #e6f7ff 0%, #e6f7ff 100%);
   padding: clamp(40px, 5vw, 80px) clamp(16px, 3vw, 24px);
   scroll-margin-top: 100px;
 }
@@ -621,14 +621,16 @@ onUnmounted(() => {
 }
 
 .hero-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: clamp(16px, 2vw, 24px);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -649,7 +651,7 @@ onUnmounted(() => {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
   padding: 0 clamp(20px, 2.5vw, 32px);
@@ -709,7 +711,7 @@ onUnmounted(() => {
 }
 
 .carousel-image:focus {
-  outline: 2px solid #52c41a;
+  outline: 2px solid #1888c8;
   outline-offset: 4px;
 }
 
@@ -734,7 +736,7 @@ onUnmounted(() => {
 }
 
 .play-pause-btn:hover {
-  background: #52c41a;
+  background: #1888c8;
   color: white;
   transform: scale(1.1);
 }
@@ -774,8 +776,8 @@ onUnmounted(() => {
 }
 
 .control-btn:hover {
-  background: #52c41a;
-  border-color: #52c41a;
+  background: #1888c8;
+  border-color: #1888c8;
   color: white;
 }
 
@@ -802,7 +804,7 @@ onUnmounted(() => {
 }
 
 .dot.active {
-  background: #52c41a;
+  background: #1888c8;
   transform: scale(1.3);
 }
 
@@ -885,13 +887,15 @@ onUnmounted(() => {
 }
 
 .section-title {
-  font-size: clamp(28px, 3vw, 36px);
-  font-weight: 700;
-  background: var(--gradient-secondary);
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(30px, 3.2vw, 40px);
+  font-weight: 800;
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: clamp(12px, 1.5vw, 16px);
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {
@@ -963,7 +967,7 @@ onUnmounted(() => {
 .card-cover.data::after,
 .card-cover.livestock-management::after,
 .card-cover.machine-control::after,
-.card-cover.vesper-service::after {
+.card-cover.partdro-service::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1085,15 +1089,18 @@ onUnmounted(() => {
 }
 
 .section-title {
-  font-size: clamp(28px, 3vw, 36px);
-  font-weight: 700;
-  color: #2c3e50;
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(30px, 3.2vw, 40px);
+  font-weight: 800;
+  color: #1d1d1f;
   margin-bottom: 12px;
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {
   font-size: clamp(16px, 1.5vw, 18px);
-  color: #666;
+  font-weight: 500;
+  color: #636264;
 }
 
 .stats-grid {
@@ -1171,7 +1178,12 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+}
+
+.value-icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
 }
 
 .value-1 { background: linear-gradient(135deg, #b7eb8f, #95de64); }
@@ -1256,7 +1268,7 @@ onUnmounted(() => {
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {

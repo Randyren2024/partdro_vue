@@ -10,13 +10,13 @@ import { computed } from 'vue'
 
 const themeConfig = computed(() => ({
   token: {
-    colorPrimary: '#2e7d32',
-    colorSuccess: '#4caf50',
+    colorPrimary: '#1888c8',
+    colorSuccess: '#1a9de4',
     colorWarning: '#ff9800',
     colorError: '#f44336',
     colorInfo: '#2196f3',
     borderRadius: 8,
-    fontFamily: "'Noto Sans', 'Noto Sans SC', 'Inter', -apple-system, 'Segoe UI', sans-serif",
+    fontFamily: "'Barlow', 'Barlow', 'Barlow', -apple-system, 'Segoe UI', sans-serif",
     fontSize: 14,
     colorText: '#2c3e50',
     colorTextSecondary: '#666',
@@ -33,7 +33,7 @@ const themeConfig = computed(() => ({
       colorBorderSecondary: '#f0f0f0',
     },
     Menu: {
-      itemSelectedColor: '#2e7d32',
+      itemSelectedColor: '#1888c8',
       itemSelectedBg: '#f6ffed',
     },
   },
@@ -50,7 +50,7 @@ const theme = themeConfig
 }
 
 body {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', -apple-system, 'Segoe UI', sans-serif;
   background-color: #f8f9fa;
   line-height: 1.7;
 }

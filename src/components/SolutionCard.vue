@@ -86,7 +86,7 @@ defineEmits<{
 }
 
 .benefit-icon {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .solution-action {

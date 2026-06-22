@@ -1,20 +1,22 @@
-/* Vesper AgriTech 全局样式 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap');
+/* Partdro 全局样式 */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
 /* 全局字体应用 */
 html, body {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #2c3e50;
+  font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #161517;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.3;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 code, pre {
@@ -22,45 +24,55 @@ code, pre {
 }
 
 :root {
-  /* Vesper 字体 */
-  --vesper-font-title: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-  --vesper-font-body: 'Noto Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-  --vesper-font-mono: 'JetBrains Mono', monospace;
-  --vesper-font: var(--vesper-font-body);
-  
+  /* Partdro 字体 - 对齐 nextjs-app */
+  --partdro-font-display: 'Poppins', 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --partdro-font-body: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --partdro-font-mono: 'JetBrains Mono', monospace;
+  --partdro-font: var(--partdro-font-body);
+
   /* 行高 */
-  --vesper-line-height-title: 1.3;
-  --vesper-line-height-body: 1.7;
-  
-  /* Vesper 品牌色 */
-  --vesper-primary: #2e7d32;
-  --vesper-primary-light: #4caf50;
-  --vesper-primary-dark: #1b5e20;
-  --vesper-secondary: #2196f3;
-  --vesper-accent: #ff9800;
-  
-  /* 中性色 */
-  --vesper-text: #2c3e50;
-  --vesper-text-secondary: #666;
-  --vesper-border: #e8e8e8;
-  --vesper-bg: #f8f9fa;
-  --vesper-card-bg: #ffffff;
-  
+  --partdro-line-height-title: 1.3;
+  --partdro-line-height-body: 1.6;
+
+  /* Partdro 品牌色 - 对齐 nextjs-app (blue accent) */
+  --partdro-primary: #1888c8;
+  --partdro-primary-light: #1a9de4;
+  --partdro-primary-dark: #0f6da0;
+  --partdro-accent: #f8a70e;
+  --partdro-accent-hover: #d68f00;
+
+  /* 语义色 */
+  --partdro-success: #10b981;
+  --partdro-warning: #f8a70e;
+  --partdro-error: #ef4444;
+  --partdro-star: #fbbf24;
+
+  /* 中性色 - 浅色主题 (对齐 nextjs-app light theme) */
+  --partdro-text: #161517;
+  --partdro-text-secondary: #636264;
+  --partdro-text-tertiary: #949394;
+  --partdro-border: #e8e8e8;
+  --partdro-border-hover: #d4d4d4;
+  --partdro-bg: #f5f5f5;
+  --partdro-bg-secondary: #ffffff;
+  --partdro-bg-tertiary: #fafafa;
+  --partdro-card-bg: #ffffff;
+
   /* 渐变 */
-  --gradient-primary: linear-gradient(135deg, #2e7d32, #4caf50);
-  --gradient-secondary: linear-gradient(135deg, #2196f3, #1976d2);
-  --gradient-accent: linear-gradient(135deg, #ff9800, #f57c00);
-  
-  /* 阴影 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --gradient-primary: linear-gradient(135deg, #1888c8, #0f6da0);
+  --gradient-accent: linear-gradient(135deg, #f8a70e, #d68f00);
+
+  /* 阴影 - 对齐 nextjs-app */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-  
-  /* 圆角 */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+  /* 圆角 - 对齐 nextjs-app */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
 
   /* 毛玻璃 */
   --glass-bg: rgba(255, 255, 255, 0.78);
@@ -73,11 +85,11 @@ code, pre {
 
 /* 渐变文字 */
 .gradient-text {
-  color: #2e7d32; /* 回退：品牌绿色 */
+  color: #1888c8; /* 回退：品牌蓝 */
 }
 
 .gradient-text-secondary {
-  color: #2196f3; /* 回退：品牌蓝色 */
+  color: #f8a70e; /* 回退：品牌琥珀 */
 }
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -87,9 +99,9 @@ code, pre {
     background-clip: text;
     color: transparent;
   }
-  
+
   .gradient-text-secondary {
-    background: var(--gradient-secondary);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -108,13 +120,13 @@ code, pre {
 
 /* Links and buttons */
 a {
-  color: var(--vesper-primary);
+  color: var(--partdro-primary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--vesper-primary-light);
+  color: var(--partdro-primary-light);
 }
 
 /* 按钮默认字体 */
@@ -208,8 +220,8 @@ img {
   box-shadow: var(--shadow-lg);
 }
 
-/* Vesper 品牌按钮 */
-.btn-vesper {
+/* Partdro 品牌按钮 */
+.btn-partdro {
   background: var(--gradient-primary);
   border: none;
   color: white;
@@ -217,24 +229,24 @@ img {
   transition: all 0.3s ease;
 }
 
-.btn-vesper:hover {
-  background: var(--vesper-primary-dark);
+.btn-partdro:hover {
+  background: var(--partdro-primary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.btn-vesper-outline {
-  border: 2px solid var(--vesper-primary);
-  color: var(--vesper-primary);
+.btn-partdro-outline {
+  border: 2px solid var(--partdro-primary);
+  color: var(--partdro-primary);
   background: transparent;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
-.btn-vesper-outline:hover {
-  background: var(--vesper-primary);
+.btn-partdro-outline:hover {
+  background: var(--partdro-primary);
   color: white;
-  border-color: var(--vesper-primary);
+  border-color: var(--partdro-primary);
 }
 
 /* 胶囊按钮 */
@@ -251,8 +263,8 @@ img {
 }
 
 .btn-pill:hover {
-  border-color: #15803d !important;
-  color: #15803d !important;
+  border-color: #1888c8 !important;
+  color: #1888c8 !important;
 }
 
 .btn-pill-primary {
@@ -261,18 +273,18 @@ img {
   height: auto !important;
   font-weight: 700 !important;
   font-size: 17px !important;
-  background: linear-gradient(135deg, #178c45, #0f5c2e) !important;
+  background: linear-gradient(135deg, #1888c8, #0f6da0) !important;
   border: none !important;
   color: white !important;
-  box-shadow: 0 14px 34px rgba(15, 92, 46, 0.22) !important;
+  box-shadow: 0 14px 34px rgba(15, 109, 160, 0.22) !important;
   transition: all 0.25s ease !important;
   cursor: pointer;
 }
 
 .btn-pill-primary:hover {
-  background: linear-gradient(135deg, #15803d, #0a4a22) !important;
+  background: linear-gradient(135deg, #0f6da0, #0a4f7a) !important;
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(15, 92, 46, 0.3) !important;
+  box-shadow: 0 18px 40px rgba(15, 109, 160, 0.3) !important;
 }
 
 /* 响应式工具类 */

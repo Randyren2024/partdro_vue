@@ -1,4 +1,4 @@
-# Vesper AgriTech - Agricultural Technology Website
+# Partdro AgriTech - Agricultural Technology Website
 
 MVP website for agricultural technology products built with Vue 3 + TypeScript + Ant Design Vue.
 
@@ -14,7 +14,7 @@ MVP website for agricultural technology products built with Vue 3 + TypeScript +
 ## Features
 
 1. **Modern Design** - Professional agricultural technology website
-2. **Vesper Brand Style** - Custom green theme color scheme
+2. **Partdro Brand Style** - Custom green theme color scheme
 3. **Responsive Layout** - Adapts to various screen sizes
 4. **Component-based Development** - Reusable component structure
 5. **TypeScript Support** - Complete type definitions
@@ -22,7 +22,7 @@ MVP website for agricultural technology products built with Vue 3 + TypeScript +
 7. **Touch Support** - Swipe gestures on carousel
 8. **Motion Animations** - Entrance animations using v-motion directives
 
-## Vesper Brand Colors
+## Partdro Brand Colors
 
 - Primary: `#2e7d32` (Dark Green)
 - Secondary: `#4caf50` (Light Green)
@@ -32,7 +32,7 @@ MVP website for agricultural technology products built with Vue 3 + TypeScript +
 ## Project Structure
 
 ```
-vesper_vue/
+partdro_vue/
 ├── src/
 │   ├── components/        # Reusable components
 │   │   ├── Header.vue
@@ -83,7 +83,7 @@ npm run preview
 ## Main Features
 
 ### 1. Navigation Bar
-- Vesper brand identity with logo
+- Partdro brand identity with logo
 - Responsive menu with route highlighting
 - Request demo button (WhatsApp integration)
 

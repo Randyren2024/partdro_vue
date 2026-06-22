@@ -81,11 +81,11 @@ export interface DealerLocation {
 
 const props = withDefaults(defineProps<Props>(), {
   title: 'Our Global Presence',
-  subtitle: 'Vesper AgriTech dealers and partners worldwide',
+  subtitle: 'Partdro AgriTech dealers and partners worldwide',
   showLegend: true,
   width: '100%',
   height: 500,
-  baseColor: '#52c41a'
+  baseColor: '#1888c8'
 })
 
 const mapContainer = ref<HTMLElement | null>(null)
@@ -136,9 +136,9 @@ const mapData = computed(() => {
       // 根据经销商数量设置颜色深浅
       let color = props.baseColor
       if (location.dealerCount >= 8) {
-        color = '#2e7d32' // 深绿 - 高密度
+        color = '#1888c8' // 深绿 - 高密度
       } else if (location.dealerCount >= 4) {
-        color = '#4caf50' // 中绿 - 中密度
+        color = '#1a9de4' // 中绿 - 中密度
       } else {
         color = '#8bc34a' // 浅绿 - 低密度
       }
@@ -157,8 +157,8 @@ const mapData = computed(() => {
 
 // 图例项
 const legendItems = computed(() => [
-  { color: '#2e7d32', label: 'High Density (8+ dealers)' },
-  { color: '#4caf50', label: 'Medium Density (4-7 dealers)' },
+  { color: '#1888c8', label: 'High Density (8+ dealers)' },
+  { color: '#1a9de4', label: 'Medium Density (4-7 dealers)' },
   { color: '#8bc34a', label: 'Low Density (1-3 dealers)' }
 ])
 

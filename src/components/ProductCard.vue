@@ -59,7 +59,7 @@ defineEmits<{
 }
 
 .product-image.navigation {
-  background: linear-gradient(135deg, #52c41a, #389e0d);
+  background: linear-gradient(135deg, #1888c8, #0f6da0);
 }
 
 .product-image.robot {

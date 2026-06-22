@@ -7,7 +7,7 @@
     <section class="hero-section" v-motion-fade-visible :delay="100">
       <div class="hero-content" v-motion-slide-visible-bottom :delay="200">
         <h1 class="hero-title">Solutions</h1>
-        <p class="hero-subtitle">Comprehensive agricultural technology solutions for modern farming</p>
+        <p class="hero-subtitle">Comprehensive drone solutions for every mission and industry</p>
       </div>
     </section>
 
@@ -50,7 +50,7 @@
     <section class="cta-section" v-motion-fade-visible :delay="600">
       <div class="cta-container" v-motion-slide-visible-bottom :delay="600">
         <h2>Need a Custom Solution?</h2>
-        <p>Contact us to discuss your specific agricultural needs</p>
+        <p>Contact us to discuss your specific drone requirements</p>
         <a-button type="primary" size="large" @click="$router.push('/contact_us')">
           Contact Us
         </a-button>
@@ -82,8 +82,8 @@ const handleFooterLogoError = (event: Event) => {
 }
 
 const openWhatsApp = () => {
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I would like to request a demo of Vesper AgriTech solutions.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I would like to learn more about Partdro enterprise drone solutions.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
@@ -91,7 +91,7 @@ const openWhatsApp = () => {
 
 <style scoped>
 .solutions-page {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
 }
 
 .header {
@@ -127,7 +127,7 @@ const openWhatsApp = () => {
 .logo-fallback {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   padding: 4px 12px;
   border-radius: 8px;
   color: white;
@@ -153,7 +153,7 @@ const openWhatsApp = () => {
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
 }
 
@@ -164,13 +164,16 @@ const openWhatsApp = () => {
 }
 
 .hero-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: 16px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -244,7 +247,7 @@ const openWhatsApp = () => {
 }
 
 .cta-section {
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   padding: 80px 20px;
   text-align: center;
   color: white;
@@ -264,7 +267,7 @@ const openWhatsApp = () => {
 
 .cta-container .ant-btn {
   background: white;
-  color: #2e7d32;
+  color: #1888c8;
   border: none;
 }
 
@@ -295,7 +298,7 @@ const openWhatsApp = () => {
 .footer-logo-fallback {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   padding: 8px 12px;
   border-radius: 8px;
 }
@@ -323,7 +326,7 @@ const openWhatsApp = () => {
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {

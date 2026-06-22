@@ -75,13 +75,13 @@ async function generateFavicons() {
 // 生成manifest文件
 function generateManifest() {
   const manifest = {
-    name: 'Vesper AgriTech',
-    short_name: 'Vesper',
+    name: 'Partdro AgriTech',
+    short_name: 'Partdro',
     description: 'Smart Agriculture, Precision Future',
     start_url: '/',
     display: 'standalone',
-    background_color: '#2e7d32',
-    theme_color: '#4caf50',
+    background_color: '#1888c8',
+    theme_color: '#1a9de4',
     icons: [
       {
         src: '/android-chrome-192x192.png',
@@ -111,7 +111,7 @@ function generateBrowserConfig() {
       <square150x150logo src="/mstile-150x150.png"/>
       <square310x310logo src="/mstile-310x310.png"/>
       <wide310x150logo src="/mstile-310x150.png"/>
-      <TileColor>#2e7d32</TileColor>
+      <TileColor>#1888c8</TileColor>
     </tile>
   </msapplication>
 </browserconfig>`;

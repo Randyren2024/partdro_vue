@@ -3,40 +3,40 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-// Vesper产品URL列表
+// Partdro产品URL列表
 const productUrls = [
   // Precision Agriculture
-  'https://www.Vesper.com/product/af718-autosteering-system/',
-  'https://www.Vesper.com/product/af305-automated-steering-system/',
-  'https://www.Vesper.com/product/af303-automated-steering-system/',
-  'https://www.Vesper.com/product/af302-automated-steering-system/',
-  'https://www.Vesper.com/product/af201-hydraulic-automated-steering-system/',
-  'https://www.Vesper.com/product/af100-assisted-guidance-system/',
-  'https://www.Vesper.com/product/vs100-spray-control-system/',
-  'https://www.Vesper.com/product/vf200-seeding-and-fertilisation-control/',
-  'https://www.Vesper.com/product/w20-land-leveling-system/',
-  'https://www.Vesper.com/product/isobus-terminal/',
+  'https://www.Partdro.com/product/af718-autosteering-system/',
+  'https://www.Partdro.com/product/af305-automated-steering-system/',
+  'https://www.Partdro.com/product/af303-automated-steering-system/',
+  'https://www.Partdro.com/product/af302-automated-steering-system/',
+  'https://www.Partdro.com/product/af201-hydraulic-automated-steering-system/',
+  'https://www.Partdro.com/product/af100-assisted-guidance-system/',
+  'https://www.Partdro.com/product/vs100-spray-control-system/',
+  'https://www.Partdro.com/product/vf200-seeding-and-fertilisation-control/',
+  'https://www.Partdro.com/product/w20-land-leveling-system/',
+  'https://www.Partdro.com/product/isobus-terminal/',
   
   // Agricultural Robotics
-  'https://www.Vesper.com/product/taurus80e-smart-lawn-mowing-robot/',
-  'https://www.Vesper.com/product/aries300n-orchard-spraying-robot/',
+  'https://www.Partdro.com/product/taurus80e-smart-lawn-mowing-robot/',
+  'https://www.Partdro.com/product/aries300n-orchard-spraying-robot/',
   
   // Geospatial Solutions
-  'https://www.Vesper.com/product/r26-pro-gnss-receiver/',
-  'https://www.Vesper.com/product/r90-laser-ar-rtk/',
-  'https://www.Vesper.com/product/r10-gnss-receiver/',
-  'https://www.Vesper.com/product/r27-gnss-receiver/',
-  'https://www.Vesper.com/product/r61-gnss-receiver/',
-  'https://www.Vesper.com/product/d32-high-efficient-radio-modem/',
+  'https://www.Partdro.com/product/r26-pro-gnss-receiver/',
+  'https://www.Partdro.com/product/r90-laser-ar-rtk/',
+  'https://www.Partdro.com/product/r10-gnss-receiver/',
+  'https://www.Partdro.com/product/r27-gnss-receiver/',
+  'https://www.Partdro.com/product/r61-gnss-receiver/',
+  'https://www.Partdro.com/product/d32-high-efficient-radio-modem/',
   
   // Livestock Management
-  'https://www.Vesper.com/product/smart-collar-livestock-management-system/',
+  'https://www.Partdro.com/product/smart-collar-livestock-management-system/',
   
   // Machine Control
-  'https://www.Vesper.com/product/egs101-intelligent-excavator-guidance-system/',
+  'https://www.Partdro.com/product/egs101-intelligent-excavator-guidance-system/',
   
   // AllyLink Service
-  'https://www.Vesper.com/product/allylink-service/'
+  'https://www.Partdro.com/product/allylink-service/'
 ];
 
 // 产品信息映射
@@ -100,7 +100,7 @@ async function scrapeProductImages() {
   const page = await context.newPage();
   
   // 创建图片目录
-  const imagesDir = path.join(__dirname, '..', 'public', 'images', 'Vesper');
+  const imagesDir = path.join(__dirname, '..', 'public', 'images', 'Partdro');
   if (!fs.existsSync(imagesDir)) {
     fs.mkdirSync(imagesDir, { recursive: true });
   }
@@ -134,7 +134,7 @@ async function scrapeProductImages() {
         'img.attachment-full',
         'img.product-image',
         'img[src*="product"]',
-        'img[src*="Vesper"]',
+        'img[src*="Partdro"]',
         'img:first-of-type'
       ];
       
@@ -155,7 +155,7 @@ async function scrapeProductImages() {
         await page.screenshot({ path: screenshotPath, fullPage: false });
         scrapedProducts.push({
           ...info,
-          imagePath: `/images/Vesper/${info.code.toLowerCase().replace(/\s+/g, '-')}.png`,
+          imagePath: `/images/Partdro/${info.code.toLowerCase().replace(/\s+/g, '-')}.png`,
           sourceUrl: url
         });
         continue;
@@ -171,7 +171,7 @@ async function scrapeProductImages() {
         
         scrapedProducts.push({
           ...info,
-          imagePath: `/images/Vesper/${imageFilename}`,
+          imagePath: `/images/Partdro/${imageFilename}`,
           sourceUrl: url
         });
       } catch (error) {

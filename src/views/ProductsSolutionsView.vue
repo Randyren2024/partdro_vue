@@ -7,7 +7,7 @@
     <section class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">Products & Solutions</h1>
-        <p class="hero-subtitle">Advanced agricultural technology solutions for modern farming. From precision steering to autonomous robots, we deliver efficiency and reliability.</p>
+        <p class="hero-subtitle">Premium drone solutions for consumers and businesses. From aerial photography to industrial inspection, find the perfect UAV for your mission.</p>
       </div>
     </section>
 
@@ -82,8 +82,8 @@
     <!-- Call to Action -->
     <section class="cta-section" v-show="filteredProducts.length > 0">
       <div class="cta-content">
-        <h2>Ready to Transform Your Farming?</h2>
-        <p>Contact us today for a personalized demonstration or quote</p>
+        <h2>Ready to Elevate Your Operations?</h2>
+        <p>Contact us today for a personalized demo or quote</p>
         <div class="cta-buttons">
           <a-button type="primary" size="large" @click="openWhatsApp">Request a Demo</a-button>
           <a-button size="large" @click="$router.push('/contact_us')">Contact Us</a-button>
@@ -160,14 +160,14 @@ const filteredProducts = computed(() => {
 })
 
 const openWhatsApp = () => {
-  const phoneNumber = '61448290926'
-  const message = 'Hello! I would like to request a demo of Vesper AgriTech products.'
+  const phoneNumber = '8613362853598'
+  const message = 'Hello! I would like to learn more about Partdro drone solutions.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
 }
 
 const openWhatsAppForProduct = (product: Product) => {
-  const phoneNumber = '61448290926'
+  const phoneNumber = '8613362853598'
   const message = `Hello! I'm interested in getting a quote for the ${product.name} (${product.code}). Could you please provide more information?`
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
@@ -192,19 +192,19 @@ const handleFooterLogoError = (event: Event) => {
 
 <style scoped>
 .products-solutions-page {
-  font-family: 'Noto Sans', 'Noto Sans SC', 'Inter', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
   min-height: 100vh;
 }
 
 /* 标题字体 */
 .hero-title {
-  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-family: 'Barlow', 'Barlow', sans-serif;
   font-weight: 700;
   line-height: 1.3;
 }
 
 .section-title {
-  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-family: 'Barlow', 'Barlow', sans-serif;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -263,26 +263,29 @@ const handleFooterLogoError = (event: Event) => {
 }
 
 .demo-btn {
-  background: linear-gradient(135deg, #52c41a, #73d13d);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   border: none;
   font-weight: 500;
 }
 
 /* Hero */
 .hero-section {
-  background: linear-gradient(135deg, #f6ffed 0%, #e6f7ff 100%);
+  background: linear-gradient(135deg, #e6f7ff 0%, #e6f7ff 100%);
   padding: clamp(40px, 5vw, 60px) clamp(16px, 3vw, 24px);
   text-align: center;
 }
 
 .hero-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
+  font-family: 'Poppins', 'Barlow', sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   margin-bottom: clamp(12px, 1.5vw, 16px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -406,7 +409,7 @@ const handleFooterLogoError = (event: Event) => {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  background: linear-gradient(135deg, #1888c8, #1a9de4);
   padding: clamp(40px, 5vw, 60px) clamp(16px, 3vw, 24px);
   text-align: center;
   color: white;
@@ -439,7 +442,7 @@ const handleFooterLogoError = (event: Event) => {
 
 .cta-buttons .ant-btn-primary {
   background: white;
-  color: #2e7d32;
+  color: #1888c8;
   border: none;
 }
 
@@ -514,7 +517,7 @@ const handleFooterLogoError = (event: Event) => {
 }
 
 .footer-link:hover {
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .footer-contact {
@@ -552,11 +555,11 @@ const handleFooterLogoError = (event: Event) => {
 
 .category-icon {
   font-size: 16px;
-  color: #52c41a;
+  color: #1888c8;
 }
 
 .view-all {
-  color: #52c41a;
+  color: #1888c8;
   font-weight: 500;
 }
 

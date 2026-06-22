@@ -23,6 +23,7 @@
               ref="galleryCarousel"
               arrows
               autoplay
+              :autoplay-speed="6000"
               class="product-carousel"
               :initial-slide="0"
               @change="onCarouselChange"
@@ -50,7 +51,7 @@
               </button>
             </div>
           </div>
-          <div class="product-badges" v-if="!product.isVesper">
+          <div class="product-badges" v-if="!product.isPartdro">
             <span v-if="product.inStock" class="stock-badge stock-badge--in-stock">In Stock</span>
             <span v-if="product.isBestSeller" class="stock-badge stock-badge--best">Best Seller</span>
             <span v-if="product.isNew" class="stock-badge stock-badge--new">New Release</span>
@@ -127,8 +128,8 @@
       </div>
     </section>
 
-    <!-- ===== Vesper-Exclusive Sections (v-if="product.isVesper") ===== -->
-    <template v-if="product.isVesper">
+    <!-- ===== Partdro-Exclusive Sections (v-if="product.isPartdro") ===== -->
+    <template v-if="product.isPartdro">
 
       <!-- 1. Slope Hero Strip -->
       <section class="mow-slope-strip">
@@ -165,11 +166,11 @@
           <h2 class="section-title">Weekend Yard Work, Reimagined</h2>
           <div class="then-now-grid">
             <div class="then-now-card">
-              <img src="/images/vesper/box/compare-before.webp" alt="Before: Back pain and hassle" class="then-now-img" />
+              <img src="/images/partdro/box/compare-before.webp" alt="Before: Back pain and hassle" class="then-now-img" />
               <p class="then-now-label">Before: Back Pain & Hassle</p>
             </div>
             <div class="then-now-card">
-              <img src="/images/vesper/box/compare-after.webp" alt="After: Effortless and efficient" class="then-now-img" />
+              <img src="/images/partdro/box/compare-after.webp" alt="After: Effortless and efficient" class="then-now-img" />
               <p class="then-now-label">Now: Effortless & Efficient</p>
             </div>
           </div>
@@ -183,17 +184,17 @@
           <p class="mow-section-lead">No base station, no app pairing, no fuel storage — pick up the remote and mow.</p>
           <div class="no-friction-grid">
             <div class="no-friction-card">
-              <img src="/images/vesper/no-rtk.webp" alt="No RTK required" />
+              <img src="/images/partdro/no-rtk.webp" alt="No RTK required" />
               <h3>No RTK</h3>
               <p>Skip the base station and survey. Mow straight out of the box.</p>
             </div>
             <div class="no-friction-card">
-              <img src="/images/vesper/no-app.webp" alt="No app required" />
+              <img src="/images/partdro/no-app.webp" alt="No app required" />
               <h3>No App</h3>
               <p>Skip the Bluetooth pairing and firmware updates. The remote is the controller.</p>
             </div>
             <div class="no-friction-card">
-              <img src="/images/vesper/no-fuel.webp" alt="No fuel required" />
+              <img src="/images/partdro/no-fuel.webp" alt="No fuel required" />
               <h3>No Fuel</h3>
               <p>No petrol, no exhaust, no oil. Charge the battery and mow — quietly, cleanly.</p>
             </div>
@@ -216,7 +217,7 @@
               </ul>
             </div>
             <div class="performance-image">
-              <img src="/images/vesper/box/rc-track.webp" alt="RC remote control mowing from the shade" />
+              <img src="/images/partdro/box/rc-track.webp" alt="RC remote control mowing from the shade" />
             </div>
           </div>
         </div>
@@ -229,27 +230,27 @@
           <p class="mow-section-lead">Six terrain types that defeat walk-behind and smart mowers — conquered by the {{ product.code }}.</p>
           <div class="scenarios-grid">
             <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/vesper/waterfront.webp" alt="Waterfront Grass" /></div>
+              <div class="scenario-image"><img src="/images/partdro/waterfront.webp" alt="Waterfront Grass" /></div>
               <h3>Waterfront Grass</h3>
             </div>
             <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/vesper/narrow.webp" alt="Narrow Side Yards" /></div>
+              <div class="scenario-image"><img src="/images/partdro/narrow.webp" alt="Narrow Side Yards" /></div>
               <h3>Narrow Side Yards</h3>
             </div>
             <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/vesper/woods.webp" alt="Dense Woods" /></div>
+              <div class="scenario-image"><img src="/images/partdro/woods.webp" alt="Dense Woods" /></div>
               <h3>Dense Woods</h3>
             </div>
             <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/vesper/muddy.webp" alt="Muddy Wet Patches" /></div>
+              <div class="scenario-image"><img src="/images/partdro/muddy.webp" alt="Muddy Wet Patches" /></div>
               <h3>Muddy Wet Patches</h3>
             </div>
             <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/vesper/roots.webp" alt="Exposed Tree Roots" /></div>
+              <div class="scenario-image"><img src="/images/partdro/roots.webp" alt="Exposed Tree Roots" /></div>
               <h3>Exposed Tree Roots</h3>
             </div>
             <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/vesper/roadside.webp" alt="Roadside Lawn Strips" /></div>
+              <div class="scenario-image"><img src="/images/partdro/roadside.webp" alt="Roadside Lawn Strips" /></div>
               <h3>Roadside Lawn Strips</h3>
             </div>
           </div>
@@ -328,7 +329,7 @@
               </ul>
             </div>
             <div class="performance-image">
-              <img src="/images/vesper/tall-grass.webp" alt="Tall grass performance" />
+              <img src="/images/partdro/tall-grass.webp" alt="Tall grass performance" />
             </div>
           </div>
         </div>
@@ -385,7 +386,7 @@
         <div class="section-container">
           <div class="performance-grid performance-flip">
             <div class="performance-image">
-              <img src="/images/vesper/vacuum.webp" alt="Leaf vacuum and mulching" />
+              <img src="/images/partdro/vacuum.webp" alt="Leaf vacuum and mulching" />
             </div>
             <div class="performance-content">
               <div class="performance-eyebrow">Multi-Season</div>
@@ -440,7 +441,7 @@
               </ul>
             </div>
             <div class="performance-image">
-              <img src="/images/vesper/battery-detail.webp" alt="LiFePO4 battery" />
+              <img src="/images/partdro/battery-detail.webp" alt="LiFePO4 battery" />
             </div>
           </div>
         </div>
@@ -451,7 +452,7 @@
         <div class="section-container">
           <div class="performance-grid performance-flip">
             <div class="performance-image">
-              <img src="/images/vesper/safety.webp" alt="360 safety system" />
+              <img src="/images/partdro/safety.webp" alt="360 safety system" />
             </div>
             <div class="performance-content">
               <div class="performance-eyebrow">Safety</div>
@@ -475,17 +476,17 @@
           <p class="mow-section-lead">Aircraft-grade aluminum chassis. DC06 deep-draw stamped steel deck. Engineered by former DJI experts for years of commercial-duty mowing.</p>
           <div class="build-grid">
             <div class="build-card">
-              <div class="build-image"><img src="/images/vesper/aluminum.webp" alt="Aircraft-grade aluminum chassis" /></div>
+              <div class="build-image"><img src="/images/partdro/aluminum.webp" alt="Aircraft-grade aluminum chassis" /></div>
               <h3>Aluminum Chassis</h3>
               <p>Aircraft-grade aluminum body — high clearance, corrosion-resistant, years of heavy use.</p>
             </div>
             <div class="build-card">
-              <div class="build-image"><img src="/images/vesper/steel-deck.webp" alt="DC06 deep-draw steel deck" /></div>
+              <div class="build-image"><img src="/images/partdro/steel-deck.webp" alt="DC06 deep-draw steel deck" /></div>
               <h3>Steel Deck</h3>
               <p>DC06 deep-draw stamped steel — automotive-grade thickness that resists impact and abrasion.</p>
             </div>
             <div class="build-card">
-              <div class="build-image"><img src="/images/vesper/remote.webp" alt="DJI-grade remote control" /></div>
+              <div class="build-image"><img src="/images/partdro/remote.webp" alt="DJI-grade remote control" /></div>
               <h3>DJI-Grade Remote</h3>
               <p>5ms response, interference-resistant signal, 400m range. Engineered by former DJI experts.</p>
             </div>
@@ -509,7 +510,7 @@
               </ul>
             </div>
             <div class="support-image">
-              <img src="/images/vesper/modular.webp" alt="Modular design" />
+              <img src="/images/partdro/modular.webp" alt="Modular design" />
             </div>
           </div>
         </div>
@@ -551,7 +552,7 @@
         <h2 class="section-title">Everything You Need to Get Started</h2>
         <p class="mow-section-lead">Your S1 ships with everything shown below — unbox, charge, and mow in minutes.</p>
         <div class="box-image-wrap">
-          <img src="/images/vesper/box/in-the-box.webp" alt="What's in the box" />
+          <img src="/images/partdro/box/in-the-box.webp" alt="What's in the box" />
         </div>
       </div>
     </section>
@@ -592,7 +593,7 @@
     </section>
 
     </template>
-    <!-- ===== /Vesper-Exclusive Sections ===== -->
+    <!-- ===== /Partdro-Exclusive Sections ===== -->
 
     <!-- Learn More Section -->
     <section class="learn-more-section" v-motion-fade-visible :delay="300">
@@ -714,7 +715,7 @@
           <a-button type="primary" size="large" class="btn-pill-primary" @click="openWhatsApp">
             <MessageOutlined /> Get A Quote
           </a-button>
-          <a-button size="large" class="btn-pill" @click="$router.push('/contact_us')" style="background: white; color: #2e7d32; border-color: white;">
+          <a-button size="large" class="btn-pill" @click="$router.push('/contact_us')" style="background: white; color: #1888c8; border-color: white;">
             Contact Us
           </a-button>
         </div>
@@ -895,7 +896,13 @@ const appImageMap: Record<string, string> = {
   'Multi-Machine Collaboration': '/images/af718/Multi-Machine-Collaboration-1.png',
   'Smart Path Planning': '/images/af718/Smart-Path-Planning-1.png',
   'AI Visual Guidance': '/images/af718/AI-Visual-Guidance-1.png',
-  'Implement Guidance': '/images/af718/Implement-Guidance-1.png'
+  'Implement Guidance': '/images/af718/Implement-Guidance-1.png',
+  'Aerial Photography': '/images/lumenfly-mini/hero.jpg',
+  'Travel Vlogging': '/images/lumenfly-mini/live-feed.jpg',
+  'Hiking & Adventure': '/images/lumenfly-mini/auto-track.jpg',
+  'Social Content Creation': '/images/lumenfly-mini/gimbal.jpg',
+  'Cinematic Filmmaking': '/images/lumenfly-mini/sony-sensor.jpg',
+  'Night & Time-lapse': '/images/lumenfly-mini/battery-life.jpg'
 }
 
 function getAppImage(appName: string): string | undefined {
@@ -903,8 +910,8 @@ function getAppImage(appName: string): string | undefined {
 }
 
 function getBadges(product: Product): string[] {
-  // Products with Vesper badge-style features (short labels, not descriptive text)
-  const badgeStyleProducts = ['AF718', 'W20']
+  // Products with Partdro badge-style features (short labels, not descriptive text)
+  const badgeStyleProducts = ['AF718', 'W20', 'LM-MINI']
   if (badgeStyleProducts.includes(product.code)) {
     return product.features
   }
@@ -982,7 +989,7 @@ onUnmounted(() => {
 <style scoped>
 /* Base */
 .product-detail-page {
-  font-family: 'Inter', 'Noto Sans', 'Noto Sans SC', sans-serif;
+  font-family: 'Barlow', 'Barlow', 'Barlow', sans-serif;
   background:
     radial-gradient(circle at top left, #eef8f0 0%, #f7f8fb 35%, #ffffff 100%);
   min-height: 100vh;
@@ -1148,7 +1155,7 @@ onUnmounted(() => {
 
 .gallery-thumb.is-active {
   opacity: 1;
-  border-color: var(--vesper-green, #2f7a3f);
+  border-color: var(--partdro-green, #2f7a3f);
   box-shadow: 0 4px 12px rgba(47, 122, 63, 0.18);
   transform: translateY(-1px);
 }
@@ -1215,7 +1222,7 @@ onUnmounted(() => {
 }
 
 .share-section :deep(.ant-btn:hover) {
-  color: #178c45;
+  color: #1888c8;
   background: #eef8f0;
 }
 
@@ -1464,7 +1471,7 @@ onUnmounted(() => {
 .learn-more-title {
   font-size: 24px;
   font-weight: 700;
-  background: linear-gradient(135deg, #178c45, #0f5c2e);
+  background: linear-gradient(135deg, #1888c8, #0f6da0);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1505,7 +1512,7 @@ onUnmounted(() => {
 }
 
 .applications-carousel :deep(.slick-arrow) {
-  color: #2e7d32 !important;
+  color: #1888c8 !important;
 }
 
 .application-slide {
@@ -1579,11 +1586,11 @@ onUnmounted(() => {
 }
 
 .specs-tabs :deep(.ant-tabs-tab-active) {
-  color: #2e7d32 !important;
+  color: #1888c8 !important;
 }
 
 .specs-tabs :deep(.ant-tabs-ink-bar) {
-  background: #2e7d32;
+  background: #1888c8;
 }
 
 .specs-table {
@@ -1621,7 +1628,7 @@ onUnmounted(() => {
 }
 
 .specs-more :deep(.ant-btn-link) {
-  color: #2e7d32;
+  color: #1888c8;
   font-weight: 500;
 }
 
@@ -1726,7 +1733,7 @@ onUnmounted(() => {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #178c45, #0f5c2e);
+  background: linear-gradient(135deg, #1888c8, #0f6da0);
   padding: 80px 40px;
   text-align: center;
   color: white;
@@ -1886,10 +1893,10 @@ onUnmounted(() => {
 }
 
 /* ============================================
-   Vesper-Exclusive Sections
+   Partdro-Exclusive Sections
    ============================================ */
 .mow-slope-strip {
-  background: linear-gradient(135deg, #178c45 0%, #0f5c2e 100%);
+  background: linear-gradient(135deg, #1888c8 0%, #0f6da0 100%);
   padding: clamp(40px, 5vw, 64px) clamp(16px, 3vw, 24px);
   color: white;
 }
@@ -2064,7 +2071,7 @@ onUnmounted(() => {
 .engineering-num {
   font-size: 48px;
   font-weight: 800;
-  background: linear-gradient(135deg, #178c45 0%, #0f5c2e 100%);
+  background: linear-gradient(135deg, #1888c8 0%, #0f6da0 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -2122,7 +2129,7 @@ onUnmounted(() => {
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #178c45;
+  color: #1888c8;
   margin-bottom: 12px;
 }
 
@@ -2159,7 +2166,7 @@ onUnmounted(() => {
 }
 
 .performance-bullets li :deep(.anticon) {
-  color: #178c45;
+  color: #1888c8;
   font-size: 18px;
   margin-top: 2px;
   flex-shrink: 0;
@@ -2217,7 +2224,7 @@ onUnmounted(() => {
 }
 
 .speed-bar-mow .speed-fill {
-  background: linear-gradient(90deg, #178c45 0%, #0f5c2e 100%);
+  background: linear-gradient(90deg, #1888c8 0%, #0f6da0 100%);
 }
 
 .speed-bar-walk .speed-fill {
@@ -2561,7 +2568,7 @@ onUnmounted(() => {
   }
 }
 
-/* Vesper responsive */
+/* Partdro responsive */
 @media (max-width: 1100px) {
   .performance-grid,
   .performance-flip,
