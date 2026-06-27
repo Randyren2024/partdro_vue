@@ -307,27 +307,27 @@ const touchEndX = ref(0)
 const carouselProducts = [
   {
     tag: 'Consumer',
-    title: 'Aerial Photography Drones',
-    description: 'Capture breathtaking 4K/8K aerial footage with intelligent flight modes, obstacle avoidance, and extended battery life.',
-    image: '/images/pexels-nc-farm-bureau-mark-2889442.webp',
-    imageAlt: 'Consumer Aerial Photography Drone',
-    link: '/products-solutions?category=consumer-drones'
-  },
-  {
-    tag: 'Enterprise',
-    title: 'Industrial Inspection UAVs',
-    description: 'Professional-grade drones with thermal imaging, LiDAR, and multispectral payloads for surveying, inspection, and public safety.',
-    image: '/images/3U9A0093.webp',
-    imageAlt: 'Enterprise Industrial Inspection UAV',
-    link: '/products-solutions?category=enterprise-drones'
+    title: 'Mini X Camera Drone',
+    description: 'Lightweight foldable 4K camera drone with 3-directional obstacle avoidance and a screen-equipped remote.',
+    image: '/images/mini-x/hero.jpg',
+    imageAlt: 'Mini X Camera Drone',
+    link: '/product/mini-x'
   },
   {
     tag: 'Agriculture',
-    title: 'Smart Agricultural Drones',
-    description: 'Precision spraying, seeding, and crop monitoring drones that reduce chemical use by up to 30% while boosting yields.',
-    image: '/images/harvest-1543064.webp',
-    imageAlt: 'Smart Agricultural Spraying Drone',
-    link: '/products-solutions?category=agriculture-drones'
+    title: 'FP500 Agriculture Drone',
+    description: 'Heavy-lift agricultural UAV with 40L spray tank, 55L spread tank, centrifugal nozzles, RTK mapping, and 3D AI orchard mode.',
+    image: '/images/fp500/hero.png',
+    imageAlt: 'FP500 Agriculture Drone',
+    link: '/product/fp500'
+  },
+  {
+    tag: 'Agriculture',
+    title: 'FP300E Agriculture Drone',
+    description: 'Compact foldable agricultural UAV with 30L spray tank, 45L spread tank, 30kg max payload, and 150m 4D radar — ideal entry point for precision agriculture.',
+    image: '/images/fp300e/hero.png',
+    imageAlt: 'FP300E Agriculture Drone',
+    link: '/product/fp300e'
   }
 ]
 
