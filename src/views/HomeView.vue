@@ -220,7 +220,9 @@ import { categories, products, getBestSellers } from '../data/products'
 
 const current = ref<string[]>(['home'])
 
-const displayedCategories = categories
+const displayedCategories = categories.filter(
+  c => c.id === 'consumer-drones' || c.id === 'agriculture-drones'
+)
 const displayedProducts = getBestSellers().slice(0, 3)
 
 
@@ -249,11 +251,8 @@ const valueItems = [
 ]
 
 const categoryImages: Record<string, string> = {
-  'consumer-drones': '/images/categories/consumer-drones_001.jpg',
-  'enterprise-drones': '/images/categories/enterprise-drones_001.jpg',
-  'agriculture-drones': '/images/categories/agriculture-drones_001.jpg',
-  'drone-accessories': '/images/categories/drone-accessories_001.jpg',
-  'payloads-sensors': '/images/categories/payloads-sensors_001.jpg'
+  'consumer-drones': '/images/mini-x/hero.jpg',
+  'agriculture-drones': '/images/fp700/hero.png'
 }
 
 const getCategoryImage = (categoryId: string): string => {
