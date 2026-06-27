@@ -64,13 +64,34 @@
                 <div class="product-category">
                   <a-tag color="green">{{ product.categoryName }}</a-tag>
                 </div>
+                <div v-if="product.price" class="product-price">
+                  <span class="price-current">{{ formatCents(product.price) }}</span>
+                  <span v-if="product.compareAtPrice" class="price-compare">
+                    {{ formatCents(product.compareAtPrice) }}
+                  </span>
+                </div>
               </template>
             </a-card-meta>
             <div class="product-actions">
               <a-button type="primary" size="small" @click.stop="$router.push(`/product/${product.id}`)">
                 Learn More
               </a-button>
-              <a-button size="small" @click.stop="openWhatsAppForProduct(product)">
+              <a-button
+                v-if="product.price && isInStock(product)"
+                type="default"
+                size="small"
+                @click.stop="addToCart(product)"
+              >
+                Add to Cart
+              </a-button>
+              <a-button
+                v-else-if="product.price && !isInStock(product)"
+                size="small"
+                disabled
+              >
+                Out of Stock
+              </a-button>
+              <a-button v-else size="small" @click.stop="openWhatsAppForProduct(product)">
                 Get Quote
               </a-button>
             </div>
@@ -106,15 +127,23 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { message } from 'ant-design-vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import { categories, products, type Product } from '../data/products'
+import { useCurrency } from '../composables/useCurrency'
+import { useCartStore } from '../stores/cart'
+import { useStock } from '../composables/useStock'
 import PrecisionAgricultureIcon from '../components/icons/PrecisionAgricultureIcon.vue'
 import PrecisionSprayingIcon from '../components/icons/PrecisionSprayingIcon.vue'
 import LandLevelingIcon from '../components/icons/LandLevelingIcon.vue'
 import LawnMowerIcon from '../components/icons/LawnMowerIcon.vue'
 import AgriculturalRobotsIcon from '../components/icons/AgriculturalRobotsIcon.vue'
 import MachineControlIcon from '../components/icons/MachineControlIcon.vue'
+
+const { formatCents } = useCurrency()
+const cartStore = useCartStore()
+const { isInStock } = useStock()
 
 const route = useRoute()
 const currentKeys = ref<string[]>(['products-solutions'])
@@ -171,6 +200,28 @@ const openWhatsAppForProduct = (product: Product) => {
   const message = `Hello! I'm interested in getting a quote for the ${product.name} (${product.code}). Could you please provide more information?`
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
+}
+
+const addToCart = (product: Product) => {
+  if (!product.price || !isInStock(product)) {
+    message.warning('This product is not available for online purchase. Please contact us for a quote.')
+    return
+  }
+
+  cartStore.addItem({
+    productId: product.id,
+    variantId: product.variants?.[0]?.id, // Default to first variant if exists
+    quantity: 1,
+    unitPriceCents: product.price + (product.variants?.[0]?.priceModifier || 0),
+    productName: product.name,
+    variantName: product.variants?.[0]?.name,
+    imageUrl: product.image
+  })
+
+  message.success(`Added ${product.name} to cart`)
+
+  // Open cart drawer to show the added item
+  cartStore.openDrawer()
 }
 
 
@@ -392,6 +443,26 @@ const handleFooterLogoError = (event: Event) => {
 
 .product-category {
   margin-top: 8px;
+}
+
+.product-price {
+  margin-top: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-current {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--partdro-primary, #1888c8);
+  font-family: 'Poppins', sans-serif;
+}
+
+.price-compare {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
 }
 
 .product-actions {

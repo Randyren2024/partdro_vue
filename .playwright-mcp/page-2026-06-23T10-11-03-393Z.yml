@@ -1,0 +1,54 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button "menu" [ref=e6] [cursor=pointer]:
+        - img "menu" [ref=e7]:
+          - img [ref=e8]
+      - link "Partdro AgriTech" [ref=e11] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e12]
+  - generic [ref=e13]:
+    - heading "Track Your Order" [level=1] [ref=e14]
+    - paragraph [ref=e15]: Enter your email and order number to view order details.
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Email
+        - textbox "Email" [ref=e19]:
+          - /placeholder: your@email.com
+      - generic [ref=e20]:
+        - generic [ref=e21]: Order Number
+        - textbox "Order Number" [ref=e22]:
+          - /placeholder: PD-20260623-XXXX
+      - button "Track Order" [ref=e23] [cursor=pointer]
+  - contentinfo [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - img "Partdro AgriTech" [ref=e28]
+        - paragraph [ref=e29]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e31]:
+        - button "right Quick Links" [ref=e33] [cursor=pointer]:
+          - img "right" [ref=e35]:
+            - img [ref=e36]
+          - generic [ref=e38]: Quick Links
+        - button "right Legal" [ref=e40] [cursor=pointer]:
+          - img "right" [ref=e42]:
+            - img [ref=e43]
+          - generic [ref=e45]: Legal
+      - generic [ref=e46]:
+        - heading "Contact Us" [level=3] [ref=e47]
+        - paragraph [ref=e48]:
+          - img "Email" [ref=e49]
+          - text: info@partdro.com
+        - paragraph [ref=e50]:
+          - img "Phone" [ref=e51]
+          - text: +86 16788684420
+      - generic [ref=e52]:
+        - heading "Follow Us" [level=3] [ref=e53]
+        - link "linkedin LinkedIn" [ref=e54] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e55]:
+            - img [ref=e56]
+          - text: LinkedIn
+    - paragraph [ref=e59]: Copyright© 2026 Partdro. All Rights Reserved

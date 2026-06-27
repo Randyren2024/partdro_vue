@@ -6,7 +6,7 @@
     <section class="hero-section">
       <div class="hero-image-container">
         <img 
-          src="/images/pexels-nc-farm-bureau-mark-26256448.webp" 
+          src="/images/agriculture-6502282.webp" 
           alt="Partdro AgriTech Support"
           class="hero-img"
         />

@@ -1,12 +1,14 @@
 <template>
   <a-config-provider :theme="theme">
     <router-view />
+    <CartDrawer />
   </a-config-provider>
 </template>
 
 <script setup lang="ts">
 import { theme } from 'ant-design-vue'
 import { computed } from 'vue'
+import CartDrawer from './components/CartDrawer.vue'
 
 const themeConfig = computed(() => ({
   token: {

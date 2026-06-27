@@ -1,0 +1,168 @@
+- generic [ref=e596]:
+  - banner [ref=e597]:
+    - generic [ref=e598]:
+      - link "Partdro AgriTech" [ref=e600] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e601]
+      - menu [ref=e602]:
+        - menuitem "Home" [ref=e603] [cursor=pointer]:
+          - generic [ref=e604]: Home
+        - generic [ref=e607] [cursor=pointer]:
+          - text: Products & Solutions
+          - img "down" [ref=e608]:
+            - img [ref=e609]
+        - menuitem "About Us" [ref=e611] [cursor=pointer]:
+          - generic [ref=e612]: About Us
+        - menuitem "Contact Us" [ref=e613] [cursor=pointer]:
+          - generic [ref=e614]: Contact Us
+        - generic:
+          - generic:
+            - img:
+              - img
+      - generic [ref=e615]:
+        - generic [ref=e616]:
+          - button "shopping-cart" [ref=e617] [cursor=pointer]:
+            - img "shopping-cart" [ref=e618]:
+              - img [ref=e619]
+          - superscript [ref=e621]:
+            - paragraph [ref=e623]: "1"
+        - button "Request Demo" [ref=e624] [cursor=pointer]:
+          - generic [ref=e625]: Request Demo
+  - generic [ref=e626]:
+    - heading "Checkout" [level=1] [ref=e627]
+    - generic [ref=e628]:
+      - generic [ref=e629]:
+        - generic [ref=e630]:
+          - heading "Contact Information" [level=2] [ref=e631]
+          - generic [ref=e632]:
+            - generic [ref=e633]: Email
+            - textbox "Email" [ref=e634]:
+              - /placeholder: your@email.com
+        - generic [ref=e635]:
+          - heading "Shipping Address" [level=2] [ref=e636]
+          - generic [ref=e637]:
+            - generic [ref=e638]:
+              - generic [ref=e639]: First Name
+              - textbox "First Name" [ref=e640]
+            - generic [ref=e641]:
+              - generic [ref=e642]: Last Name
+              - textbox "Last Name" [ref=e643]
+          - generic [ref=e644]:
+            - generic [ref=e645]: Address
+            - textbox "Address" [ref=e646]:
+              - /placeholder: 123 Main St
+          - generic [ref=e647]:
+            - generic [ref=e648]:
+              - generic [ref=e649]: City
+              - textbox "City" [ref=e650]
+            - generic [ref=e651]:
+              - generic [ref=e652]: State
+              - textbox "State" [ref=e653]
+          - generic [ref=e654]:
+            - generic [ref=e655]:
+              - generic [ref=e656]: ZIP Code
+              - textbox "ZIP Code" [ref=e657]
+            - generic [ref=e658]:
+              - generic [ref=e659]: Country
+              - combobox "Country" [ref=e660]:
+                - option "United States" [selected]
+                - option "Canada"
+                - option "United Kingdom"
+          - generic [ref=e661]:
+            - generic [ref=e662]: Phone (optional)
+            - textbox "Phone (optional)" [ref=e663]:
+              - /placeholder: +1 (555) 123-4567
+        - generic [ref=e664]:
+          - heading "Payment Information" [level=2] [ref=e665]
+          - generic [ref=e666]:
+            - img "info-circle" [ref=e668]:
+              - img [ref=e669]
+            - generic [ref=e672]:
+              - heading "Demo Mode - Mock Payment" [level=3] [ref=e673]
+              - paragraph [ref=e674]: This is a demonstration system. No real payment will be processed.
+              - generic [ref=e675]:
+                - paragraph [ref=e676]:
+                  - strong [ref=e677]: "Test Card (for display only):"
+                - paragraph [ref=e678]:
+                  - text: "Card Number:"
+                  - code [ref=e679]: 4242 4242 4242 4242
+                - paragraph [ref=e680]:
+                  - text: "Expiry:"
+                  - code [ref=e681]: 12/25
+                  - text: "| CVC:"
+                  - code [ref=e682]: "123"
+          - generic [ref=e683]:
+            - generic [ref=e684]:
+              - generic [ref=e685]: Card Number (Mock)
+              - textbox "Card Number (Mock)" [ref=e686]:
+                - /placeholder: 4242 4242 4242 4242
+                - text: 4242 4242 4242 4242
+            - generic [ref=e687]:
+              - generic [ref=e688]:
+                - generic [ref=e689]: Expiry Date
+                - textbox "Expiry Date" [ref=e690]:
+                  - /placeholder: MM/YY
+                  - text: 12/25
+              - generic [ref=e691]:
+                - generic [ref=e692]: CVC
+                - textbox "CVC" [ref=e693]:
+                  - /placeholder: "123"
+                  - text: "123"
+      - generic [ref=e694]:
+        - heading "Order Summary" [level=2] [ref=e695]
+        - generic [ref=e697]:
+          - img "Camera Drone" [ref=e698]
+          - generic [ref=e699]:
+            - generic [ref=e700]: Camera Drone
+            - generic [ref=e701]: Standard Kit
+            - generic [ref=e702]: "Qty: 1"
+          - generic [ref=e703]: $599.00
+        - generic [ref=e704]:
+          - generic [ref=e705]:
+            - generic [ref=e706]: Subtotal
+            - generic [ref=e707]: $599.00
+          - generic [ref=e708]:
+            - generic [ref=e709]: Shipping
+            - generic [ref=e710]: FREE
+          - generic [ref=e711]:
+            - generic [ref=e712]: Tax
+            - generic [ref=e713]: $0.00
+          - generic [ref=e714]:
+            - generic [ref=e715]: Total
+            - generic [ref=e716]: $599.00
+        - button "Place Order" [disabled] [ref=e717]
+  - contentinfo [ref=e718]:
+    - generic [ref=e719]:
+      - generic [ref=e720]:
+        - img "Partdro AgriTech" [ref=e722]
+        - paragraph [ref=e723]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e724]:
+        - heading "Quick Links" [level=3] [ref=e725]
+        - generic [ref=e726] [cursor=pointer]: Products & Solutions
+        - generic [ref=e727] [cursor=pointer]: About Us
+        - generic [ref=e728] [cursor=pointer]: Contact Us
+        - generic [ref=e729] [cursor=pointer]: Support
+      - generic [ref=e730]:
+        - heading "Legal" [level=3] [ref=e731]
+        - link "Privacy Policy" [ref=e732] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms & Conditions" [ref=e733] [cursor=pointer]:
+          - /url: /terms-conditions
+      - generic [ref=e734]:
+        - heading "Contact Us" [level=3] [ref=e735]
+        - paragraph [ref=e736]:
+          - img "Email" [ref=e737]
+          - text: info@partdro.com
+        - paragraph [ref=e738]:
+          - img "Phone" [ref=e739]
+          - text: +86 16788684420
+      - generic [ref=e740]:
+        - heading "Follow Us" [level=3] [ref=e741]
+        - link "linkedin LinkedIn" [ref=e742] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e743]:
+            - img [ref=e744]
+          - text: LinkedIn
+    - paragraph [ref=e747]: Copyright© 2026 Partdro. All Rights Reserved

@@ -1,0 +1,95 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button "menu" [ref=e6] [cursor=pointer]:
+        - img "menu" [ref=e7]:
+          - img [ref=e8]
+      - link "Partdro AgriTech" [ref=e11] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e12]
+  - generic [ref=e13]:
+    - heading "Track Your Order" [level=1] [ref=e14]
+    - paragraph [ref=e15]: Enter your email and order number to view order details.
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Email
+        - textbox "Email" [ref=e19]:
+          - /placeholder: your@email.com
+          - text: test@example.com
+      - generic [ref=e20]:
+        - generic [ref=e21]: Order Number
+        - textbox "Order Number" [ref=e22]:
+          - /placeholder: PD-20260623-XXXX
+          - text: PD-20260623-7837
+      - button "Track Order" [ref=e23] [cursor=pointer]
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - img "check-circle" [ref=e62]:
+          - img [ref=e63]
+        - heading "Order Found" [level=2] [ref=e65]
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: Order Number
+            - generic [ref=e70]: PD-20260623-7837
+          - generic [ref=e71]:
+            - generic [ref=e72]: Email
+            - generic [ref=e73]: test@example.com
+          - generic [ref=e74]:
+            - generic [ref=e75]: Status
+            - generic [ref=e76]: paid
+          - generic [ref=e77]:
+            - generic [ref=e78]: Placed
+            - generic [ref=e79]: Jun 23, 2026, 06:02 PM
+        - heading "Order Items" [level=3] [ref=e80]
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]: Camera Drone
+            - generic [ref=e84]: Standard Kit
+            - generic [ref=e85]: "Qty: 1"
+          - generic [ref=e86]: $599.00
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]: Subtotal
+            - generic [ref=e90]: $599.00
+          - generic [ref=e91]:
+            - generic [ref=e92]: Shipping
+            - generic [ref=e93]: FREE
+          - generic [ref=e94]:
+            - generic [ref=e95]: Tax
+            - generic [ref=e96]: $0.00
+          - generic [ref=e97]:
+            - generic [ref=e98]: Total
+            - generic [ref=e99]: $599.00
+  - contentinfo [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - img "Partdro AgriTech" [ref=e28]
+        - paragraph [ref=e29]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e31]:
+        - button "right Quick Links" [ref=e33] [cursor=pointer]:
+          - img "right" [ref=e35]:
+            - img [ref=e36]
+          - generic [ref=e38]: Quick Links
+        - button "right Legal" [ref=e40] [cursor=pointer]:
+          - img "right" [ref=e42]:
+            - img [ref=e43]
+          - generic [ref=e45]: Legal
+      - generic [ref=e46]:
+        - heading "Contact Us" [level=3] [ref=e47]
+        - paragraph [ref=e48]:
+          - img "Email" [ref=e49]
+          - text: info@partdro.com
+        - paragraph [ref=e50]:
+          - img "Phone" [ref=e51]
+          - text: +86 16788684420
+      - generic [ref=e52]:
+        - heading "Follow Us" [level=3] [ref=e53]
+        - link "linkedin LinkedIn" [ref=e54] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e55]:
+            - img [ref=e56]
+          - text: LinkedIn
+    - paragraph [ref=e59]: Copyright© 2026 Partdro. All Rights Reserved

@@ -1,0 +1,68 @@
+- generic [ref=e748]:
+  - banner [ref=e749]:
+    - generic [ref=e750]:
+      - link "Partdro AgriTech" [ref=e752] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e753]
+      - menu [ref=e754]:
+        - menuitem "Home" [ref=e755] [cursor=pointer]:
+          - generic [ref=e756]: Home
+        - generic [ref=e759] [cursor=pointer]:
+          - text: Products & Solutions
+          - img "down" [ref=e760]:
+            - img [ref=e761]
+        - menuitem "About Us" [ref=e763] [cursor=pointer]:
+          - generic [ref=e764]: About Us
+        - menuitem "Contact Us" [ref=e765] [cursor=pointer]:
+          - generic [ref=e766]: Contact Us
+        - generic:
+          - generic:
+            - img:
+              - img
+      - generic [ref=e767]:
+        - button "shopping-cart" [ref=e769] [cursor=pointer]:
+          - img "shopping-cart" [ref=e770]:
+            - img [ref=e771]
+        - button "Request Demo" [ref=e773] [cursor=pointer]:
+          - generic [ref=e774]: Request Demo
+  - generic [ref=e776]:
+    - img "check-circle" [ref=e778]:
+      - img [ref=e779]
+    - heading "Order Confirmed!" [level=1] [ref=e782]
+    - paragraph [ref=e783]: Thank you for your purchase
+    - paragraph [ref=e785]: Loading order details...
+  - contentinfo [ref=e786]:
+    - generic [ref=e787]:
+      - generic [ref=e788]:
+        - img "Partdro AgriTech" [ref=e790]
+        - paragraph [ref=e791]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e792]:
+        - heading "Quick Links" [level=3] [ref=e793]
+        - generic [ref=e794] [cursor=pointer]: Products & Solutions
+        - generic [ref=e795] [cursor=pointer]: About Us
+        - generic [ref=e796] [cursor=pointer]: Contact Us
+        - generic [ref=e797] [cursor=pointer]: Support
+      - generic [ref=e798]:
+        - heading "Legal" [level=3] [ref=e799]
+        - link "Privacy Policy" [ref=e800] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms & Conditions" [ref=e801] [cursor=pointer]:
+          - /url: /terms-conditions
+      - generic [ref=e802]:
+        - heading "Contact Us" [level=3] [ref=e803]
+        - paragraph [ref=e804]:
+          - img "Email" [ref=e805]
+          - text: info@partdro.com
+        - paragraph [ref=e806]:
+          - img "Phone" [ref=e807]
+          - text: +86 16788684420
+      - generic [ref=e808]:
+        - heading "Follow Us" [level=3] [ref=e809]
+        - link "linkedin LinkedIn" [ref=e810] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e811]:
+            - img [ref=e812]
+          - text: LinkedIn
+    - paragraph [ref=e815]: Copyright© 2026 Partdro. All Rights Reserved

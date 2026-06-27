@@ -58,6 +58,11 @@
       
       <!-- Request Demo 按钮 (桌面端) -->
       <div class="header-actions desktop-actions">
+        <a-badge :count="cartItemCount" :overflow-count="99" class="cart-badge">
+          <a-button type="text" shape="circle" class="cart-icon-btn" @click="cartStore.openDrawer()">
+            <ShoppingCartOutlined />
+          </a-button>
+        </a-badge>
         <a-button type="primary" class="demo-btn" @click="handleRequestDemo">
           Request Demo
         </a-button>
@@ -117,17 +122,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { 
-  MenuOutlined, 
-  DownOutlined, 
-  HomeOutlined, 
-  AppstoreOutlined, 
-  TeamOutlined, 
-  PhoneOutlined
+import {
+  MenuOutlined,
+  DownOutlined,
+  HomeOutlined,
+  AppstoreOutlined,
+  TeamOutlined,
+  PhoneOutlined,
+  ShoppingCartOutlined
 } from '@ant-design/icons-vue'
 import { categories } from '../data/products'
+import { useCartStore } from '../stores/cart'
 import PrecisionAgricultureIcon from './icons/PrecisionAgricultureIcon.vue'
 import PrecisionSprayingIcon from './icons/PrecisionSprayingIcon.vue'
 import LandLevelingIcon from './icons/LandLevelingIcon.vue'
@@ -137,9 +144,12 @@ import MachineControlIcon from './icons/MachineControlIcon.vue'
 
 const router = useRouter()
 const route = useRoute()
+const cartStore = useCartStore()
 
 const currentKeys = ref<string[]>(['home'])
 const drawerVisible = ref(false)
+
+const cartItemCount = computed(() => cartStore.totalQuantity)
 
 const menuItems = [
   { key: '/', label: 'Home', icon: HomeOutlined },
@@ -309,6 +319,27 @@ onMounted(() => {
   font-size: 14px;
   padding: 8px 16px;
   height: auto;
+}
+
+.cart-icon-btn {
+  font-size: 20px;
+  color: #2c3e50;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.cart-icon-btn:hover {
+  color: var(--partdro-primary, #1888c8);
+  background: rgba(24, 136, 200, 0.08);
+}
+
+.cart-badge :deep(.ant-badge-count) {
+  background: var(--partdro-primary, #1888c8);
+  box-shadow: 0 2px 4px rgba(24, 136, 200, 0.3);
 }
 
 /* 移动端抽屉 */

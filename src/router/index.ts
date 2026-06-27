@@ -56,6 +56,26 @@ const router = createRouter({
       path: '/support',
       name: 'support',
       component: () => import('../views/SupportView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('../views/CartView.vue')
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: () => import('../views/CheckoutView.vue')
+    },
+    {
+      path: '/order-confirmation',
+      name: 'order-confirmation',
+      component: () => import('../views/OrderConfirmationView.vue')
+    },
+    {
+      path: '/orders/lookup',
+      name: 'orders-lookup',
+      component: () => import('../views/OrderLookupView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {

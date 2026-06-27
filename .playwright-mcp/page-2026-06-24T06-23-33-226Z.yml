@@ -1,0 +1,674 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Partdro AgriTech" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e8]
+      - menu [ref=e9]:
+        - menuitem "Home" [ref=e10] [cursor=pointer]:
+          - generic [ref=e11]: Home
+        - generic [ref=e14] [cursor=pointer]:
+          - text: Products & Solutions
+          - img "down" [ref=e15]:
+            - img [ref=e16]
+        - menuitem "About Us" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: About Us
+        - menuitem "Contact Us" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Contact Us
+        - generic:
+          - generic:
+            - img:
+              - img
+      - generic [ref=e22]:
+        - button "shopping-cart" [ref=e24] [cursor=pointer]:
+          - img "shopping-cart" [ref=e25]:
+            - img [ref=e26]
+        - button "Request Demo" [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: Request Demo
+  - navigation [ref=e31]:
+    - list [ref=e32]:
+      - listitem [ref=e33]:
+        - generic [ref=e35] [cursor=pointer]: Home
+        - text: /
+      - listitem [ref=e36]:
+        - generic [ref=e38] [cursor=pointer]: Products & Solutions
+        - text: /
+      - listitem [ref=e39]:
+        - generic [ref=e41] [cursor=pointer]: Consumer Drones
+        - text: /
+      - listitem [ref=e42]:
+        - generic [ref=e43]: LM-MSE
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e49]:
+          - button "← Previous" [ref=e50] [cursor=pointer]
+          - generic [ref=e52]:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - img "Mini SE Camera Drone - image 1" [ref=e56]
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+            - generic:
+              - generic:
+                - generic:
+                  - img
+          - button "→ Next" [ref=e57] [cursor=pointer]
+          - list [ref=e58]:
+            - listitem [ref=e59]
+            - listitem [ref=e60]
+            - listitem [ref=e61]
+            - listitem [ref=e62]
+            - listitem [ref=e63]
+            - listitem [ref=e64]
+            - listitem [ref=e65]
+            - listitem [ref=e66]
+            - listitem [ref=e67]
+            - listitem [ref=e68]
+            - listitem [ref=e69]
+            - listitem [ref=e70]
+            - listitem [ref=e71]
+            - listitem [ref=e72]
+            - listitem [ref=e73]
+            - listitem [ref=e74]
+            - listitem [ref=e75]
+            - listitem [ref=e76]
+            - listitem [ref=e77]
+            - listitem [ref=e78]
+        - generic [ref=e79]:
+          - button "Show image 1" [ref=e80] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 1"
+          - button "Show image 2" [ref=e81] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 2"
+          - button "Show image 3" [ref=e82] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 3"
+          - button "Show image 4" [ref=e83] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 4"
+          - button "Show image 5" [ref=e84] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 5"
+          - button "Show image 6" [ref=e85] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 6"
+          - button "Show image 7" [ref=e86] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 7"
+          - button "Show image 8" [ref=e87] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 8"
+          - button "Show image 9" [ref=e88] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 9"
+          - button "Show image 10" [ref=e89] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 10"
+          - button "Show image 11" [ref=e90] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 11"
+          - button "Show image 12" [ref=e91] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 12"
+          - button "Show image 13" [ref=e92] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 13"
+          - button "Show image 14" [ref=e93] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 14"
+          - button "Show image 15" [ref=e94] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 15"
+          - button "Show image 16" [ref=e95] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 16"
+          - button "Show image 17" [ref=e96] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 17"
+          - button "Show image 18" [ref=e97] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 18"
+          - button "Show image 19" [ref=e98] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 19"
+          - button "Show image 20" [ref=e99] [cursor=pointer]:
+            - img "Mini SE Camera Drone thumbnail 20"
+      - generic [ref=e100]:
+        - generic [ref=e101]: In Stock
+        - generic [ref=e102]: New Release
+      - generic [ref=e103]:
+        - generic [ref=e104]: "Share:"
+        - button "twitter" [ref=e105] [cursor=pointer]:
+          - img "twitter" [ref=e106]:
+            - img [ref=e107]
+        - button "facebook" [ref=e109] [cursor=pointer]:
+          - img "facebook" [ref=e110]:
+            - img [ref=e111]
+        - button "linkedin" [ref=e113] [cursor=pointer]:
+          - img "linkedin" [ref=e114]:
+            - img [ref=e115]
+    - generic [ref=e117]:
+      - generic [ref=e118]: Consumer Drones
+      - heading "LM-MSE Mini SE Camera Drone" [level=1] [ref=e119]
+      - paragraph [ref=e120]: Smart Lightweight Companion — Voice Control, AI Tracking, 30 Min Flight
+      - generic [ref=e121]:
+        - generic [ref=e122]: 4K/30fps
+        - generic [ref=e123]: 249G FOLDABLE
+        - generic [ref=e124]: 30-MIN FLIGHT
+        - generic [ref=e125]: 4KM HD TRANSMISSION
+        - generic [ref=e126]: VOICE CONTROL
+        - generic [ref=e127]: AI TRACKING
+      - generic [ref=e128]:
+        - button "right Why You'll Choose It" [ref=e130] [cursor=pointer]:
+          - img "right" [ref=e132]:
+            - img [ref=e133]
+          - generic [ref=e135]: Why You'll Choose It
+        - button "right Features" [ref=e137] [cursor=pointer]:
+          - img "right" [ref=e139]:
+            - img [ref=e140]
+          - generic [ref=e142]: Features
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - generic [ref=e145]: $449.00
+          - generic [ref=e146]: $549.00
+          - generic [ref=e147]:
+            - img "check-circle" [ref=e148]:
+              - img [ref=e149]
+            - text: 30 in stock
+        - generic [ref=e152]:
+          - generic [ref=e153]: "Configuration:"
+          - generic [ref=e154]:
+            - generic [ref=e155] [cursor=pointer]:
+              - generic [ref=e156]:
+                - radio "Standard Kit"
+              - generic [ref=e157]: Standard Kit
+            - generic [ref=e158] [cursor=pointer]:
+              - generic [ref=e159]:
+                - radio "Voice Edition (+$100.00)"
+              - generic [ref=e160]: Voice Edition (+$100.00)
+        - generic [ref=e161]:
+          - generic [ref=e162]: "Quantity:"
+          - generic [ref=e163]:
+            - button "minus" [disabled] [ref=e164]:
+              - img "minus" [ref=e165]:
+                - img [ref=e166]
+            - spinbutton [ref=e168]: "1"
+            - button "plus" [ref=e169] [cursor=pointer]:
+              - img "plus" [ref=e170]:
+                - img [ref=e171]
+          - text: 30 available
+        - generic [ref=e174]:
+          - button "shopping-cart Add to Cart" [ref=e175] [cursor=pointer]:
+            - img "shopping-cart" [ref=e176]:
+              - img [ref=e177]
+            - generic [ref=e179]: Add to Cart
+          - button "message Get a Quote" [ref=e180] [cursor=pointer]:
+            - img "message" [ref=e181]:
+              - img [ref=e182]
+            - generic [ref=e184]: Get a Quote
+      - generic [ref=e185]:
+        - button "table View Specifications" [ref=e186] [cursor=pointer]:
+          - img "table" [ref=e187]:
+            - img [ref=e188]
+          - generic [ref=e190]: View Specifications
+        - button "phone Contact Us" [ref=e191] [cursor=pointer]:
+          - img "phone" [ref=e192]:
+            - img [ref=e193]
+          - generic [ref=e195]: Contact Us
+        - button "customer-service Product Support" [ref=e196] [cursor=pointer]:
+          - img "customer-service" [ref=e197]:
+            - img [ref=e198]
+          - generic [ref=e200]: Product Support
+  - generic [ref=e202]:
+    - heading "Learn More About LM-MSE Mini SE Camera Drone" [level=2] [ref=e203]
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - img "Voice Control with WK-V8 Handle" [ref=e207]
+        - generic [ref=e208]:
+          - heading "Voice Control with WK-V8 Handle" [level=3] [ref=e209]
+          - paragraph [ref=e210]: Pair the Mini SE with the optional WK-V8 voice handle and fly it hands-free. Speak commands to take off, land, orbit, follow, or stop — useful when your hands are full, you are wearing gloves, or you simply want a smoother vlog workflow. Voice recognition works in English and Mandarin out of the box.
+      - generic [ref=e211]:
+        - img "AI Smart Follow, Five Modes" [ref=e213]
+        - generic [ref=e214]:
+          - heading "AI Smart Follow, Five Modes" [level=3] [ref=e215]
+          - paragraph [ref=e216]: Tap a subject on screen and the Mini SE keeps it centered using one of five tracking modes. Bird’s Eye climbs to a top-down view; Fly Steady holds a constant distance behind a moving subject; Cross Terrain follows across varied landscape; Orbit Follow circles the subject; Quad Follow flies a four-corner reveal pattern around it.
+      - generic [ref=e217]:
+        - img "4K UHD Camera with 3-Axis Gimbal" [ref=e219]
+        - generic [ref=e220]:
+          - heading "4K UHD Camera with 3-Axis Gimbal" [level=3] [ref=e221]
+          - paragraph [ref=e222]: A 1/2.3-inch CMOS sensor captures 4K UHD video at 30 fps and high-resolution stills. The 3-axis mechanical gimbal keeps the horizon level through aggressive maneuvers, so every clip comes out smooth, level, and share-ready straight from the drone — no post-processing required.
+      - generic [ref=e223]:
+        - img "4 km HD Live Transmission" [ref=e225]
+        - generic [ref=e226]:
+          - heading "4 km HD Live Transmission" [level=3] [ref=e227]
+          - paragraph [ref=e228]: The 5 GHz remote streams 1080p live view up to 4 km in open environments with sub-200 ms latency. Choose between the P2 controller with a built-in 5.5-inch screen, the WK-V8 voice handle for hands-free control, or a third option for phone-based flight — whichever fits your workflow.
+      - generic [ref=e229]:
+        - img "30-Minute Intelligent Flight Battery" [ref=e231]
+        - generic [ref=e232]:
+          - heading "30-Minute Intelligent Flight Battery" [level=3] [ref=e233]
+          - paragraph [ref=e234]: A high-density LiPo 2S pack delivers up to 30 minutes of hover or 22–25 minutes of active mixed flight per charge — among the longest flight times in the sub-250 g category. The standard kit includes one battery; an optional Fly More Combo adds a charging hub and two spare packs.
+      - generic [ref=e235]:
+        - img "Toss-to-Launch & One-Tap QuickShots" [ref=e237]
+        - generic [ref=e238]:
+          - heading "Toss-to-Launch & One-Tap QuickShots" [level=3] [ref=e239]
+          - paragraph [ref=e240]: Toss the Mini SE into the air from your palm and it hovers in place, ready for the next command. Combine with QuickShots — Orbit, Pull-Away, Rise, and Tail — for instant cinematic clips that drop straight into TikTok, Reels, or YouTube Shorts with no editing required.
+  - generic [ref=e242]:
+    - heading "See It In Action" [level=2] [ref=e243]
+    - generic [ref=e248]:
+      - heading "Mini SE — Official Product Film" [level=3] [ref=e249]
+      - paragraph [ref=e250]: See the foldable sub-249g body, voice control via the WK-V8 handle, and 30-minute flight in action. Footage shot on the Mini SE in 4K.
+  - generic [ref=e252]:
+    - heading "Core Applications" [level=2] [ref=e253]
+    - generic [ref=e255]:
+      - button "← Previous" [ref=e256] [cursor=pointer]
+      - generic [ref=e258]:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Outdoor Adventure
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Action Sports
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Quick Creative Shots
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Vlog & Social Content
+        - generic [ref=e262]:
+          - img "Travel Photography" [ref=e264]
+          - heading "Travel Photography" [level=3] [ref=e265]
+        - generic [ref=e269]:
+          - img "Indoor Flying" [ref=e271]
+          - heading "Indoor Flying" [level=3] [ref=e272]
+        - generic [ref=e276]:
+          - img "Outdoor Adventure" [ref=e278]
+          - heading "Outdoor Adventure" [level=3] [ref=e279]
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Action Sports
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Quick Creative Shots
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Vlog & Social Content
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Travel Photography
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Indoor Flying
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Outdoor Adventure
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Action Sports
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Quick Creative Shots
+      - button "→ Next" [ref=e280] [cursor=pointer]
+      - list [ref=e281]:
+        - listitem [ref=e282]:
+          - button "1" [ref=e283] [cursor=pointer]
+        - listitem [ref=e284]:
+          - button "2" [ref=e285] [cursor=pointer]
+        - listitem [ref=e286]:
+          - button "3" [ref=e287] [cursor=pointer]
+        - listitem [ref=e288]:
+          - button "4" [ref=e289] [cursor=pointer]
+        - listitem [ref=e290]:
+          - button "5" [ref=e291] [cursor=pointer]
+        - listitem [ref=e292]:
+          - button "6" [ref=e293] [cursor=pointer]
+  - generic [ref=e295]:
+    - heading "Specifications" [level=2] [ref=e296]
+    - generic [ref=e298]:
+      - tablist [ref=e299]:
+        - generic [ref=e301]:
+          - tab "Aircraft" [selected] [ref=e303] [cursor=pointer]
+          - tab "4K Camera" [ref=e305] [cursor=pointer]
+          - tab "Gimbal" [ref=e307] [cursor=pointer]
+          - tab "Sensing & Positioning" [ref=e309] [cursor=pointer]
+          - tab "P2 Remote Controller" [ref=e311] [cursor=pointer]
+          - tab "WK-V8 Voice Handle (Optional)" [ref=e313] [cursor=pointer]
+          - tab "Intelligent Flight Battery" [ref=e315] [cursor=pointer]
+        - button [ref=e317]:
+          - img [ref=e318]:
+            - img [ref=e319]
+      - tabpanel "Aircraft" [ref=e323]:
+        - table [ref=e330]:
+          - rowgroup [ref=e333]:
+            - row "Specification Value" [ref=e334]:
+              - columnheader "Specification" [ref=e335]
+              - columnheader "Value" [ref=e336]
+          - rowgroup [ref=e337]:
+            - row "Diagonal Wheelbase 247 mm" [ref=e338]:
+              - cell "Diagonal Wheelbase" [ref=e339]
+              - cell "247 mm" [ref=e340]
+            - row "Dimensions (Unfolded) 157 × 224 × 70 mm" [ref=e341]:
+              - cell "Dimensions (Unfolded)" [ref=e342]
+              - cell "157 × 224 × 70 mm" [ref=e343]
+            - row "Dimensions (Folded) 142 × 82 × 70 mm" [ref=e344]:
+              - cell "Dimensions (Folded)" [ref=e345]
+              - cell "142 × 82 × 70 mm" [ref=e346]
+            - row "Takeoff Weight 249 g" [ref=e347]:
+              - cell "Takeoff Weight" [ref=e348]
+              - cell "249 g" [ref=e349]
+            - row "Max Ascent Speed 5 m/s" [ref=e350]:
+              - cell "Max Ascent Speed" [ref=e351]
+              - cell "5 m/s" [ref=e352]
+            - row "Max Descent Speed 3.5 m/s" [ref=e353]:
+              - cell "Max Descent Speed" [ref=e354]
+              - cell "3.5 m/s" [ref=e355]
+            - row "Max Horizontal Speed 12 m/s" [ref=e356]:
+              - cell "Max Horizontal Speed" [ref=e357]
+              - cell "12 m/s" [ref=e358]
+            - row "Max Tilt Angle 35°" [ref=e359]:
+              - cell "Max Tilt Angle" [ref=e360]
+              - cell "35°" [ref=e361]
+            - row "Max Service Ceiling 4,000 m" [ref=e362]:
+              - cell "Max Service Ceiling" [ref=e363]
+              - cell "4,000 m" [ref=e364]
+            - row "Max Wind Resistance 12 m/s (Level 7)" [ref=e365]:
+              - cell "Max Wind Resistance" [ref=e366]
+              - cell "12 m/s (Level 7)" [ref=e367]
+            - row "Max Flight Time 30 min (sea level, no wind, 3 m/s auto-cruise)" [ref=e368]:
+              - cell "Max Flight Time" [ref=e369]
+              - cell "30 min (sea level, no wind, 3 m/s auto-cruise)" [ref=e370]
+            - row "Operating Temperature -10°C to 40°C" [ref=e371]:
+              - cell "Operating Temperature" [ref=e372]
+              - cell "-10°C to 40°C" [ref=e373]
+            - row "Hovering Accuracy ±0.3 m vertical (with optical flow), ±1.0 m horizontal (with GPS)" [ref=e374]:
+              - cell "Hovering Accuracy" [ref=e375]
+              - cell "±0.3 m vertical (with optical flow), ±1.0 m horizontal (with GPS)" [ref=e376]
+    - button "Learn More About Specifications →" [ref=e378] [cursor=pointer]:
+      - generic [ref=e379]: Learn More About Specifications →
+  - generic [ref=e381]:
+    - heading "Frequently Asked Questions" [level=2] [ref=e382]
+    - generic [ref=e383]:
+      - button "right What is the takeoff weight, and do I need to register the Mini SE?" [ref=e385] [cursor=pointer]:
+        - img "right" [ref=e387]:
+          - img [ref=e388]
+        - generic [ref=e390]: What is the takeoff weight, and do I need to register the Mini SE?
+      - button "right How does voice control work on the Mini SE?" [ref=e392] [cursor=pointer]:
+        - img "right" [ref=e394]:
+          - img [ref=e395]
+        - generic [ref=e397]: How does voice control work on the Mini SE?
+      - button "right What AI Smart Follow modes are available?" [ref=e399] [cursor=pointer]:
+        - img "right" [ref=e401]:
+          - img [ref=e402]
+        - generic [ref=e404]: What AI Smart Follow modes are available?
+      - button "right How long does the Mini SE fly on a single battery?" [ref=e406] [cursor=pointer]:
+        - img "right" [ref=e408]:
+          - img [ref=e409]
+        - generic [ref=e411]: How long does the Mini SE fly on a single battery?
+      - button "right What is the maximum transmission range?" [ref=e413] [cursor=pointer]:
+        - img "right" [ref=e415]:
+          - img [ref=e416]
+        - generic [ref=e418]: What is the maximum transmission range?
+      - button "right Can the Mini SE fly indoors?" [ref=e420] [cursor=pointer]:
+        - img "right" [ref=e422]:
+          - img [ref=e423]
+        - generic [ref=e425]: Can the Mini SE fly indoors?
+      - button "right What QuickShots and Panorama modes are included?" [ref=e427] [cursor=pointer]:
+        - img "right" [ref=e429]:
+          - img [ref=e430]
+        - generic [ref=e432]: What QuickShots and Panorama modes are included?
+      - button "right Does the Mini SE support ND filters?" [ref=e434] [cursor=pointer]:
+        - img "right" [ref=e436]:
+          - img [ref=e437]
+        - generic [ref=e439]: Does the Mini SE support ND filters?
+      - button "right Is the Mini SE waterproof?" [ref=e441] [cursor=pointer]:
+        - img "right" [ref=e443]:
+          - img [ref=e444]
+        - generic [ref=e446]: Is the Mini SE waterproof?
+      - button "right What is the warranty and return policy?" [ref=e448] [cursor=pointer]:
+        - img "right" [ref=e450]:
+          - img [ref=e451]
+        - generic [ref=e453]: What is the warranty and return policy?
+    - button "Learn More →" [ref=e455] [cursor=pointer]:
+      - generic [ref=e456]: Learn More →
+  - generic [ref=e458]:
+    - heading "You May Also Like" [level=2] [ref=e459]
+    - generic [ref=e460]:
+      - generic [ref=e461] [cursor=pointer]:
+        - img "Camera Drone" [ref=e464]
+        - generic [ref=e467]:
+          - generic [ref=e468]: LM-MINI Camera Drone
+          - generic [ref=e469]: Sub-249g 4K camera drone with 3-axis gimbal, 40-min flight, ...
+      - generic [ref=e470] [cursor=pointer]:
+        - img "Mini X Camera Drone" [ref=e473]
+        - generic [ref=e476]:
+          - generic [ref=e477]: LM-MX Mini X Camera Drone
+          - generic [ref=e478]: Lightweight foldable 4K camera drone with 3-directional obst...
+  - generic [ref=e480]:
+    - heading "Interested in LM-MSE Mini SE Camera Drone?" [level=2] [ref=e481]
+    - paragraph [ref=e482]: Contact us today for more information or request a demo
+    - generic [ref=e483]:
+      - button "message Get A Quote" [ref=e484] [cursor=pointer]:
+        - img "message" [ref=e485]:
+          - img [ref=e486]
+        - generic [ref=e488]: Get A Quote
+      - button "Contact Us" [ref=e489] [cursor=pointer]:
+        - generic [ref=e490]: Contact Us
+  - button "Get A Quote" [ref=e493] [cursor=pointer]:
+    - generic [ref=e494]: Get A Quote
+  - contentinfo [ref=e495]:
+    - generic [ref=e496]:
+      - generic [ref=e497]:
+        - img "Partdro AgriTech" [ref=e499]
+        - paragraph [ref=e500]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e501]:
+        - heading "Quick Links" [level=3] [ref=e502]
+        - generic [ref=e503] [cursor=pointer]: Products & Solutions
+        - generic [ref=e504] [cursor=pointer]: About Us
+        - generic [ref=e505] [cursor=pointer]: Contact Us
+        - generic [ref=e506] [cursor=pointer]: Support
+      - generic [ref=e507]:
+        - heading "Legal" [level=3] [ref=e508]
+        - link "Privacy Policy" [ref=e509] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms & Conditions" [ref=e510] [cursor=pointer]:
+          - /url: /terms-conditions
+      - generic [ref=e511]:
+        - heading "Contact Us" [level=3] [ref=e512]
+        - paragraph [ref=e513]:
+          - img "Email" [ref=e514]
+          - text: info@partdro.com
+        - paragraph [ref=e515]:
+          - img "Phone" [ref=e516]
+          - text: +86 16788684420
+      - generic [ref=e517]:
+        - heading "Follow Us" [level=3] [ref=e518]
+        - link "linkedin LinkedIn" [ref=e519] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e520]:
+            - img [ref=e521]
+          - text: LinkedIn
+    - paragraph [ref=e524]: Copyright© 2026 Partdro. All Rights Reserved

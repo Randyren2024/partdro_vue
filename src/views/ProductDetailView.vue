@@ -102,8 +102,98 @@
             </a-collapse-panel>
           </a-collapse>
 
-          <!-- CTA Buttons -->
-          <div class="product-cta-buttons">
+          <!-- E-commerce section: Price, Variants, Quantity, Add to Cart -->
+          <div v-if="product.price" class="ecommerce-section">
+            <!-- Price display -->
+            <div class="product-price-section">
+              <span class="price-current">{{ formatCents(currentPrice) }}</span>
+              <span v-if="product.compareAtPrice" class="price-compare">
+                {{ formatCents(product.compareAtPrice) }}
+              </span>
+              <span class="price-stock" :class="{ 'out-of-stock': !isPurchasable }">
+                <CheckCircleOutlined v-if="isPurchasable" style="color: #52c41a" />
+                <ExclamationCircleOutlined v-else style="color: #ff4d4f" />
+                {{ isPurchasable ? `${maxQuantity} in stock` : 'Out of Stock' }}
+              </span>
+            </div>
+
+            <!-- Out of stock message -->
+            <div v-if="!isPurchasable" class="out-of-stock-message">
+              <p>This product is currently unavailable. Please contact us for more information or to join the waitlist.</p>
+            </div>
+
+            <!-- Variant selector -->
+            <div v-if="product.variants && product.variants.length > 1" class="variant-selector">
+              <label class="variant-label">Configuration:</label>
+              <a-radio-group
+                v-model:value="selectedVariantId"
+                :default-value="product.variants[0].id"
+                button-style="solid"
+                size="large"
+              >
+                <a-radio-button
+                  v-for="variant in product.variants"
+                  :key="variant.id"
+                  :value="variant.id"
+                >
+                  {{ variant.name }}
+                  <span v-if="variant.priceModifier !== 0" class="variant-price-modifier">
+                    ({{ variant.priceModifier > 0 ? '+' : '' }}{{ formatCents(variant.priceModifier) }})
+                  </span>
+                </a-radio-button>
+              </a-radio-group>
+            </div>
+
+            <!-- Quantity selector -->
+            <div v-if="isPurchasable" class="quantity-selector">
+              <label class="quantity-label">Quantity:</label>
+              <div class="quantity-controls">
+                <a-button
+                  size="large"
+                  :disabled="quantity <= 1"
+                  @click="decrementQuantity"
+                >
+                  <MinusOutlined />
+                </a-button>
+                <input
+                  type="number"
+                  v-model.number="quantity"
+                  :min="1"
+                  :max="maxQuantity"
+                  class="quantity-input"
+                />
+                <a-button
+                  size="large"
+                  :disabled="quantity >= maxQuantity"
+                  @click="incrementQuantity"
+                >
+                  <PlusOutlined />
+                </a-button>
+              </div>
+              <span class="quantity-stock">{{ maxQuantity }} available</span>
+            </div>
+
+            <!-- Add to Cart button -->
+            <div class="product-cta-buttons">
+              <a-button
+                type="primary"
+                size="large"
+                class="btn-pill-primary add-to-cart-btn"
+                @click="addToCart"
+                :disabled="!isPurchasable"
+              >
+                <ShoppingCartOutlined v-if="isPurchasable" />
+                <ExclamationCircleOutlined v-else />
+                {{ isPurchasable ? 'Add to Cart' : 'Out of Stock' }}
+              </a-button>
+              <a-button size="large" class="btn-pill" @click="openWhatsApp">
+                <MessageOutlined /> Get a Quote
+              </a-button>
+            </div>
+          </div>
+
+          <!-- Fallback CTA for non-purchasable products -->
+          <div v-else class="product-cta-buttons">
             <a-button type="primary" size="large" class="btn-pill-primary" @click="openWhatsAppDemo">
               <CalendarOutlined /> Request a Demo
             </a-button>
@@ -128,472 +218,6 @@
       </div>
     </section>
 
-    <!-- ===== Partdro-Exclusive Sections (v-if="product.isPartdro") ===== -->
-    <template v-if="product.isPartdro">
-
-      <!-- 1. Slope Hero Strip -->
-      <section class="mow-slope-strip">
-        <div class="section-container">
-          <div class="slope-strip-grid">
-            <div class="slope-stat-card">
-              <div class="slope-stat-label">Max Slope</div>
-              <div class="slope-stat-value">{{ getMowSpec('Max Slope') || '—' }}</div>
-              <div class="slope-stat-sub">All-Wheel Beast Drive</div>
-            </div>
-            <div class="slope-stat-card">
-              <div class="slope-stat-label">Cutting Width</div>
-              <div class="slope-stat-value">{{ getMowSpec('Cutting Width') || '—' }}</div>
-              <div class="slope-stat-sub">53 cm deck, dense-grass ready</div>
-            </div>
-            <div class="slope-stat-card">
-              <div class="slope-stat-label">Peak Cutting Power</div>
-              <div class="slope-stat-value">{{ getMowSpec('Peak Cutting Power') || '—' }}</div>
-              <div class="slope-stat-sub">8.13 N·m torque</div>
-            </div>
-            <div class="slope-stat-card">
-              <div class="slope-stat-label">Coverage / Charge</div>
-              <div class="slope-stat-value">4500 ㎡</div>
-              <div class="slope-stat-sub">18Ah LiFePO₄</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 1.5 Then vs. Now -->
-      <section class="mow-then-now">
-        <div class="section-container">
-          <div class="performance-eyebrow">Then vs. Now</div>
-          <h2 class="section-title">Weekend Yard Work, Reimagined</h2>
-          <div class="then-now-grid">
-            <div class="then-now-card">
-              <img src="/images/partdro/box/compare-before.webp" alt="Before: Back pain and hassle" class="then-now-img" />
-              <p class="then-now-label">Before: Back Pain & Hassle</p>
-            </div>
-            <div class="then-now-card">
-              <img src="/images/partdro/box/compare-after.webp" alt="After: Effortless and efficient" class="then-now-img" />
-              <p class="then-now-label">Now: Effortless & Efficient</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. No RTK / No App / No Fuel -->
-      <section class="mow-no-friction">
-        <div class="section-container">
-          <h2 class="section-title">Ready in Seconds</h2>
-          <p class="mow-section-lead">No base station, no app pairing, no fuel storage — pick up the remote and mow.</p>
-          <div class="no-friction-grid">
-            <div class="no-friction-card">
-              <img src="/images/partdro/no-rtk.webp" alt="No RTK required" />
-              <h3>No RTK</h3>
-              <p>Skip the base station and survey. Mow straight out of the box.</p>
-            </div>
-            <div class="no-friction-card">
-              <img src="/images/partdro/no-app.webp" alt="No app required" />
-              <h3>No App</h3>
-              <p>Skip the Bluetooth pairing and firmware updates. The remote is the controller.</p>
-            </div>
-            <div class="no-friction-card">
-              <img src="/images/partdro/no-fuel.webp" alt="No fuel required" />
-              <h3>No Fuel</h3>
-              <p>No petrol, no exhaust, no oil. Charge the battery and mow — quietly, cleanly.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2.5 Your Lawn. Your RC Track -->
-      <section class="mow-rc-track">
-        <div class="section-container">
-          <div class="performance-grid performance-flip">
-            <div class="performance-content">
-              <div class="performance-eyebrow">Your Lawn. Your RC Track</div>
-              <h2 class="performance-headline">Stay in the Shade. Grab a Cold Drink. Flick the Sticks.</h2>
-              <p class="performance-lead">Power on. Grab the remote. Start mowing in seconds. No pushing, no walking behind a hot machine, no gas fumes. The DJI-grade remote gives you a 5ms response and 400 m range — steer around trees, cut tight corners, and navigate slopes from the comfort of your porch. Yard work finally feels like a game.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> DJI-grade remote: 5ms response, interference-resistant signal, 400 m range</li>
-                <li><CheckCircleOutlined /> One-touch straight-line and one-touch turning for efficient mowing patterns</li>
-                <li><CheckCircleOutlined /> Sit anywhere — porch, shade tree, or office window — and mow the entire property</li>
-              </ul>
-            </div>
-            <div class="performance-image">
-              <img src="/images/partdro/box/rc-track.webp" alt="RC remote control mowing from the shade" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. Scenarios Grid (6 use cases) -->
-      <section class="mow-scenarios">
-        <div class="section-container">
-          <h2 class="section-title">Where Others Stop, You Begin</h2>
-          <p class="mow-section-lead">Six terrain types that defeat walk-behind and smart mowers — conquered by the {{ product.code }}.</p>
-          <div class="scenarios-grid">
-            <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/partdro/waterfront.webp" alt="Waterfront Grass" /></div>
-              <h3>Waterfront Grass</h3>
-            </div>
-            <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/partdro/narrow.webp" alt="Narrow Side Yards" /></div>
-              <h3>Narrow Side Yards</h3>
-            </div>
-            <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/partdro/woods.webp" alt="Dense Woods" /></div>
-              <h3>Dense Woods</h3>
-            </div>
-            <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/partdro/muddy.webp" alt="Muddy Wet Patches" /></div>
-              <h3>Muddy Wet Patches</h3>
-            </div>
-            <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/partdro/roots.webp" alt="Exposed Tree Roots" /></div>
-              <h3>Exposed Tree Roots</h3>
-            </div>
-            <div class="scenario-card">
-              <div class="scenario-image"><img src="/images/partdro/roadside.webp" alt="Roadside Lawn Strips" /></div>
-              <h3>Roadside Lawn Strips</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. Engineering Features (3-col) -->
-      <section class="mow-engineering">
-        <div class="section-container">
-          <h2 class="section-title">Engineered to Perform</h2>
-          <p class="mow-section-lead">Three core systems working together: drive, traction, and torque control.</p>
-          <div class="engineering-grid">
-            <div class="engineering-card">
-              <div class="engineering-num">01</div>
-              <h3>4-Motor AWD</h3>
-              <p>Four independent brushless motors deliver 1000W of traction output. Each wheel is controlled separately for maximum grip on slopes, mud, and uneven ground.</p>
-            </div>
-            <div class="engineering-card">
-              <div class="engineering-num">02</div>
-              <h3>TPU Tread Wheels</h3>
-              <p>12mm non-directional tread teeth, semi-solid TPU. Puncture-free construction that holds traction on wet grass, loose soil, and loose gravel.</p>
-            </div>
-            <div class="engineering-card">
-              <div class="engineering-num">03</div>
-              <h3>FOC Torque Control</h3>
-              <p>Field-Oriented Control with electronic braking and 5ms response. Maintains cutting torque through thick patches without stalling the blade.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4.5 Spring to Fall. One Machine -->
-      <section class="mow-spring-fall">
-        <div class="section-container">
-          <div class="performance-eyebrow">Spring to Fall. One Machine</div>
-          <h2 class="section-title">From the First Spring Mow to the Last Fall Cleanup</h2>
-          <p class="mow-section-lead">Discharge heavy spring growth. Mulch summer clippings back into the soil. Bag autumn leaves. Shred windfall into fine mulch. One machine replaces your mower, rake, blower, and chipper — all year round.</p>
-          <div class="spring-fall-grid">
-            <div class="spring-fall-card">
-              <div class="sf-icon">🌱</div>
-              <h3>Spring</h3>
-              <p>High-lift blade stands grass up for a clean first cut. 1985W peak power handles fast spring growth without clogging.</p>
-            </div>
-            <div class="spring-fall-card">
-              <div class="sf-icon">☀️</div>
-              <h3>Summer</h3>
-              <p>Mulching mode returns fine clippings as natural fertilizer. Keep your lawn green through the heat — no bagging, no waste.</p>
-            </div>
-            <div class="spring-fall-card">
-              <div class="sf-icon">🍂</div>
-              <h3>Autumn</h3>
-              <p>931 CFM leaf-shredding vacuum with 70 L bag. Rake-free leaf cleanup — lift, shred, and collect in one pass.</p>
-            </div>
-            <div class="spring-fall-card">
-              <div class="sf-icon">❄️</div>
-              <h3>Winter Prep</h3>
-              <p>Final cut before dormancy. 5 adjustable heights (1.5–4.3") for the ideal overwintering length. Store with 70% charge — ready for spring.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. Tall Grass Performance -->
-      <section class="mow-performance">
-        <div class="section-container">
-          <div class="performance-grid">
-            <div class="performance-content">
-              <div class="performance-eyebrow">Peak Power</div>
-              <h2 class="performance-headline">1985W Peak Cutting Power</h2>
-              <p class="performance-lead">8.13 N·m of cutting torque chews through 1.3 m tall, matted, wet grass without bogging down. The high-lift blade creates strong airflow that stands grass up for a clean, even cut on the first pass.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> 1.3 m max tall-grass height</li>
-                <li><CheckCircleOutlined /> 8.13 N·m cutting torque</li>
-                <li><CheckCircleOutlined /> High-lift blade for strong airflow</li>
-                <li><CheckCircleOutlined /> No stalling on wet or matted patches</li>
-              </ul>
-            </div>
-            <div class="performance-image">
-              <img src="/images/partdro/tall-grass.webp" alt="Tall grass performance" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5.5 Just Rained? Doesn't Matter -->
-      <section class="mow-wet-grass mow-vacuum-flip">
-        <div class="section-container">
-          <div class="performance-grid performance-flip">
-            <div class="performance-content">
-              <div class="performance-eyebrow">Just Rained? Doesn't Matter</div>
-              <h2 class="performance-headline">Wet Grass Is Finally Not a Problem</h2>
-              <p class="performance-lead">Front-to-rear airflow combined with a high-lift blade creates powerful under-deck suction that lifts rain-soaked grass, cuts it clean, and directs clippings into the bag. No clumps. No mess. No mold.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> High-volume under-deck airflow lifts matted, wet grass for a clean cut</li>
-                <li><CheckCircleOutlined /> Powerful suction directs clippings into the bag — no wet clumps left behind</li>
-                <li><CheckCircleOutlined /> 1985W peak power cuts through rain-soaked growth without bogging</li>
-              </ul>
-            </div>
-            <div class="performance-image">
-              <video autoplay muted loop playsinline preload="metadata" poster="https://mowrator.com/cdn/shop/files/preview_images/7cc4ef504c2243feae8b8e8162b7bb7f.thumbnail.0000000000_small.jpg?v=1778675370" class="section-video">
-                <source src="https://mowrator.com/cdn/shop/videos/c/vp/7cc4ef504c2243feae8b8e8162b7bb7f/7cc4ef504c2243feae8b8e8162b7bb7f.HD-1080p-4.8Mbps-84021522.mp4?v=0" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5.6 Tough Grass? No Problem -->
-      <section class="mow-tough-grass">
-        <div class="section-container">
-          <div class="performance-grid">
-            <div class="performance-image">
-              <video autoplay muted loop playsinline preload="metadata" poster="https://mowrator.com/cdn/shop/files/preview_images/794f8e4485d84bb98cd01c64c13da980.thumbnail.0000000000_small.jpg?v=1740550695" class="section-video">
-                <source src="https://mowrator.com/cdn/shop/videos/c/vp/794f8e4485d84bb98cd01c64c13da980/794f8e4485d84bb98cd01c64c13da980.HD-720p-1.6Mbps-43240723.mp4?v=0" type="video/mp4">
-              </video>
-            </div>
-            <div class="performance-content">
-              <div class="performance-eyebrow">Tough Grass? No Problem</div>
-              <h2 class="performance-headline">Thick, Stubborn, Overgrown — All in One Pass</h2>
-              <p class="performance-lead">High-volume airflow and a mulching blade keep clippings suspended longer under the deck for finer, more even shredding. The result: tiny particles that break down into natural lawn fertilizer — no visible clumps, no bagging required.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> Mulching mode returns nutrients to your soil — free, natural fertilizer</li>
-                <li><CheckCircleOutlined /> 6.0 ft-lbs cutting torque powers through thick, stubborn grass types</li>
-                <li><CheckCircleOutlined /> Rear discharge for fast cleanup of overgrown areas</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. Leaf Vacuum & Fall Cleanup -->
-      <section class="mow-vacuum mow-vacuum-flip">
-        <div class="section-container">
-          <div class="performance-grid performance-flip">
-            <div class="performance-image">
-              <img src="/images/partdro/vacuum.webp" alt="Leaf vacuum and mulching" />
-            </div>
-            <div class="performance-content">
-              <div class="performance-eyebrow">Multi-Season</div>
-              <h2 class="performance-headline">Drop the Rake. Fall Is Handled.</h2>
-              <p class="performance-lead">4-in-1 mowing: Discharge, Mulch, Bag, and the 931 CFM Leaf-Shredding Vacuum. The 70 L collection bag turns autumn leaves into fine mulch in one pass — replace the rake, blower, and chipper with a single machine.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> 931 CFM suction</li>
-                <li><CheckCircleOutlined /> 70 L collection bag</li>
-                <li><CheckCircleOutlined /> Mulch leaves and grass in one pass</li>
-                <li><CheckCircleOutlined /> Switch modes in seconds</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7. Speed & Efficiency Comparison -->
-      <section class="mow-speed">
-        <div class="section-container">
-          <h2 class="section-title">Get Yard Care Done in 1/3 the Time</h2>
-          <p class="mow-section-lead">2000 ㎡/h coverage vs 600 ㎡/h for typical walk-behind mowers. The {{ product.code }} finishes a typical residential lawn in a single battery cycle.</p>
-          <div class="speed-bars">
-            <div class="speed-row">
-              <div class="speed-label">{{ product.code }}</div>
-              <div class="speed-bar speed-bar-mow"><span class="speed-fill" style="width: 100%;"></span><span class="speed-value">2000 ㎡/h</span></div>
-            </div>
-            <div class="speed-row">
-              <div class="speed-label">Walk-Behind</div>
-              <div class="speed-bar speed-bar-walk"><span class="speed-fill" style="width: 30%;"></span><span class="speed-value">600 ㎡/h</span></div>
-            </div>
-            <div class="speed-row">
-              <div class="speed-label">Smart Robotic</div>
-              <div class="speed-bar speed-bar-smart"><span class="speed-fill" style="width: 25%;"></span><span class="speed-value">~500 ㎡/h</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 8. Battery & Power -->
-      <section class="mow-battery">
-        <div class="section-container">
-          <div class="performance-grid">
-            <div class="performance-content">
-              <div class="performance-eyebrow">Power</div>
-              <h2 class="performance-headline">Uninterrupted Power, Single Charge</h2>
-              <p class="performance-lead">56V automotive-grade LiFePO₄ battery with 1500+ cycles — 3× the industry average. Charge once and finish the whole yard, with margin for tall grass and steep slopes.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> 1500+ cycle LiFePO₄ chemistry</li>
-                <li><CheckCircleOutlined /> 12Ah (3000 ㎡) or 18Ah (4500 ㎡)</li>
-                <li><CheckCircleOutlined /> Smart BMS protection</li>
-                <li><CheckCircleOutlined /> ~70–90 min full charge (600W)</li>
-              </ul>
-            </div>
-            <div class="performance-image">
-              <img src="/images/partdro/battery-detail.webp" alt="LiFePO4 battery" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 9. Safety -->
-      <section class="mow-safety mow-safety-flip">
-        <div class="section-container">
-          <div class="performance-grid performance-flip">
-            <div class="performance-image">
-              <img src="/images/partdro/safety.webp" alt="360 safety system" />
-            </div>
-            <div class="performance-content">
-              <div class="performance-eyebrow">Safety</div>
-              <h2 class="performance-headline">Total Peace of Mind</h2>
-              <p class="performance-lead">360° safety protection with 4 ultrasonic sensors, a front bumper, and tilt / roll-over auto-stop. The blade stops the instant the unit tips beyond a safe angle, or when an obstacle approaches.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> 4 ultrasonic sensors detect obstacles, people, pets</li>
-                <li><CheckCircleOutlined /> Front bumper impact buffer</li>
-                <li><CheckCircleOutlined /> Tilt & roll-over auto-stop</li>
-                <li><CheckCircleOutlined /> DJI-grade 5ms response remote</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 10. Build Quality -->
-      <section class="mow-build">
-        <div class="section-container">
-          <h2 class="section-title">Built Like a Tank</h2>
-          <p class="mow-section-lead">Aircraft-grade aluminum chassis. DC06 deep-draw stamped steel deck. Engineered by former DJI experts for years of commercial-duty mowing.</p>
-          <div class="build-grid">
-            <div class="build-card">
-              <div class="build-image"><img src="/images/partdro/aluminum.webp" alt="Aircraft-grade aluminum chassis" /></div>
-              <h3>Aluminum Chassis</h3>
-              <p>Aircraft-grade aluminum body — high clearance, corrosion-resistant, years of heavy use.</p>
-            </div>
-            <div class="build-card">
-              <div class="build-image"><img src="/images/partdro/steel-deck.webp" alt="DC06 deep-draw steel deck" /></div>
-              <h3>Steel Deck</h3>
-              <p>DC06 deep-draw stamped steel — automotive-grade thickness that resists impact and abrasion.</p>
-            </div>
-            <div class="build-card">
-              <div class="build-image"><img src="/images/partdro/remote.webp" alt="DJI-grade remote control" /></div>
-              <h3>DJI-Grade Remote</h3>
-              <p>5ms response, interference-resistant signal, 400m range. Engineered by former DJI experts.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 11. Support -->
-      <section class="mow-support">
-        <div class="section-container">
-          <div class="support-grid">
-            <div class="support-content">
-              <div class="performance-eyebrow">Support</div>
-              <h2 class="performance-headline">Worry-Free Support, Guaranteed for Years</h2>
-              <p class="performance-lead">Local AU repair hubs in NSW and Victoria. 2-year warranty on main unit, remote, and battery. 30-day return policy. Modular, service-friendly design — replace blades and batteries in minutes.</p>
-              <ul class="performance-bullets">
-                <li><CheckCircleOutlined /> 2-year warranty (main unit, remote, battery)</li>
-                <li><CheckCircleOutlined /> 30-day return policy</li>
-                <li><CheckCircleOutlined /> Local AU repair hubs (NSW & Victoria)</li>
-                <li><CheckCircleOutlined /> Modular parts — quick swap, no special tools</li>
-              </ul>
-            </div>
-            <div class="support-image">
-              <img src="/images/partdro/modular.webp" alt="Modular design" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <!-- 12. Video Demos -->
-    <section class="mow-video">
-      <div class="section-container">
-        <div class="performance-eyebrow">See It in Action</div>
-        <h2 class="section-title">Watch the S1 Work. Then Buy with Confidence</h2>
-        <p class="mow-section-lead">From wet grass to fall leaves — see how the S1 handles real yard conditions with zero effort.</p>
-        <div class="video-grid">
-          <div class="video-card">
-            <video autoplay muted loop playsinline preload="metadata" poster="https://mowrator.com/cdn/shop/files/preview_images/7cc4ef504c2243feae8b8e8162b7bb7f.thumbnail.0000000000_small.jpg?v=1778675370" class="video-player">
-              <source src="https://mowrator.com/cdn/shop/videos/c/vp/7cc4ef504c2243feae8b8e8162b7bb7f/7cc4ef504c2243feae8b8e8162b7bb7f.HD-1080p-4.8Mbps-84021522.mp4?v=0" type="video/mp4">
-            </video>
-            <p class="video-label">Just Rained? Doesn't Matter</p>
-          </div>
-          <div class="video-card">
-            <video autoplay muted loop playsinline preload="metadata" poster="https://mowrator.com/cdn/shop/files/preview_images/794f8e4485d84bb98cd01c64c13da980.thumbnail.0000000000_small.jpg?v=1740550695" class="video-player">
-              <source src="https://mowrator.com/cdn/shop/videos/c/vp/794f8e4485d84bb98cd01c64c13da980/794f8e4485d84bb98cd01c64c13da980.HD-720p-1.6Mbps-43240723.mp4?v=0" type="video/mp4">
-            </video>
-            <p class="video-label">Tough Grass? No Problem — Mulching Demo</p>
-          </div>
-          <div class="video-card">
-            <video autoplay muted loop playsinline preload="metadata" poster="https://mowrator.com/cdn/shop/files/preview_images/8d2b0f57dee04a15bceea3f1c4495137.thumbnail.0000000000_small.jpg?v=1779890413" class="video-player">
-              <source src="https://mowrator.com/cdn/shop/videos/c/vp/8d2b0f57dee04a15bceea3f1c4495137/8d2b0f57dee04a15bceea3f1c4495137.HD-1080p-3.3Mbps-85058480.mp4?v=0" type="video/mp4">
-            </video>
-            <p class="video-label">Yard Work Is Now a Game</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. What's in the Box -->
-    <section class="mow-in-the-box">
-      <div class="section-container">
-        <div class="performance-eyebrow">In the Box</div>
-        <h2 class="section-title">Everything You Need to Get Started</h2>
-        <p class="mow-section-lead">Your S1 ships with everything shown below — unbox, charge, and mow in minutes.</p>
-        <div class="box-image-wrap">
-          <img src="/images/partdro/box/in-the-box.webp" alt="What's in the box" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. Customer Spotlight -->
-    <section class="mow-reviews">
-      <div class="section-container">
-        <div class="performance-eyebrow">Customer Spotlight</div>
-        <h2 class="section-title">See It in Action. Real Stories</h2>
-        <p class="mow-section-lead">Hear from homeowners who've traded push mowers, back pain, and weekend yard work for the S1.</p>
-        <div class="reviews-grid">
-          <div class="review-card">
-            <p class="review-quote">"This machine is a beast. I have a hillside in front of my house that was impossible to mow safely. The S1 climbs it like a mountain goat. Best investment I've made for my property."</p>
-            <p class="review-author">— Verified Owner, 50° 4WD Model</p>
-          </div>
-          <div class="review-card">
-            <p class="review-quote">"I am 69, and I operate the S1 on my own. No pushing, no struggling on slopes, no sweat. I sit under my tree with the remote and mow the entire property. BEST investment."</p>
-            <p class="review-author">— Verified Owner, 40° 4WD Model</p>
-          </div>
-          <div class="review-card">
-            <p class="review-quote">"Neighbors are jealous seeing me sit in the shade mowing my lawn with what looks like a giant RC car. My yard has never looked better — the cut quality is honestly better than my old ride-on."</p>
-            <p class="review-author">— Verified Owner, 37° 4WD Model</p>
-          </div>
-          <div class="review-card">
-            <p class="review-quote">"I have a spine issue, so I bought this as a tool — not a toy. It's been a game changer. I can maintain my entire property without pain. The remote is so intuitive, my grandkids figured it out in 5 minutes."</p>
-            <p class="review-author">— Verified Owner, 2WD 24° Model</p>
-          </div>
-          <div class="review-card">
-            <p class="review-quote">"The unit handles all of the slope with ease and the finish of the cut is excellent. I was skeptical about the vacuum attachment but fall cleanup is actually fun now — one pass and the leaves are gone."</p>
-            <p class="review-author">— Verified Owner, 50° 4WD Model</p>
-          </div>
-          <div class="review-card">
-            <p class="review-quote">"These machines are durable and well built. I have 1 acre with steep hills and my S1 has been running strong for months. No oil changes, no fuel, no maintenance headaches — just charge and go."</p>
-            <p class="review-author">— Verified Owner, 37° 4WD Model</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    </template>
-    <!-- ===== /Partdro-Exclusive Sections ===== -->
 
     <!-- Learn More Section -->
     <section class="learn-more-section" v-motion-fade-visible :delay="300">
@@ -615,6 +239,31 @@
             <div class="learn-more-content">
               <h3 class="learn-more-title">{{ card.title }}</h3>
               <p class="learn-more-description">{{ card.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section v-if="product.videos && product.videos.length" class="video-section" v-motion-fade-visible :delay="400">
+      <div class="section-container">
+        <h2 class="section-title" v-motion-slide-visible-bottom :delay="400">See It In Action</h2>
+        <div class="video-grid">
+          <div v-for="(video, idx) in product.videos" :key="idx" class="video-item" v-motion-slide-visible-bottom :delay="500 + idx * 100">
+            <div class="video-wrapper">
+              <video
+                :src="video.src"
+                :poster="video.poster"
+                controls
+                preload="metadata"
+                playsinline
+                class="product-video"
+              />
+            </div>
+            <div v-if="video.title || video.caption" class="video-meta">
+              <h3 v-if="video.title" class="video-title">{{ video.title }}</h3>
+              <p v-if="video.caption" class="video-caption">{{ video.caption }}</p>
             </div>
           </div>
         </div>
@@ -749,16 +398,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { message } from 'ant-design-vue'
 import {
   CheckCircleOutlined, MessageOutlined, TableOutlined, AppstoreOutlined,
   LinkedinOutlined, CalendarOutlined, PhoneOutlined, CustomerServiceOutlined,
-  TwitterOutlined, FacebookOutlined
+  TwitterOutlined, FacebookOutlined, ShoppingCartOutlined, MinusOutlined, PlusOutlined,
+  ExclamationCircleOutlined
 } from '@ant-design/icons-vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
-import { products, getProductById, getProductsByCategory, type Product } from '../data/products'
+import { products, getProductById, getProductsByCategory, type Product, type ProductVariant } from '../data/products'
+import { useCurrency } from '../composables/useCurrency'
+import { useCartStore } from '../stores/cart'
+import { useStock } from '../composables/useStock'
+
+const { formatCents } = useCurrency()
+const cartStore = useCartStore()
+const { isInStock, getAvailableStock } = useStock()
 
 const route = useRoute()
 const productAccordionKeys = ref<string[]>([])
@@ -769,6 +427,10 @@ const isMobile = ref(false)
 const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1200)
 const galleryCarousel = ref<any>(null)
 const activeSlideIdx = ref(0)
+
+// E-commerce state
+const selectedVariantId = ref<string | undefined>(undefined)
+const quantity = ref(1)
 
 function goToSlide(idx: number) {
   activeSlideIdx.value = idx
@@ -807,6 +469,78 @@ const productGallery = computed(() => {
   if (product.value.gallery && product.value.gallery.length > 0) return product.value.gallery
   return [product.value.image]
 })
+
+// E-commerce computed properties
+const currentVariant = computed<ProductVariant | undefined>(() => {
+  if (!product.value?.variants) return undefined
+  return product.value.variants.find(v => v.id === selectedVariantId.value) || product.value.variants[0]
+})
+
+const currentPrice = computed<number>(() => {
+  if (!product.value?.price) return 0
+  const basePrice = product.value.price
+  const variantModifier = currentVariant.value?.priceModifier || 0
+  return basePrice + variantModifier
+})
+
+const isPurchasable = computed(() => {
+  if (!product.value?.price) return false
+  return isInStock(product.value, currentVariant.value)
+})
+
+const maxQuantity = computed(() => {
+  if (!product.value) return 0
+  return getAvailableStock(product.value, currentVariant.value)
+})
+
+// Auto-reduce quantity if it exceeds available stock (e.g., when switching variants)
+watch(maxQuantity, (newMax) => {
+  if (quantity.value > newMax && newMax > 0) {
+    quantity.value = newMax
+  } else if (newMax === 0) {
+    quantity.value = 1 // Reset to 1 when out of stock
+  }
+})
+
+const incrementQuantity = () => {
+  if (quantity.value < maxQuantity.value) {
+    quantity.value++
+  }
+}
+
+const decrementQuantity = () => {
+  if (quantity.value > 1) {
+    quantity.value--
+  }
+}
+
+const addToCart = () => {
+  if (!product.value || !isPurchasable.value) {
+    message.warning('This product is not available for online purchase. Please contact us for a quote.')
+    return
+  }
+
+  if (quantity.value > maxQuantity.value) {
+    message.error(`Only ${maxQuantity.value} items available in stock.`)
+    return
+  }
+
+  cartStore.addItem({
+    productId: product.value.id,
+    variantId: currentVariant.value?.id,
+    quantity: quantity.value,
+    unitPriceCents: currentPrice.value,
+    productName: product.value.name,
+    variantName: currentVariant.value?.name,
+    imageUrl: currentVariant.value?.image || product.value.image
+  })
+
+  message.success(`Added ${quantity.value} × ${product.value.name} to cart`)
+  quantity.value = 1 // Reset quantity after adding
+
+  // Open cart drawer to show the added item
+  cartStore.openDrawer()
+}
 
 const productWhyReasons = computed(() => {
   if (!product.value) return []
@@ -902,7 +636,25 @@ const appImageMap: Record<string, string> = {
   'Hiking & Adventure': '/images/lumenfly-mini/auto-track.jpg',
   'Social Content Creation': '/images/lumenfly-mini/gimbal.jpg',
   'Cinematic Filmmaking': '/images/lumenfly-mini/sony-sensor.jpg',
-  'Night & Time-lapse': '/images/lumenfly-mini/battery-life.jpg'
+  'Night & Time-lapse': '/images/lumenfly-mini/battery-life.jpg',
+  'Vlog & Social Content': '/images/mini-x/quickshot-rise.jpg',
+  'Travel Photography': '/images/mini-x/gallery-snow-mountains.png',
+  'Indoor Flying': '/images/mini-x/feature-foldable-handheld.png',
+  'Outdoor Adventure': '/images/mini-x/feature-obstacle-avoidance.png',
+  'Action Sports': '/images/mini-x/quickshot-pull-away.jpg',
+  'Quick Creative Shots': '/images/mini-x/feature-gimbal-closeup.png',
+  'Vlog & Social Content (Mini SE)': '/images/mini-se/quickshot-rise.jpg',
+  'Travel Photography (Mini SE)': '/images/mini-se/panorama-180.jpg',
+  'Indoor Flying (Mini SE)': '/images/mini-se/feature-optical-flow.jpg',
+  'Outdoor Adventure (Mini SE)': '/images/mini-se/feature-toss-takeoff.jpg',
+  'Action Sports (Mini SE)': '/images/mini-se/feature-ai-tracking.jpg',
+  'Quick Creative Shots (Mini SE)': '/images/mini-se/quickshot-orbit.jpg',
+  'Field Crop Spraying': '/images/fp500/action-field-spray.jpg',
+  'Orchard Spraying': '/images/fp500/orchard-overview-aerial.jpg',
+  'Fertilizer Spreading': '/images/fp500/action-orchard-spray.jpg',
+  'Precision Mapping': '/images/fp500/field-planning-software.jpg',
+  'Mountain Terrain': '/images/fp500/action-orchard-closeup.jpg',
+  'Pest Control': '/images/fp500/action-orchard-distance.jpg'
 }
 
 function getAppImage(appName: string): string | undefined {
@@ -911,7 +663,7 @@ function getAppImage(appName: string): string | undefined {
 
 function getBadges(product: Product): string[] {
   // Products with Partdro badge-style features (short labels, not descriptive text)
-  const badgeStyleProducts = ['AF718', 'W20', 'LM-MINI']
+  const badgeStyleProducts = ['AF718', 'W20', 'LM-MINI', 'LM-MX', 'LM-MSE', 'PD-FP500', 'PD-FP600', 'PD-FP700', 'PD-A80', 'PD-FP300E']
   if (badgeStyleProducts.includes(product.code)) {
     return product.features
   }
@@ -921,11 +673,6 @@ function getBadges(product: Product): string[] {
   if (product.isBestSeller) badges.push('PREMIUM')
   badges.push('ACCURATE', 'UPGRADABLE')
   return badges
-}
-
-function getMowSpec(key: string): string | undefined {
-  if (!product.value?.specifications) return undefined
-  return product.value.specifications[key]
 }
 
 function onGalleryImgError(e: Event) {
@@ -1369,6 +1116,122 @@ onUnmounted(() => {
   flex-shrink: 0;
 }
 
+/* E-commerce section */
+.ecommerce-section {
+  margin-bottom: 28px;
+}
+
+.product-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.price-current {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--partdro-primary, #1888c8);
+  font-family: 'Poppins', sans-serif;
+}
+
+.price-compare {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-stock {
+  font-size: 14px;
+  color: #52c41a;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.price-stock.out-of-stock {
+  color: #ff4d4f;
+}
+
+.out-of-stock-message {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.out-of-stock-message p {
+  margin: 0;
+  color: #ff4d4f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.variant-selector {
+  margin-bottom: 20px;
+}
+
+.variant-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.variant-price-modifier {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.quantity-selector {
+  margin-bottom: 20px;
+}
+
+.quantity-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-input {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.quantity-input:focus {
+  border-color: var(--partdro-primary, #1888c8);
+}
+
+.quantity-stock {
+  margin-left: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  min-width: 200px;
+}
+
 /* CTA buttons */
 .product-cta-buttons {
   display: flex;
@@ -1495,6 +1358,67 @@ onUnmounted(() => {
   font-size: 20px;
   color: #4d5f6d;
   line-height: 1.9;
+}
+
+/* Video Gallery */
+.video-section {
+  background: transparent;
+  padding: 24px 40px;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.video-item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(24, 42, 63, 0.04);
+  padding: 16px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #0a1a2f;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-meta {
+  padding: 16px 8px 4px;
+}
+
+.video-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #182a3f;
+  margin: 0 0 4px;
+}
+
+.video-caption {
+  font-size: 0.95rem;
+  color: #4a5b6e;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* Applications */
@@ -1895,11 +1819,6 @@ onUnmounted(() => {
 /* ============================================
    Partdro-Exclusive Sections
    ============================================ */
-.mow-slope-strip {
-  background: linear-gradient(135deg, #1888c8 0%, #0f6da0 100%);
-  padding: clamp(40px, 5vw, 64px) clamp(16px, 3vw, 24px);
-  color: white;
-}
 
 .slope-strip-grid {
   max-width: 1480px;
@@ -1944,20 +1863,8 @@ onUnmounted(() => {
   opacity: 0.75;
 }
 
-.mow-section-lead {
-  text-align: center;
-  max-width: 760px;
-  margin: -16px auto 40px;
-  color: #4d5f6d;
-  font-size: clamp(15px, 1.3vw, 17px);
-  line-height: 1.7;
-}
 
 /* No Friction */
-.mow-no-friction {
-  background: #ffffff;
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
 .no-friction-grid {
   max-width: 1480px;
@@ -2002,10 +1909,6 @@ onUnmounted(() => {
 }
 
 /* Scenarios Grid */
-.mow-scenarios {
-  background: #f7faf8;
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
 .scenarios-grid {
   max-width: 1480px;
@@ -2047,10 +1950,6 @@ onUnmounted(() => {
 }
 
 /* Engineering */
-.mow-engineering {
-  background: white;
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
 .engineering-grid {
   max-width: 1480px;
@@ -2094,18 +1993,7 @@ onUnmounted(() => {
 }
 
 /* Performance blocks (Tall Grass / Vacuum / Battery / Safety) */
-.mow-performance,
-.mow-vacuum,
-.mow-battery,
-.mow-safety {
-  background: white;
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
-.mow-vacuum-flip,
-.mow-safety-flip {
-  background: #f7faf8;
-}
 
 .performance-grid {
   max-width: 1480px;
@@ -2180,10 +2068,6 @@ onUnmounted(() => {
 }
 
 /* Speed bars */
-.mow-speed {
-  background: linear-gradient(180deg, #f7faf8 0%, #eef8f0 100%);
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
 .speed-bars {
   max-width: 900px;
@@ -2250,10 +2134,6 @@ onUnmounted(() => {
 }
 
 /* Build */
-.mow-build {
-  background: white;
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
 .build-grid {
   max-width: 1480px;
@@ -2304,10 +2184,6 @@ onUnmounted(() => {
 }
 
 /* Support */
-.mow-support {
-  background: #f7faf8;
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 24px);
-}
 
 .support-grid {
   max-width: 1480px;
@@ -2326,10 +2202,6 @@ onUnmounted(() => {
 }
 
 /* Then vs Now */
-.mow-then-now {
-  background: linear-gradient(180deg, #f7fbf8 0%, #edf5ef 100%);
-  padding: 72px 0;
-}
 
 .then-now-grid {
   display: grid;
@@ -2375,10 +2247,6 @@ onUnmounted(() => {
 }
 
 /* Spring to Fall */
-.mow-spring-fall {
-  background: #ffffff;
-  padding: 72px 0;
-}
 
 .spring-fall-grid {
   display: grid;
@@ -2436,38 +2304,15 @@ onUnmounted(() => {
 }
 
 /* RC Track */
-.mow-rc-track {
-  background: #ffffff;
-  padding: 72px 0;
-}
 
-.mow-rc-track .performance-image img {
-  width: 100%;
-  border-radius: 20px;
-  display: block;
+
+@media (max-width: 768px) {
 }
 
 @media (max-width: 768px) {
-  .mow-rc-track .performance-grid {
-    grid-template-columns: 1fr;
-  }
-  .mow-rc-track .performance-image {
-    order: -1;
-  }
-}
-
-@media (max-width: 768px) {
-  .mow-wet-grass .performance-grid,
-  .mow-tough-grass .performance-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Video Section */
-.mow-video {
-  background: #ffffff;
-  padding: 72px 0;
-}
 
 .video-grid {
   display: grid;
@@ -2505,10 +2350,6 @@ onUnmounted(() => {
 }
 
 /* In the Box */
-.mow-in-the-box {
-  background: linear-gradient(180deg, #f7fbf8 0%, #edf5ef 100%);
-  padding: 72px 0;
-}
 
 .box-image-wrap {
   max-width: 900px;
@@ -2525,10 +2366,6 @@ onUnmounted(() => {
 }
 
 /* Customer Reviews */
-.mow-reviews {
-  background: #ffffff;
-  padding: 72px 0;
-}
 
 .reviews-grid {
   display: grid;
@@ -2680,6 +2517,19 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .related-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-section {
+    padding: 16px 12px;
+  }
+
+  .video-item {
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .video-wrapper {
+    border-radius: 12px;
   }
 
   .product-hero {

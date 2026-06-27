@@ -1,0 +1,113 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Partdro AgriTech" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e8]
+      - menu [ref=e9]:
+        - menuitem "Home" [ref=e10] [cursor=pointer]:
+          - generic [ref=e11]: Home
+        - generic [ref=e14] [cursor=pointer]:
+          - text: Products & Solutions
+          - img "down" [ref=e15]:
+            - img [ref=e16]
+        - menuitem "About Us" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: About Us
+        - menuitem "Contact Us" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Contact Us
+        - generic:
+          - generic:
+            - img:
+              - img
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - button "shopping-cart" [ref=e24] [cursor=pointer]:
+            - img "shopping-cart" [ref=e25]:
+              - img [ref=e26]
+          - superscript [ref=e28]:
+            - paragraph [ref=e30]: "3"
+        - button "Request Demo" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: Request Demo
+  - generic [ref=e34]:
+    - heading "Shopping Cart" [level=1] [ref=e35]
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - img "Camera Drone" [ref=e39]
+          - generic [ref=e40]:
+            - heading "Camera Drone" [level=3] [ref=e41]
+            - paragraph [ref=e42]: Standard Kit
+            - paragraph [ref=e43]: $599.00
+          - generic [ref=e44]:
+            - button "-" [ref=e45] [cursor=pointer]:
+              - generic [ref=e46]: "-"
+            - generic [ref=e47]: "1"
+            - button "+" [ref=e48] [cursor=pointer]:
+              - generic [ref=e49]: +
+          - generic [ref=e50]: $599.00
+          - button "delete" [ref=e51] [cursor=pointer]:
+            - img "delete" [ref=e52]:
+              - img [ref=e53]
+        - generic [ref=e55]:
+          - img "Camera Drone" [ref=e56]
+          - generic [ref=e57]:
+            - heading "Camera Drone" [level=3] [ref=e58]
+            - paragraph [ref=e59]: Fly More Combo
+            - paragraph [ref=e60]: $799.00
+          - generic [ref=e61]:
+            - button "-" [ref=e62] [cursor=pointer]:
+              - generic [ref=e63]: "-"
+            - generic [ref=e64]: "2"
+            - button "+" [ref=e65] [cursor=pointer]:
+              - generic [ref=e66]: +
+          - generic [ref=e67]: $1598.00
+          - button "delete" [ref=e68] [cursor=pointer]:
+            - img "delete" [ref=e69]:
+              - img [ref=e70]
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]: Subtotal
+          - generic [ref=e75]: $2197.00
+        - generic [ref=e76]:
+          - generic [ref=e77]: Shipping
+          - generic [ref=e78]: Calculated at checkout
+        - generic [ref=e79]:
+          - generic [ref=e80]: Total
+          - generic [ref=e81]: $2197.00
+        - button "Proceed to Checkout" [ref=e82] [cursor=pointer]:
+          - generic [ref=e83]: Proceed to Checkout
+  - contentinfo [ref=e84]:
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - img "Partdro AgriTech" [ref=e88]
+        - paragraph [ref=e89]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e90]:
+        - heading "Quick Links" [level=3] [ref=e91]
+        - generic [ref=e92] [cursor=pointer]: Products & Solutions
+        - generic [ref=e93] [cursor=pointer]: About Us
+        - generic [ref=e94] [cursor=pointer]: Contact Us
+        - generic [ref=e95] [cursor=pointer]: Support
+      - generic [ref=e96]:
+        - heading "Legal" [level=3] [ref=e97]
+        - link "Privacy Policy" [ref=e98] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "Terms & Conditions" [ref=e99] [cursor=pointer]:
+          - /url: /terms-conditions
+      - generic [ref=e100]:
+        - heading "Contact Us" [level=3] [ref=e101]
+        - paragraph [ref=e102]:
+          - img "Email" [ref=e103]
+          - text: info@partdro.com
+        - paragraph [ref=e104]:
+          - img "Phone" [ref=e105]
+          - text: +86 16788684420
+      - generic [ref=e106]:
+        - heading "Follow Us" [level=3] [ref=e107]
+        - link "linkedin LinkedIn" [ref=e108] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e109]:
+            - img [ref=e110]
+          - text: LinkedIn
+    - paragraph [ref=e113]: Copyright© 2026 Partdro. All Rights Reserved

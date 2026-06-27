@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(curl -s http://localhost:3000/product/af718)"
+      "Bash(curl -s http://localhost:3000/product/af718)",
+      "Read(//c/Users/81102/.claude/skills/nano-banana/**)",
+      "Bash(python scripts/generate.py \"In this drone feature image, keep the upper 75% unchanged \\(the gray drone flying above dark silhouette figures on a teal background\\) and replace ONLY the bottom 25% which contains 5 Chinese text labels and small sub-images. Replace the Chinese text labels with English equivalents in the same position, same font size, same white sans-serif style: 'Bird's Eye' \\(replacing 上帝视觉\\), 'Fly Steady' \\(replacing 一马平川\\), 'Cross Terrain' \\(replacing 跨越山海\\), 'Orbit Follow' \\(replacing 环绕伴飞\\), 'Quad Follow' \\(replacing 四角伴飞\\). Keep the same overall composition, colors, lighting, and layout. Do not change the drone, silhouettes, or background.\" -i \"C:/Users/81102/Desktop/lumenfly_20260619/lumenfly_ecommerce/partdro_vue/public/images/mini-se/feature-smart-follow.orig.jpg\" -o \"C:/Users/81102/Desktop/lumenfly_20260619/lumenfly_ecommerce/partdro_vue/public/images/mini-se/feature-smart-follow.jpg\")"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
 }

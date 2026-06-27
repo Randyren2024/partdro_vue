@@ -1,0 +1,121 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button "menu" [ref=e6] [cursor=pointer]:
+        - img "menu" [ref=e7]:
+          - img [ref=e8]
+      - link "Partdro AgriTech" [ref=e11] [cursor=pointer]:
+        - /url: /
+        - img "Partdro AgriTech" [ref=e12]
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - heading "Take Flight with Partdro" [level=1] [ref=e15]
+      - paragraph [ref=e16]: Your trusted destination for premium drones — from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - button "Explore Products & Solutions" [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: Explore Products & Solutions
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]: Consumer
+          - heading "Aerial Photography Drones" [level=2] [ref=e24]
+          - paragraph [ref=e25]: Capture breathtaking 4K/8K aerial footage with intelligent flight modes, obstacle avoidance, and extended battery life.
+          - button "Learn More" [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]: Learn More
+        - generic [ref=e28]:
+          - 'button "Previous: Smart Agricultural Drones" [ref=e29] [cursor=pointer]':
+            - generic [ref=e30]: ‹
+          - tablist "Product slides" [ref=e31]:
+            - tab "Aerial Photography Drones" [selected] [ref=e32] [cursor=pointer]
+            - tab "Industrial Inspection UAVs" [ref=e33] [cursor=pointer]
+            - tab "Smart Agricultural Drones" [ref=e34] [cursor=pointer]
+          - 'button "Next: Industrial Inspection UAVs" [ref=e35] [cursor=pointer]':
+            - generic [ref=e36]: ›
+      - region "Product showcase carousel" [ref=e37]:
+        - img "Consumer Aerial Photography Drone" [ref=e38]
+        - button "Pause slideshow" [ref=e39] [cursor=pointer]: ⏸
+  - generic [ref=e40]:
+    - generic [ref=e41]:
+      - heading "Drone Categories" [level=2] [ref=e42]
+      - paragraph [ref=e43]: Explore our full range of UAV solutions for every mission
+    - generic [ref=e44]:
+      - generic [ref=e45] [cursor=pointer]:
+        - img "Consumer Drones" [ref=e48]
+        - generic [ref=e51]:
+          - generic [ref=e52]: Consumer Drones
+          - generic [ref=e53]: High-performance drones for aerial photography, videography, and recreational flying
+      - generic [ref=e54] [cursor=pointer]:
+        - img "Enterprise Drones" [ref=e57]
+        - generic [ref=e60]:
+          - generic [ref=e61]: Enterprise Drones
+          - generic [ref=e62]: Professional UAV solutions for industrial inspection, surveying, mapping, and public safety
+      - generic [ref=e63] [cursor=pointer]:
+        - img "Agricultural Drones" [ref=e66]
+        - generic [ref=e69]:
+          - generic [ref=e70]: Agricultural Drones
+          - generic [ref=e71]: Smart spraying, seeding, and crop monitoring drones for precision agriculture
+      - generic [ref=e72] [cursor=pointer]:
+        - img "Drone Accessories" [ref=e75]
+        - generic [ref=e78]:
+          - generic [ref=e79]: Drone Accessories
+          - generic [ref=e80]: Batteries, propellers, controllers, cases, and essential drone gear
+      - generic [ref=e81] [cursor=pointer]:
+        - img "Payloads & Sensors" [ref=e84]
+        - generic [ref=e87]:
+          - generic [ref=e88]: Payloads & Sensors
+          - generic [ref=e89]: Thermal cameras, LiDAR, multispectral sensors, and specialized payloads
+  - generic [ref=e91]:
+    - heading "Featured Drones" [level=2] [ref=e92]
+    - paragraph [ref=e93]: Top-selling UAVs trusted by professionals worldwide
+  - generic [ref=e94]:
+    - generic [ref=e95]:
+      - heading "Our Values" [level=2] [ref=e96]
+      - paragraph [ref=e97]: What drives us forward
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - img "Technical Excellence" [ref=e101]
+        - heading "Technical Excellence" [level=3] [ref=e102]
+        - paragraph [ref=e103]: Maintaining the highest standards in product selection and technical validation, ensuring every solution meets rigorous quality benchmarks.
+      - generic [ref=e104]:
+        - img "Customer Partnership" [ref=e106]
+        - heading "Customer Partnership" [level=3] [ref=e107]
+        - paragraph [ref=e108]: Viewing clients as long-term partners, providing comprehensive support from product selection to after-sales service.
+      - generic [ref=e109]:
+        - img "Market Intelligence" [ref=e111]
+        - heading "Market Intelligence" [level=3] [ref=e112]
+        - paragraph [ref=e113]: Deep understanding of both Chinese manufacturing capabilities and global market needs for optimal product-market fit.
+      - generic [ref=e114]:
+        - img "Localized Service" [ref=e116]
+        - heading "Localized Service" [level=3] [ref=e117]
+        - paragraph [ref=e118]: Building deep, localized service systems to truly serve global customers with complete solutions, not just products.
+  - contentinfo [ref=e119]:
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - img "Partdro AgriTech" [ref=e123]
+        - paragraph [ref=e124]:
+          - text: Your trusted destination for premium drones —
+          - text: from consumer aerial photography to enterprise-grade industrial UAV solutions
+      - generic [ref=e126]:
+        - button "right Quick Links" [ref=e128] [cursor=pointer]:
+          - img "right" [ref=e130]:
+            - img [ref=e131]
+          - generic [ref=e133]: Quick Links
+        - button "right Legal" [ref=e135] [cursor=pointer]:
+          - img "right" [ref=e137]:
+            - img [ref=e138]
+          - generic [ref=e140]: Legal
+      - generic [ref=e141]:
+        - heading "Contact Us" [level=3] [ref=e142]
+        - paragraph [ref=e143]:
+          - img "Email" [ref=e144]
+          - text: info@partdro.com
+        - paragraph [ref=e145]:
+          - img "Phone" [ref=e146]
+          - text: +86 16788684420
+      - generic [ref=e147]:
+        - heading "Follow Us" [level=3] [ref=e148]
+        - link "linkedin LinkedIn" [ref=e149] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alan-gan-partdroinno/
+          - img "linkedin" [ref=e150]:
+            - img [ref=e151]
+          - text: LinkedIn
+    - paragraph [ref=e154]: Copyright© 2026 Partdro. All Rights Reserved
