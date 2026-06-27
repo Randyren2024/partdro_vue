@@ -297,7 +297,7 @@ export const products: Product[] = [
       }
     ],
     inStock: true,
-    isBestSeller: false,
+    isBestSeller: true,
     isNew: true,
 
     // Commerce fields
@@ -561,7 +561,7 @@ export const products: Product[] = [
       }
     ],
     inStock: true,
-    isBestSeller: false,
+    isBestSeller: true,
     isNew: true
   },
   {
@@ -1505,7 +1505,7 @@ export const products: Product[] = [
       }
     ],
     inStock: true,
-    isBestSeller: false,
+    isBestSeller: true,
     isNew: true,
     price: 2499900,
     compareAtPrice: 2799900,
